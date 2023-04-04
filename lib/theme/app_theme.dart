@@ -5,29 +5,27 @@ import 'package:size_config/size_config.dart';
 class AppTheme {
   AppTheme._();
   static ThemeData lightTheme = ThemeData(
-    // fontFamily: 'Noto Serif',
+    fontFamily: 'Urbanist',
     brightness: Brightness.light,
     colorScheme: const ColorScheme.light(
-      primary: Color(0xFF0076EB),
+      primary: Color(0xFF1BAB4B),
       onPrimary: Colors.white,
-      background:  Color(0xFFFAFCFF),
+      background:  Color(0xFFF5F5F5),
       onBackground:  Color(0xDE04294E),
-      secondary: Color(0xFFFFFFFF),
+      secondary: Color(0xFFF3F3F4),
       onSecondary: Colors.black,
       brightness: Brightness.light,
-        tertiary: Color(0xDE04294E),
-      outline: Colors.white
     ),
     textTheme:  TextTheme(
       bodyLarge:  TextStyle(
-        color: const Color(0xDE04294E),
+        color: const Color(0xFF212121),
         fontSize: 16.sp
       ),
       bodyMedium: const TextStyle(
-          color: Color(0x9904294E)
+          color: Color(0xFF212121)
       ),
       bodySmall: const TextStyle(
-          color: Color(0x6104294E)
+          color: Color(0xFF616161)
       ),
       titleMedium: const TextStyle(
         color: Color(0xDE04294E)
@@ -36,28 +34,26 @@ class AppTheme {
   );
 
   static ThemeData darkTheme = ThemeData(
-      // fontFamily: 'Noto Serif',
+      fontFamily: 'Urbanist',
       brightness: Brightness.dark,
       colorScheme: const ColorScheme.dark(
-        primary:Color(0xFF0076EB),
-        background: Color(0xFF121212),
+        primary:Color(0xFF1BAB4B),
+        background: Color(0xFF181A20),
         onBackground:  Color(0xDEEDF6FF),
-        secondary:  Color(0xFF222222),
+        secondary:  Color(0xFF1F222A),
         onSecondary: Colors.white,
         onPrimary: Colors.white,
-        tertiary: Color(0x61ECF5FE),
-          outline: Colors.black
       ),
       textTheme: TextTheme(
         bodyLarge: TextStyle(
-            color: const Color(0xDEEDF6FF),
+            color: const Color(0xFFFFFFFF),
           fontSize: 16.sp
         ),
         bodyMedium: const TextStyle(
-            color: Color(0x99ECF5FE)
+            color: Color(0xFFFFFFFF)
         ),
         bodySmall: const TextStyle(
-            color: Color(0x61ECF5FE)
+            color: Color(0xFFE0E0E0)
         ),
       )
   );
