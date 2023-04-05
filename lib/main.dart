@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizeConfigInit(
-      referenceHeight: 800,
-      referenceWidth: 360,
+      referenceHeight: 926,
+      referenceWidth: 428,
       builder: (BuildContext context, Orientation orientation) {
         return Builder(
           builder: (context) => MaterialApp.router(

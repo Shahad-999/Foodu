@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/presentation/onBoarding/widgets/on_boarding_body.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -7,6 +8,7 @@ class OnBoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
+      body: const OnBoardingBody(),
     );
   }
 }
