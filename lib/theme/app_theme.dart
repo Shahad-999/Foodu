@@ -12,8 +12,8 @@ class AppTheme {
       onPrimary: Colors.white,
       background:  Color(0xFFF5F5F5),
       onBackground:  Color(0xFF212121),
-      secondary: Color(0xFFF3F3F4),
-      onSecondary: Colors.black,
+      secondary: Color(0xFFD2D2D2),
+      onSecondary: Color(0xFFBABABB),
       brightness: Brightness.light,
       tertiary: Color(0x8BCDDED5)
     ),
@@ -45,8 +45,8 @@ class AppTheme {
         primary:Color(0xFF1BAB4B),
         background: Color(0xFF181A20),
         onBackground:  Color(0xFFFFFFFF),
-        secondary:  Color(0xFF1F222A),
-        onSecondary: Colors.white,
+        secondary:  Color(0xFFEDF2F2),
+          onSecondary: Color(0xFF737376),
         onPrimary: Colors.white,
           tertiary: Color(0xFF192E26)
       ),
