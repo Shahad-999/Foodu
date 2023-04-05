@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import '../presentation/onBoarding/on_boarding_screen.dart';
 import '../presentation/splashScreen/splash_screen.dart';
 
 class AppRouter{
@@ -10,7 +11,7 @@ class AppRouter{
 
     // static Widget _homeRouteBuilder(BuildContext context, GoRouterState state) => const HomeScreen();
     static Widget _splashRouteBuilder(BuildContext context, GoRouterState state) => const SplashScreen();
-    // static Widget _onBoardingRouteBuilder(BuildContext context, GoRouterState state) => const OnBoardingScreen();
+    static Widget _onBoardingRouteBuilder(BuildContext context, GoRouterState state) => const OnBoardingScreen();
 
 
     static final GoRouter _router =
@@ -18,7 +19,7 @@ class AppRouter{
           initialLocation: splashScreenRoute,
           routes: [
               GoRoute(path: splashScreenRoute, builder: _splashRouteBuilder),
-              // GoRoute(path: onBoardingRoute, builder: _onBoardingRouteBuilder ),
+              GoRoute(path: onBoardingRoute, builder: _onBoardingRouteBuilder ),
               // GoRoute(path: homeRoute, builder: _homeRouteBuilder)
             ],
         );
