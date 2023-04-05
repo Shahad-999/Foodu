@@ -11,7 +11,7 @@ class AppTheme {
       primary: Color(0xFF1BAB4B),
       onPrimary: Colors.white,
       background:  Color(0xFFF5F5F5),
-      onBackground:  Color(0xDE04294E),
+      onBackground:  Color(0xFF212121),
       secondary: Color(0xFFF3F3F4),
       onSecondary: Colors.black,
       brightness: Brightness.light,
@@ -31,6 +31,10 @@ class AppTheme {
       titleMedium: const TextStyle(
         color: Color(0xDE04294E)
       ),
+
+      labelLarge:const TextStyle(
+          color: Color(0xFF737273)
+      ),
     )
   );
 
@@ -40,7 +44,7 @@ class AppTheme {
       colorScheme: const ColorScheme.dark(
         primary:Color(0xFF1BAB4B),
         background: Color(0xFF181A20),
-        onBackground:  Color(0xDEEDF6FF),
+        onBackground:  Color(0xFFFFFFFF),
         secondary:  Color(0xFF1F222A),
         onSecondary: Colors.white,
         onPrimary: Colors.white,
@@ -56,6 +60,9 @@ class AppTheme {
         ),
         bodySmall: const TextStyle(
             color: Color(0xFFE0E0E0)
+        ),
+        labelLarge:const TextStyle(
+            color: Color(0xFFE0E1E3)
         ),
       )
   );

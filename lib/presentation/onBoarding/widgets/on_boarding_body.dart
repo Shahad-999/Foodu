@@ -69,27 +69,24 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
                 children: [
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: Container(
-                      height: 50.h,
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.primary,
-                          borderRadius: BorderRadius.circular(100)),
-                      child: Center(
-                        child: TextButton(
-                          onPressed: navToNextPage,
-                          style: const ButtonStyle(
-                            splashFactory: NoSplash.splashFactory,
-                          ),
-                          child: Text(
-                            'Next',
-                            style: TextStyle(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white
+                    child: GestureDetector(
+                      onTap: navToNextPage,
+                      child: Container(
+                        height: 50.h,
+                        decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.primary,
+                            borderRadius: BorderRadius.circular(100)),
+                        child: Center(
+                          child:  Text(
+                              'Next',
+                              style: TextStyle(
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white
+                              ),
                             ),
                           ),
                         ),
-                      ),
                     ),
                   ),
                   SizedBox(height: 40.h,),
