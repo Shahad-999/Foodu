@@ -15,7 +15,8 @@ class AppTheme {
       secondary: Color(0xFFF5F5F5),
       onSecondary: Color(0xFFBABABB),
       brightness: Brightness.light,
-      tertiary: Color(0x8BCDDED5)
+      tertiary: Color(0x8BCDDED5),
+      primaryContainer: Color(0xFFFEFFFE)
     ),
     textTheme:  TextTheme(
       bodyLarge:  TextStyle(
@@ -48,7 +49,8 @@ class AppTheme {
         secondary:  Color(0xFF1F222A),
           onSecondary: Color(0xFF737376),
         onPrimary: Colors.white,
-          tertiary: Color(0xFF192E26)
+          tertiary: Color(0xFF192E26),
+          primaryContainer: Color(0xFF1F222A)
       ),
       textTheme: TextTheme(
         bodyLarge: TextStyle(

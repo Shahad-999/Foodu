@@ -12,7 +12,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  bool _showOnBoarding = true;
+  bool _showOnBoarding = false;
 
   @override
   void initState() {

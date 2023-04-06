@@ -14,6 +14,7 @@ class CategoriesSection extends StatelessWidget {
         childAspectRatio: MediaQuery.of(context).size.width /
             (MediaQuery.of(context).size.height / 1.8),
         shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
         crossAxisCount: 4,
         children: const [
           CategoryItem(image: 'assets/images/buger.png', title: 'Burger'),
@@ -23,8 +24,7 @@ class CategoriesSection extends StatelessWidget {
           CategoryItem(image: 'assets/images/veg.png', title: 'Vegetable'),
           CategoryItem(image: 'assets/images/pan_cake.png', title: 'Dessert'),
           CategoryItem(image: 'assets/images/drink_glass.png', title: 'Drink'),
-          CategoryItem(
-              image: 'assets/images/chocolate_cake.png', title: 'More'),
+          CategoryItem(image: 'assets/images/chocolate_cake.png', title: 'More'),
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:foodu/presentation/home/widgets/discount_guaranteed_section.dart';
 import 'package:foodu/presentation/home/widgets/search_bar.dart';
 import 'package:foodu/presentation/home/widgets/special_offer_section.dart';
 import 'package:size_config/size_config.dart';
@@ -17,6 +18,7 @@ class HomeBody extends StatelessWidget {
         SizedBox(height: 16.h,),
         const SpecialOffersSection(),
         const CategoriesSection(),
+        const DiscountGuaranteedSection()
       ],
     );
   }
