@@ -3,6 +3,8 @@ import 'package:foodu/presentation/home/widgets/search_bar.dart';
 import 'package:foodu/presentation/home/widgets/special_offer_section.dart';
 import 'package:size_config/size_config.dart';
 
+import 'categories_section.dart';
+
 class HomeBody extends StatelessWidget {
   const HomeBody({Key? key}) : super(key: key);
 
@@ -13,8 +15,8 @@ class HomeBody extends StatelessWidget {
         SizedBox(height: 8.h,),
         const HomeSearchBar(),
         SizedBox(height: 16.h,),
-        const SpecialOffersSection()
-  
+        const SpecialOffersSection(),
+        const CategoriesSection(),
       ],
     );
   }
