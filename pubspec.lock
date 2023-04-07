@@ -33,6 +33,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.1"
+  chip_list:
+    dependency: "direct main"
+    description:
+      name: chip_list
+      sha256: da8ce35f7d62e660ca294b053fe38d170f92db064c93e93f88872cef3742aa87
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.3+8"
   clock:
     dependency: transitive
     description:

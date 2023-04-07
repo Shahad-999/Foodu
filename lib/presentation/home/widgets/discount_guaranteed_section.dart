@@ -13,7 +13,7 @@ class DiscountGuaranteedSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 400.h,
+      height: 365.h,
       child: Column(
         children: [
           HeaderSection(
