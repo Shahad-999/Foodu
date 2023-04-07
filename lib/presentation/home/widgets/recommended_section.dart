@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:foodu/presentation/home/widgets/recommended_item.dart';
 import 'package:size_config/size_config.dart';
 
 import 'categories_chip_list.dart';
@@ -28,16 +27,9 @@ class RecommendedSection extends StatelessWidget {
           ListView.builder(
             itemCount: 3,
             shrinkWrap: true,
+              physics: const ScrollPhysics(),
             itemBuilder: (context,index){
-              return Padding(
-                padding: EdgeInsets.all(16), 
-                child: Container(
-
-                  color: Colors.blueAccent,
-                  height: 50,
-                  width: 100,
-                ),
-                );
+              return const RecommendedItem();
             }
           )
 

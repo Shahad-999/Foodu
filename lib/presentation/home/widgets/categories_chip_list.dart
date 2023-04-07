@@ -1,7 +1,5 @@
 import 'package:chip_list/chip_list.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:size_config/size_config.dart';
 
 class CategoriesChipList extends StatefulWidget {
