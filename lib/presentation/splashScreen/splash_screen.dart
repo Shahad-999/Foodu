@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
       if(_showOnBoarding){
         GoRouter.of(context).go(AppRouter.onBoardingRoute);
       }else{
-        GoRouter.of(context).go(AppRouter.homeRoute);
+        GoRouter.of(context).go(AppRouter.mainRoute);
       }
     });
   }
