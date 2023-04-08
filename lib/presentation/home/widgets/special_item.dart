@@ -4,7 +4,8 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:size_config/size_config.dart';
 
 class SpecialItem extends StatelessWidget {
-  const SpecialItem({super.key});
+  const SpecialItem({super.key, this.backgroundColor});
+  final Color? backgroundColor;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,7 +14,7 @@ class SpecialItem extends StatelessWidget {
         height: 178.h,
         width: MediaQuery.of(context).size.width - 48.w,
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primary,
+          color: backgroundColor ?? Theme.of(context).colorScheme.primary,
           borderRadius: BorderRadius.circular(36),
         ),
         child: Row(

@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:foodu/presentation/home/widgets/special_item.dart';
+import 'package:foodu/routing/routes.dart';
+import 'package:go_router/go_router.dart';
 import 'package:size_config/size_config.dart';
 
 import 'hearder_section.dart';
@@ -11,7 +13,7 @@ class SpecialOffersSection extends StatelessWidget {
 
 
   void _onClickSeeAll(BuildContext context){
-
+    GoRouter.of(context).push(AppRouter.specialOffersRoute);
   }
   @override
   Widget build(BuildContext context) {
