@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:size_config/size_config.dart';
 
+import '../../../routing/routes.dart';
 import 'action_button.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -12,7 +14,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
   
   _onClickBag(BuildContext context){
-    
+    GoRouter.of(context).push(AppRouter.cartRoute);
   }
   
   @override
