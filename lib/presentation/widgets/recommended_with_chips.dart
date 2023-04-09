@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/presentation/widgets/recommended_item.dart';
 import 'package:size_config/size_config.dart';
 
 import 'categories_chip_list.dart';
-import 'recommended_item.dart';
 
 class RecommendedWithChips extends StatelessWidget {
   const RecommendedWithChips({Key? key}) : super(key: key);

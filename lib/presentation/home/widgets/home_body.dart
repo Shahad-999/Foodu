@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:foodu/presentation/home/widgets/discount_guaranteed_section.dart';
 import 'package:foodu/presentation/home/widgets/recommended_section.dart';
-import 'package:foodu/presentation/home/widgets/search_bar.dart';
+import 'package:foodu/presentation/widgets/search_bar.dart';
 import 'package:foodu/presentation/home/widgets/special_offer_section.dart';
 import 'package:go_router/go_router.dart';
 import 'package:size_config/size_config.dart';
 
-import '../../../routing/routes.dart';
-import '../../categories/widgets/categories_section.dart';
+import '../../../config/routes.dart';
+import '../../widgets/categories_section.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({Key? key}) : super(key: key);

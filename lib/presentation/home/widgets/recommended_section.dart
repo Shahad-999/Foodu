@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:foodu/routing/routes.dart';
+import 'package:foodu/config/routes.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../recommendedForYou/widgets/recommended_with_chips.dart';
+import '../../widgets/recommended_with_chips.dart';
 import 'hearder_section.dart';
 
 class RecommendedSection extends StatelessWidget {

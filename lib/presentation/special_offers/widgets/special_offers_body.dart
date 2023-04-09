@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:foodu/presentation/home/widgets/special_item.dart';
+import 'package:foodu/presentation/widgets/special_item.dart';
 import 'package:size_config/size_config.dart';
 
 

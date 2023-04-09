@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:foodu/presentation/recommendedForYou/widgets/recommended_with_chips.dart';
+import 'package:foodu/presentation/widgets/recommended_with_chips.dart';
 import 'package:size_config/size_config.dart';
 
 

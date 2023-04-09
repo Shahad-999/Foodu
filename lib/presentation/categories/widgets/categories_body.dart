@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:size_config/size_config.dart';
 
-import 'categories_section.dart';
+import '../../widgets/categories_section.dart';
 
 
 class CategoriesBody extends StatelessWidget {

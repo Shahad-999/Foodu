@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:size_config/size_config.dart';
-import '../../../routing/routes.dart';
+import '../../../config/routes.dart';
 import 'on_boarding_pages.dart';
 
 class OnBoardingBody extends StatefulWidget {

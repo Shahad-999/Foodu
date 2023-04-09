@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:size_config/size_config.dart';
 
 class SpecialItem extends StatelessWidget {
@@ -36,7 +34,7 @@ class SpecialItem extends StatelessWidget {
                       )
                     ),
                       Text(
-                      'Discount only \n vaild for today ',
+                      'Discount only \n valid for today ',
                       style: TextStyle(
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w900,
