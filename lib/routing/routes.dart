@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:foodu/presentation/mainScreens/main_screen.dart';
+import 'package:foodu/presentation/recommendedForYou/recommended_screen.dart';
 import 'package:go_router/go_router.dart';
 import '../presentation/cart/cart_screen.dart';
 import '../presentation/home/home_screen.dart';
@@ -15,6 +16,7 @@ class AppRouter{
     static const mainRoute = '/main_screen';
     static const cartRoute = '/cart_screen';
     static const specialOffersRoute = '/special_offers_screen';
+    static const recommendedRoute = '/recommended_screen';
 
     static Widget _homeRouteBuilder(BuildContext context, GoRouterState state) => const HomeScreen();
     static Widget _splashRouteBuilder(BuildContext context, GoRouterState state) => const SplashScreen();
@@ -22,6 +24,7 @@ class AppRouter{
     static Widget _mainRouteBuilder(BuildContext context, GoRouterState state) => const MainScreen();
     static Widget _cartRouteBuilder(BuildContext context, GoRouterState state) => const CartScreen();
     static Widget _specialOffersRouteBuilder(BuildContext context, GoRouterState state) => const SpecialOffersScreen();
+    static Widget _recommendedRouteBuilder(BuildContext context, GoRouterState state) => const RecommendedScreen();
 
 
     static final GoRouter _router =
@@ -34,6 +37,7 @@ class AppRouter{
               GoRoute(path: mainRoute, builder: _mainRouteBuilder),
               GoRoute(path: cartRoute, builder: _cartRouteBuilder),
               GoRoute(path: specialOffersRoute, builder: _specialOffersRouteBuilder),
+              GoRoute(path: recommendedRoute, builder: _recommendedRouteBuilder),
             ],
         );
     static GoRouter get router => _router;
