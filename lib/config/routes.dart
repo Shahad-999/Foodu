@@ -5,6 +5,7 @@ import 'package:foodu/presentation/recommendedForYou/recommended_screen.dart';
 import 'package:go_router/go_router.dart';
 import '../presentation/cart/cart_screen.dart';
 import '../presentation/categories/categories_screen.dart';
+import '../presentation/category/category_screen.dart';
 import '../presentation/home/home_screen.dart';
 import '../presentation/onBoarding/on_boarding_screen.dart';
 import '../presentation/special_offers/Special OffersScreen.dart';
@@ -19,6 +20,7 @@ class AppRouter{
     static const specialOffersRoute = '/special_offers_screen';
     static const recommendedRoute = '/recommended_screen';
     static const categoriesRoute = '/categories_screen';
+    static categoryDetailsParam([String? id,String? title]) => '/category/${id ?? ':id'}/${title ?? ':title'}';
 
     static Widget _homeRouteBuilder(BuildContext context, GoRouterState state) => const HomeScreen();
     static Widget _splashRouteBuilder(BuildContext context, GoRouterState state) => const SplashScreen();
@@ -28,6 +30,7 @@ class AppRouter{
     static Widget _specialOffersRouteBuilder(BuildContext context, GoRouterState state) => const SpecialOffersScreen();
     static Widget _recommendedRouteBuilder(BuildContext context, GoRouterState state) => const RecommendedScreen();
     static Widget _categoriesRouteBuilder(BuildContext context, GoRouterState state) => const CategoriesScreen();
+    static Widget _categoryRouteBuilder(BuildContext context, GoRouterState state) =>  CategoryScreen(categoryId:state.params['id']!, categoryTitle: state.params['title']!,);
 
 
     static final GoRouter _router =
@@ -42,6 +45,7 @@ class AppRouter{
               GoRoute(path: specialOffersRoute, builder: _specialOffersRouteBuilder),
               GoRoute(path: recommendedRoute, builder: _recommendedRouteBuilder),
               GoRoute(path: categoriesRoute, builder: _categoriesRouteBuilder),
+              GoRoute(path: categoryDetailsParam(), builder: _categoryRouteBuilder),
             ],
         );
     static GoRouter get router => _router;

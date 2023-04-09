@@ -21,8 +21,8 @@ class HomeBody extends StatelessWidget {
         SizedBox(height: 16.h,),
         const SpecialOffersSection(),
          CategoriesSection(
-          onTapMore: (){
-            GoRouter.of(context).push(AppRouter.categoriesRoute);
+          onTapItem: (id,title){
+            GoRouter.of(context).push(AppRouter.categoryDetailsParam(id,title));
           },
         ),
         const DiscountGuaranteedSection(),

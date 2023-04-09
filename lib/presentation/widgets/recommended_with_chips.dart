@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodu/presentation/widgets/recommended_item.dart';
+import 'package:foodu/presentation/widgets/meal_item.dart';
 import 'package:size_config/size_config.dart';
 
 import 'categories_chip_list.dart';
@@ -20,7 +20,7 @@ class RecommendedWithChips extends StatelessWidget {
             shrinkWrap: true,
             physics: const ScrollPhysics(),
             itemBuilder: (context,index){
-              return const RecommendedItem();
+              return const MealItem();
             }
         )
       ],

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:size_config/size_config.dart';
 
-class RecommendedItem extends StatelessWidget {
-  const RecommendedItem({Key? key}) : super(key: key);
+class MealItem extends StatelessWidget {
+  const MealItem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

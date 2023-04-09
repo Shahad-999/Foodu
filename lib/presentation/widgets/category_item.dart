@@ -3,18 +3,20 @@ import 'package:size_config/size_config.dart';
 
 
 class CategoryItem extends StatelessWidget {
-  const CategoryItem({Key? key, required this.image, required this.title, this.onTap})
+  const CategoryItem({Key? key, required this.image, required this.title,required this.onTap})
       : super(key: key);
   final String image;
   final String title;
-  final VoidCallback? onTap;
+  final Function(String,String) onTap;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(bottom: 16.h),
       child: GestureDetector(
-        onTap: onTap,
+        onTap: (){
+          onTap(title,title);
+        },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
