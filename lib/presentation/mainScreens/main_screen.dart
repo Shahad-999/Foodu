@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:foodu/presentation/categories/categories_screen.dart';
 import 'package:foodu/presentation/home/home_screen.dart';
 import 'package:size_config/size_config.dart';
 
@@ -14,8 +16,9 @@ class _MainScreenState extends State<MainScreen> {
 
   static  const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
+    CategoriesScreen(),
     Text(
-      'Index 1: Business',
+      'Index 2: School',
     ),
     Text(
       'Index 2: School',
@@ -51,18 +54,55 @@ class _MainScreenState extends State<MainScreen> {
                 topRight: Radius.circular(30.0),
               ),
               child: BottomNavigationBar(
-                items: const <BottomNavigationBarItem>[
+                items:  <BottomNavigationBarItem>[
                   BottomNavigationBarItem(
-                    icon: Icon(Icons.home),
+                    activeIcon: SvgPicture.asset(
+                      'assets/svg/home.svg',
+                      semanticsLabel: '',
+                    )  ,
+                    icon: SvgPicture.asset(
+                      'assets/svg/home.svg',
+                      colorFilter: const ColorFilter.mode(Color(0xFFBDBDBB), BlendMode.srcIn),
+                      semanticsLabel: '',
+                    ) ,
                     label: 'Home',
                   ),
                   BottomNavigationBarItem(
-                    icon: Icon(Icons.business),
-                    label: 'Business',
+                    activeIcon: SvgPicture.asset(
+                      'assets/svg/category.svg',
+                      semanticsLabel: '',
+                    ) ,
+                    icon: SvgPicture.asset(
+                      'assets/svg/category.svg',
+                      colorFilter: const ColorFilter.mode(Color(0xFFBDBDBB), BlendMode.srcIn),
+                      semanticsLabel: '',
+                    ) ,
+                    label: 'Categories',
+                  ),
+
+                  BottomNavigationBarItem(
+                    activeIcon: SvgPicture.asset(
+                      'assets/svg/order.svg',
+                      semanticsLabel: '',
+                    ) ,
+                    icon: SvgPicture.asset(
+                      'assets/svg/order.svg',
+                      colorFilter: const ColorFilter.mode(Color(0xFFBDBDBB), BlendMode.srcIn),
+                      semanticsLabel: '',
+                    ) ,
+                    label: 'Orders',
                   ),
                   BottomNavigationBarItem(
-                    icon: Icon(Icons.school),
-                    label: 'School',
+                    activeIcon: SvgPicture.asset(
+                      'assets/svg/profile.svg',
+                      semanticsLabel: '',
+                    ),
+                    icon: SvgPicture.asset(
+                      'assets/svg/profile.svg',
+                      colorFilter: const ColorFilter.mode(Color(0xFFBDBDBB), BlendMode.srcIn),
+                      semanticsLabel: '',
+                    ) ,
+                    label: 'Profile',
                   ),
                 ],
                 currentIndex: _selectedIndex,
