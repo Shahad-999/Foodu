@@ -8,6 +8,7 @@ import '../presentation/categories/categories_screen.dart';
 import '../presentation/category/category_screen.dart';
 import '../presentation/home/home_screen.dart';
 import '../presentation/onBoarding/on_boarding_screen.dart';
+import '../presentation/restaurant/ResturantScreen.dart';
 import '../presentation/search/SearchScreen.dart';
 import '../presentation/special_offers/Special OffersScreen.dart';
 import '../presentation/splashScreen/splash_screen.dart';
@@ -23,6 +24,7 @@ class AppRouter{
     static const categoriesRoute = '/categories_screen';
     static categoryDetailsParam([String? id,String? title]) => '/category/${id ?? ':id'}/${title ?? ':title'}';
     static searchParam([String? keyWord]) => '/search/${keyWord ?? ':keyWord'}';
+    static restaurantParam([String? restaurantId]) => '/restaurant/${restaurantId ?? ':restaurantId'}';
 
     static Widget _homeRouteBuilder(BuildContext context, GoRouterState state) => const HomeScreen();
     static Widget _splashRouteBuilder(BuildContext context, GoRouterState state) => const SplashScreen();
@@ -34,6 +36,7 @@ class AppRouter{
     static Widget _categoriesRouteBuilder(BuildContext context, GoRouterState state) => const CategoriesScreen();
     static Widget _categoryRouteBuilder(BuildContext context, GoRouterState state) =>  CategoryScreen(categoryId:state.params['id']!, categoryTitle: state.params['title']!,);
     static Widget _searchRouteBuilder(BuildContext context, GoRouterState state) =>  SearchScreen(searchKeyWord: state.params['keyWord']!,);
+    static Widget _restaurantRouteBuilder(BuildContext context, GoRouterState state) =>  RestaurantScreen(restaurantId: state.params['restaurantId']!,);
 
 
     static final GoRouter _router =
@@ -50,6 +53,7 @@ class AppRouter{
               GoRoute(path: categoriesRoute, builder: _categoriesRouteBuilder),
               GoRoute(path: categoryDetailsParam(), builder: _categoryRouteBuilder),
               GoRoute(path: searchParam(), builder: _searchRouteBuilder),
+              GoRoute(path: restaurantParam(), builder: _restaurantRouteBuilder)
             ],
         );
     static GoRouter get router => _router;
