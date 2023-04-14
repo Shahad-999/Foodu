@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 
 import '../../../config/routes.dart';
@@ -9,12 +9,11 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({Key? key}) : super(key: key);
 
 
-  _onClickNotification(BuildContext context){
-    
+  _onClickNotification(){
   }
   
-  _onClickBag(BuildContext context){
-    GoRouter.of(context).push(AppRouter.cartRoute);
+  _onClickBag(){
+    Get.toNamed(Routes.cartRoute);
   }
   
   @override
@@ -69,12 +68,12 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           ActionButton(
               icon: 'assets/svg/notification.svg',
-              onPressed: () => _onClickNotification(context)
+              onPressed: _onClickNotification
           ),
           SizedBox(width: 16.w,),
           ActionButton(
               icon: 'assets/svg/bag.svg',
-              onPressed: () => _onClickBag(context)
+              onPressed: _onClickBag
           ),
         ],
       ),

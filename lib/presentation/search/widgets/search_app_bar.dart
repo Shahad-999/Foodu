@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 
 import '../../widgets/search_bar.dart';
@@ -27,7 +27,7 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
             height: 28,
           ),
           alignment: Alignment.center,
-          onPressed: () { GoRouter.of(context).pop(); },
+          onPressed: () { Get.back(); },
           highlightColor: Colors.transparent,
           splashColor: Colors.transparent,
         ),

@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:foodu/presentation/mealDetails/widgets/meal_details_body.dart';
 
 class MealDetailsScreen extends StatelessWidget {
-  const MealDetailsScreen({Key? key, required this.mealId}) : super(key: key);
-  final String mealId;
+  const MealDetailsScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(

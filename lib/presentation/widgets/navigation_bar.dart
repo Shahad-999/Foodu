@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 
 class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget{
@@ -20,7 +20,7 @@ class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget{
           width: 28,
           height: 28,
         ),
-        onPressed: () { GoRouter.of(context).pop(); },
+        onPressed: () { Get.back(); },
         highlightColor: Colors.transparent,
         splashColor: Colors.transparent,
       ),

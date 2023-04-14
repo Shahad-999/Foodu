@@ -1,65 +1,96 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:foodu/presentation/mainScreens/main_screen.dart';
 import 'package:foodu/presentation/recommendedForYou/recommended_screen.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
 import '../presentation/cart/cart_screen.dart';
 import '../presentation/categories/categories_screen.dart';
 import '../presentation/category/category_screen.dart';
 import '../presentation/home/home_screen.dart';
 import '../presentation/mealDetails/meal_details_screen.dart';
 import '../presentation/onBoarding/on_boarding_screen.dart';
-import '../presentation/restaurant/ResturantScreen.dart';
+import '../presentation/restaurant/restaurant_screen.dart';
 import '../presentation/search/SearchScreen.dart';
 import '../presentation/special_offers/Special OffersScreen.dart';
 import '../presentation/splashScreen/splash_screen.dart';
 
-class AppRouter{
-    static const splashScreenRoute = '/splash_screen';
-    static const onBoardingRoute = '/onBoarding_screen';
-    static const homeRoute = '/home_screen';
-    static const mainRoute = '/main_screen';
-    static const cartRoute = '/cart_screen';
-    static const specialOffersRoute = '/special_offers_screen';
-    static const recommendedRoute = '/recommended_screen';
-    static const categoriesRoute = '/categories_screen';
-    static categoryDetailsParam([String? id,String? title]) => '/category/${id ?? ':id'}/${title ?? ':title'}';
-    static searchParam([String? keyWord]) => '/search/${keyWord ?? ':keyWord'}';
-    static restaurantParam([String? restaurantId]) => '/restaurant/${restaurantId ?? ':restaurantId'}';
-    static mealParam([String? mealId]) => '/meal/${mealId ?? ':mealId'}';
+class Arguments{
+  static const String categoryId = 'CATEGORY_ID';
+  static const String categoryTitle = 'CATEGORY_TITLE';
 
-    static Widget _homeRouteBuilder(BuildContext context, GoRouterState state) => const HomeScreen();
-    static Widget _splashRouteBuilder(BuildContext context, GoRouterState state) => const SplashScreen();
-    static Widget _onBoardingRouteBuilder(BuildContext context, GoRouterState state) => const OnBoardingScreen();
-    static Widget _mainRouteBuilder(BuildContext context, GoRouterState state) => const MainScreen();
-    static Widget _cartRouteBuilder(BuildContext context, GoRouterState state) => const CartScreen();
-    static Widget _specialOffersRouteBuilder(BuildContext context, GoRouterState state) => const SpecialOffersScreen();
-    static Widget _recommendedRouteBuilder(BuildContext context, GoRouterState state) => const RecommendedScreen();
-    static Widget _categoriesRouteBuilder(BuildContext context, GoRouterState state) => const CategoriesScreen();
-    static Widget _categoryRouteBuilder(BuildContext context, GoRouterState state) =>  CategoryScreen(categoryId:state.params['id']!, categoryTitle: state.params['title']!,);
-    static Widget _searchRouteBuilder(BuildContext context, GoRouterState state) =>  SearchScreen(searchKeyWord: state.params['keyWord']!,);
-    static Widget _restaurantRouteBuilder(BuildContext context, GoRouterState state) =>  RestaurantScreen(restaurantId: state.params['restaurantId']!,);
-    static Widget _mealRouteBuilder(BuildContext context, GoRouterState state) =>  MealDetailsScreen(mealId: state.params['mealId']!,);
+  static const String searchKeyWord = 'SEARCH_KEY_WORD';
+  static const String mealId = 'MEAL_ID';
+  static const String restaurantId = 'RESTAURANT_ID';
 
+}
+class Routes{
+    static const String splashScreenRoute = '/splash_screen';
+    static const String onBoardingRoute = '/onBoarding_screen';
+    static const String homeRoute = '/home_screen';
+    static const String mainRoute = '/main_screen';
+    static const String cartRoute = '/cart_screen';
+    static const String specialOffersRoute = '/special_offers_screen';
+    static const String recommendedRoute = '/recommended_screen';
+    static const String categoriesRoute = '/categories_screen';
+    static const String categoryDetailsRoute =  '/category_screen';
+    static const String searchRoute = '/search_screen';
+    static const String restaurantRoute = '/restaurant_screen';
+    static const String mealRoute = '/meal_screen';
+}
+class AppRoutes{
+  static const initialPage = Routes.splashScreenRoute;
 
-    static final GoRouter _router =
-        GoRouter(
-          initialLocation: splashScreenRoute,
-          routes: [
-              GoRoute(path: splashScreenRoute, builder: _splashRouteBuilder),
-              GoRoute(path: onBoardingRoute, builder: _onBoardingRouteBuilder ),
-              GoRoute(path: homeRoute, builder: _homeRouteBuilder),
-              GoRoute(path: mainRoute, builder: _mainRouteBuilder),
-              GoRoute(path: cartRoute, builder: _cartRouteBuilder),
-              GoRoute(path: specialOffersRoute, builder: _specialOffersRouteBuilder),
-              GoRoute(path: recommendedRoute, builder: _recommendedRouteBuilder),
-              GoRoute(path: categoriesRoute, builder: _categoriesRouteBuilder),
-              GoRoute(path: categoryDetailsParam(), builder: _categoryRouteBuilder),
-              GoRoute(path: searchParam(), builder: _searchRouteBuilder),
-              GoRoute(path: restaurantParam(), builder: _restaurantRouteBuilder),
-              GoRoute(path: mealParam(), builder: _mealRouteBuilder),
-            ],
-        );
-    static GoRouter get router => _router;
+  static final pages =[
+      GetPage(
+          name: Routes.specialOffersRoute,
+          page: () => const SpecialOffersScreen(),
+      ),
+        GetPage(
+            name: Routes.homeRoute,
+            page: () => const HomeScreen(),
+        ),
+        GetPage(
+            name: Routes.splashScreenRoute,
+            page: () => const SplashScreen(),
+        ),
+        GetPage(
+            name: Routes.onBoardingRoute,
+            page: () => const OnBoardingScreen(),
+        ),
+        GetPage(
+            name: Routes.mainRoute,
+            page: () => const MainScreen(),
+        ),
+        GetPage(
+            name: Routes.cartRoute,
+            page: () => const CartScreen(),
+        ),
+        GetPage(
+            name: Routes.specialOffersRoute,
+            page: () => const SpecialOffersScreen(),
+        ),
+        GetPage(
+            name: Routes.recommendedRoute,
+            page: () => const RecommendedScreen(),
+        ),
+        GetPage(
+            name: Routes.categoriesRoute,
+            page: () => const CategoriesScreen(),
+        ),
+        GetPage(
+            name: Routes.categoryDetailsRoute,
+            page: () => const CategoryScreen(),
+        ),
+        GetPage(
+            name: Routes.searchRoute,
+            page: () => const SearchScreen(),
+        ),
+        GetPage(
+            name: Routes.restaurantRoute,
+            page: () => const RestaurantScreen(),
+        ),
+        GetPage(
+            name: Routes.mealRoute,
+            page: () => const MealDetailsScreen(),
+        ),
 
+    ];
 }

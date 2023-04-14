@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/config/routes.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 
 import '../../widgets/recommended_with_chips.dart';
-import 'hearder_section.dart';
+import 'header_section.dart';
 
 class RecommendedSection extends StatelessWidget {
   const RecommendedSection  ({super.key});
 
- void _onClickSeeAll(BuildContext context){
-   GoRouter.of(context).push(AppRouter.recommendedRoute);
+ _onClickSeeAll(){
+   Get.toNamed(Routes.recommendedRoute,);
   }
   
   @override
@@ -18,7 +18,7 @@ class RecommendedSection extends StatelessWidget {
         children: [
           HeaderSection(
               headerTitle: 'Recommended For You 👌',
-              onClickSeeAll: () => _onClickSeeAll(context)
+              onClickSeeAll: _onClickSeeAll
           ),
           const RecommendedWithChips()
         ],

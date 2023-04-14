@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:size_config/size_config.dart';
 
 import 'discount_item.dart';
-import 'hearder_section.dart';
+import 'header_section.dart';
 
 class DiscountGuaranteedSection extends StatelessWidget {
   const DiscountGuaranteedSection({Key? key}) : super(key: key);

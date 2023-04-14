@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 
 import '../../config/routes.dart';
@@ -23,9 +23,9 @@ class _SplashScreenState extends State<SplashScreen> {
   _navToNextScreen(){
     Future.delayed(const Duration(milliseconds: 3000)).then((value) {
       if(_showOnBoarding){
-        GoRouter.of(context).go(AppRouter.onBoardingRoute);
+        Get.offNamed(Routes.onBoardingRoute);
       }else{
-        GoRouter.of(context).go(AppRouter.mainRoute);
+        Get.offNamed(Routes.mainRoute);
       }
     });
   }

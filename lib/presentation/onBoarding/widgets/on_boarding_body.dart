@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 import '../../../config/routes.dart';
 import 'on_boarding_pages.dart';
@@ -28,7 +28,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
     num currentPage =
         pageController!.hasClients ? pageController?.page ?? 0 : 0;
     if (currentPage == pageCount - 1) {
-      GoRouter.of(context).go(AppRouter.homeRoute);
+      Get.offNamed(Routes.homeRoute);
     } else {
       pageController?.nextPage(
           duration: const Duration(milliseconds: 500), curve: Curves.easeIn);

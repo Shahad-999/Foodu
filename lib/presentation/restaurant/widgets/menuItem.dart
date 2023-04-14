@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 
 import '../../../config/routes.dart';
@@ -7,8 +7,8 @@ import '../../../config/routes.dart';
 class MenuItem extends StatelessWidget {
   const MenuItem({Key? key}) : super(key: key);
 
-  _navToMealDetails(BuildContext context, String mealId){
-    GoRouter.of(context).push(AppRouter.mealParam(mealId));
+  _navToMealDetails(String mealId) {
+    Get.toNamed(Routes.mealRoute, arguments: {Arguments.mealId: mealId});
   }
 
   @override
@@ -16,7 +16,7 @@ class MenuItem extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8.h),
       child: GestureDetector(
-        onTap : () => _navToMealDetails(context,'jjj'),
+        onTap: () => _navToMealDetails('jjj'),
         child: Container(
           height: 128.h,
           decoration: BoxDecoration(
@@ -29,9 +29,9 @@ class MenuItem extends StatelessWidget {
                 Hero(
                   tag: 'meal image',
                   child: SizedBox(
-                  height: 100,
-                  width: 100,
-                  child: ClipRRect(
+                    height: 100,
+                    width: 100,
+                    child: ClipRRect(
                         borderRadius: BorderRadius.circular(16),
                         child: Image.asset('assets/images/salad.png')),
                   ),

@@ -1,20 +1,19 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:foodu/presentation/widgets/special_item.dart';
 import 'package:foodu/config/routes.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 
-import 'hearder_section.dart';
+import 'header_section.dart';
 
 class SpecialOffersSection extends StatelessWidget {
   const SpecialOffersSection({super.key});
 
 
-  void _onClickSeeAll(BuildContext context){
-    GoRouter.of(context).push(AppRouter.specialOffersRoute);
+  _onClickSeeAll(){
+    Get.toNamed(Routes.specialOffersRoute);
   }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -23,7 +22,7 @@ class SpecialOffersSection extends StatelessWidget {
         children: [
           HeaderSection(
             headerTitle: 'Special Offers',
-            onClickSeeAll: () => _onClickSeeAll(context)
+            onClickSeeAll: _onClickSeeAll
           ),
           SizedBox(
             height: 178.h,

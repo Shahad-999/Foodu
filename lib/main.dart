@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/config/service_locator.dart';
+import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 
 import 'package:foodu/config/routes.dart';
@@ -20,11 +21,12 @@ class MyApp extends StatelessWidget {
       referenceWidth: 428,
       builder: (BuildContext context, Orientation orientation) {
         return Builder(
-          builder: (context) => MaterialApp.router(
-            routerConfig: AppRouter.router,
+          builder: (context) => GetMaterialApp(
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             themeMode: ThemeMode.system,
+            initialRoute: AppRoutes.initialPage,
+            getPages: AppRoutes.pages,
           ),
         );
       },
