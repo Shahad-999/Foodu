@@ -5,44 +5,44 @@ import '../domain/models/special_offer.dart';
 const List<Category> foodCategories = [
   Category(
       id: "1",
-      name: "Food",
+      name: "Noodles",
       imageUrl:
-          "https://images.unsplash.com/photo-1505247960409-9e9e714bddf5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+          "https://cdn.pixabay.com/photo/2018/12/24/19/28/japanese-noodles-3893449_960_720.png"),
   Category(
       id: "2",
       name: "Snacks",
       imageUrl:
-          "https://images.unsplash.com/photo-1559847844-531569b93631?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+          "https://cdn.pixabay.com/photo/2014/12/21/23/39/fruit-575762_960_720.png"),
   Category(
       id: "3",
-      name: "Beverages",
+      name: "Pizza",
       imageUrl:
-          "https://images.unsplash.com/photo-1601937357687-7d384f6eb17f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+          "https://cdn.pixabay.com/photo/2013/07/13/09/36/pizza-155771_960_720.png"),
   Category(
       id: "4",
       name: "Desserts",
       imageUrl:
-          "https://images.unsplash.com/photo-1529333166-1a30b2d1d5b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+          "https://cdn.pixabay.com/photo/2016/04/01/09/41/cherry-1299509_960_720.png"),
   Category(
       id: "5",
       name: "Fruits",
       imageUrl:
-          "https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+          "https://cdn.pixabay.com/photo/2013/07/13/11/29/cherries-158241_960_720.png"),
   Category(
       id: "6",
       name: "Vegetables",
       imageUrl:
-          "https://images.unsplash.com/photo-1559028017-7f26b08e3f3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+          "https://cdn.pixabay.com/photo/2014/12/21/23/30/broccoli-575500_960_720.png"),
   Category(
       id: "7",
       name: "Meat",
       imageUrl:
-          "https://images.unsplash.com/photo-1550547661-7ec19bca8eaf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+          "https://cdn.pixabay.com/photo/2013/07/12/14/47/meat-148789_960_720.png"),
   Category(
       id: "8",
       name: "Seafood",
       imageUrl:
-          "https://images.unsplash.com/photo-1600834314145-ebae5ea5b8a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+          "https://cdn.pixabay.com/photo/2012/04/12/12/23/sushi-29791_960_720.png"),
   Category(
       id: "9",
       name: "Spices",
@@ -160,7 +160,7 @@ const List<Meal> fakeRecommendedMeal = [
   Meal(
     id: '1',
     name: 'Grilled Chicken',
-    imageUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba',
+    imageUrl: 'https://previews.123rf.com/images/olegtoka/olegtoka1701/olegtoka170100008/70456474-illustration-of-grilled-chicken-drumstick-in-tomato-sauce.jpg',
     rating: 4.5,
     isFavorite: true,
     distance: '2 km',
@@ -186,7 +186,7 @@ const List<Meal> fakeRecommendedMeal = [
   Meal(
     id: '3',
     name: 'Margherita Pizza',
-    imageUrl: 'https://images.unsplash.com/photo-1612711068278-9a27c5db619e',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/44/543-pizza-1.svg',
     rating: 4.8,
     isFavorite: true,
     distance: '4 km',
@@ -199,7 +199,7 @@ const List<Meal> fakeRecommendedMeal = [
   Meal(
     id: '4',
     name: 'Beef Burger',
-    imageUrl: 'https://images.unsplash.com/photo-1586871986469-15a19d65465e',
+    imageUrl: 'https://img.freepik.com/premium-vector/burger-fast-food-isolated-icon-hamburger-with-tomato-bow-greens-juicy-fried-beef-cutlet-cheese-slice_502272-1036.jpg?w=740',
     rating: 4.6,
     isFavorite: false,
     distance: '5 km',
@@ -212,7 +212,7 @@ const List<Meal> fakeRecommendedMeal = [
   Meal(
     id: '5',
     name: 'Miso Soup',
-    imageUrl: 'https://images.unsplash.com/photo-1543168123-3ce3d2fefb77',
+    imageUrl: 'https://img.freepik.com/premium-vector/dla-interneta_130388-3885.jpg?w=740',
     rating: 4.4,
     isFavorite: true,
     distance: '1 km',
@@ -225,7 +225,7 @@ const List<Meal> fakeRecommendedMeal = [
   Meal(
     id: '6',
     name: 'Pesto Pasta',
-    imageUrl: 'https://images.unsplash.com/photo-1615470699787-64d717b1cc7c',
+    imageUrl: 'https://img.freepik.com/free-vector/hand-drawn-italian-cuisine-illustration_23-2149330365.jpg?w=740&t=st=1681472682~exp=1681473282~hmac=ed38ec25788e46f79c2b35af81826ccab1df42b7657eaf257030a30f81d98ecb',
     rating: 4.9,
     isFavorite: false,
     distance: '2.5 km',
@@ -238,7 +238,7 @@ const List<Meal> fakeRecommendedMeal = [
   Meal(
     id: '7',
     name: 'Fish and Chips',
-    imageUrl: 'https://images.unsplash.com/photo-1609318619077-8b41720f17c6',
+    imageUrl: 'https://cdn-icons-png.flaticon.com/512/490/490515.png?w=740&t=st=1681472758~exp=1681473358~hmac=a6dd2e33b2dd776689e2a305d5cc2f4b194a206297e82e1a0f0884c0206b0c51',
     rating: 4.3,
     isFavorite: false,
     distance: '6 km',

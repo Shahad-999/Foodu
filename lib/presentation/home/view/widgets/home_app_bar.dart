@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 
-import '../../../config/routes.dart';
-import '../../widgets/action_button.dart';
+import '../../../../config/routes.dart';
+import '../../../widgets/action_button.dart';
+
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({Key? key}) : super(key: key);

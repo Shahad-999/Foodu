@@ -4,7 +4,7 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import '../presentation/cart/cart_screen.dart';
 import '../presentation/categories/categories_screen.dart';
 import '../presentation/category/category_screen.dart';
-import '../presentation/home/home_screen.dart';
+import '../presentation/home/view/home_screen.dart';
 import '../presentation/mealDetails/meal_details_screen.dart';
 import '../presentation/onBoarding/on_boarding_screen.dart';
 import '../presentation/restaurant/restaurant_screen.dart';
@@ -45,7 +45,7 @@ class AppRoutes{
       ),
         GetPage(
             name: Routes.homeRoute,
-            page: () => const HomeScreen(),
+            page: () =>  HomeScreen(),
         ),
         GetPage(
             name: Routes.splashScreenRoute,

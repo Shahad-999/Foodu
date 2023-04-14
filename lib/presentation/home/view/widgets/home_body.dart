@@ -1,27 +1,19 @@
 import 'package:flutter/cupertino.dart';
-import 'package:foodu/presentation/home/widgets/discount_guaranteed_section.dart';
-import 'package:foodu/presentation/home/widgets/recommended_section.dart';
+import 'package:foodu/presentation/home/view/widgets/recommended_section.dart';
+import 'package:foodu/presentation/home/view/widgets/special_offer_section.dart';
 import 'package:foodu/presentation/widgets/search_bar.dart';
-import 'package:foodu/presentation/home/widgets/special_offer_section.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 
-import '../../../config/routes.dart';
-import '../../widgets/categories_section.dart';
+import '../../../../config/routes.dart';
+import '../../../widgets/categories_section.dart';
+import '../../controller/home_controller.dart';
+import 'discount_guaranteed_section.dart';
+
 
 class HomeBody extends StatelessWidget {
-  const HomeBody({Key? key}) : super(key: key);
-
-
-  _onTapCategory(String id , String title){
-    Get.toNamed(
-        Routes.categoryDetailsRoute,
-        arguments: {
-          Arguments.categoryTitle : title,
-          Arguments.categoryId : id
-        }
-    );
-  }
+  HomeBody({Key? key}) : super(key: key);
+  final HomeController homeController = Get.find();
   _navToSearchBar(String keyWord){
       Get.toNamed(
           Routes.searchRoute,
@@ -43,9 +35,13 @@ class HomeBody extends StatelessWidget {
         ),
         SizedBox(height: 16.h,),
         const SpecialOffersSection(),
-         CategoriesSection(
-          onTapItem: _onTapCategory,
-        ),
+        Obx(
+                () =>CategoriesSection(
+                  categories: homeController.categories,
+                  numberOfCategories:  homeController.categories.isNotEmpty ? 8 :0,
+                )
+        )
+        ,
         const DiscountGuaranteedSection(),
         const RecommendedSection()
       ],

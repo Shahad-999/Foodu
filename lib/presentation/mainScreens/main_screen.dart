@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:foodu/presentation/categories/categories_screen.dart';
-import 'package:foodu/presentation/home/home_screen.dart';
+import 'package:foodu/presentation/home/view/home_screen.dart';
 import 'package:size_config/size_config.dart';
 
 class MainScreen extends StatefulWidget {
@@ -14,7 +14,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
-  static  const List<Widget> _widgetOptions = <Widget>[
+  static   List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     CategoriesScreen(),
     Text(

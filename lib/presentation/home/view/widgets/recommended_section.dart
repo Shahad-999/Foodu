@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodu/config/routes.dart';
 import 'package:get/get.dart';
 
-import '../../widgets/recommended_with_chips.dart';
+import '../../../widgets/recommended_with_chips.dart';
 import 'header_section.dart';
 
 class RecommendedSection extends StatelessWidget {

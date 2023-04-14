@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:size_config/size_config.dart';
+
+import '../../config/routes.dart';
+import '../home/model/category_ui.dart';
 
 
 class CategoryItem extends StatelessWidget {
-  const CategoryItem({Key? key, required this.image, required this.title,required this.onTap})
+  const CategoryItem({Key? key, required this.category})
       : super(key: key);
-  final String image;
-  final String title;
-  final Function(String,String) onTap;
+  final CategoryUi category;
+
+  _onTapCategory(String id, String title) {
+    Get.toNamed(Routes.categoryDetailsRoute,
+        arguments: {Arguments.categoryTitle: title, Arguments.categoryId: id});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +23,15 @@ class CategoryItem extends StatelessWidget {
       padding: EdgeInsets.only(bottom: 16.h),
       child: GestureDetector(
         onTap: (){
-          onTap(title,title);
+          _onTapCategory(category.id,category.name);
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 64, width: 64, child: Image.asset(image)),
+            SizedBox(height: 64, width: 64, child: Image.network(category.imageUrl)),
             SizedBox(height: 8.h),
             Text(
-              title,
+              category.name,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.bold,
