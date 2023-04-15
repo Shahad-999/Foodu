@@ -2,34 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:foodu/presentation/categories/categories_screen.dart';
 import 'package:foodu/presentation/home/view/home_screen.dart';
+import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
+import 'bottom_navigation_controller.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+class MainScreen extends StatelessWidget {
 
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
+  BottomNavigationController bottomNavigationController = Get.put(BottomNavigationController());
 
-class _MainScreenState extends State<MainScreen> {
-  int _selectedIndex = 0;
-
-  static   List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
-    CategoriesScreen(),
-    Text(
+  static final List<Widget> _widgetOptions = <Widget>[
+    const HomeScreen(),
+    const CategoriesScreen(),
+    const Text(
       'Index 2: School',
     ),
-    Text(
+    const Text(
       'Index 2: School',
     ),
   ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +27,10 @@ class _MainScreenState extends State<MainScreen> {
       child: Scaffold(
           extendBody: true,
           backgroundColor: Colors.transparent,
-          body: _widgetOptions.elementAt(_selectedIndex),
+          body: Obx(() => IndexedStack(
+            index: bottomNavigationController.currentIndex.value,
+            children: _widgetOptions,
+          ) ),
         bottomNavigationBar:
         Container(
             decoration: const BoxDecoration(
@@ -53,74 +46,75 @@ class _MainScreenState extends State<MainScreen> {
                 topLeft: Radius.circular(30.0),
                 topRight: Radius.circular(30.0),
               ),
-              child: BottomNavigationBar(
-                items:  <BottomNavigationBarItem>[
-                  BottomNavigationBarItem(
-                    activeIcon: SvgPicture.asset(
-                      'assets/svg/home.svg',
-                      semanticsLabel: '',
-                    )  ,
-                    icon: SvgPicture.asset(
-                      'assets/svg/home.svg',
-                      colorFilter: const ColorFilter.mode(Color(0xFFBDBDBB), BlendMode.srcIn),
-                      semanticsLabel: '',
-                    ) ,
-                    label: 'Home',
-                  ),
-                  BottomNavigationBarItem(
-                    activeIcon: SvgPicture.asset(
-                      'assets/svg/category.svg',
-                      semanticsLabel: '',
-                    ) ,
-                    icon: SvgPicture.asset(
-                      'assets/svg/category.svg',
-                      colorFilter: const ColorFilter.mode(Color(0xFFBDBDBB), BlendMode.srcIn),
-                      semanticsLabel: '',
-                    ) ,
-                    label: 'Categories',
-                  ),
-
-                  BottomNavigationBarItem(
-                    activeIcon: SvgPicture.asset(
-                      'assets/svg/order.svg',
-                      semanticsLabel: '',
-                    ) ,
-                    icon: SvgPicture.asset(
-                      'assets/svg/order.svg',
-                      colorFilter: const ColorFilter.mode(Color(0xFFBDBDBB), BlendMode.srcIn),
-                      semanticsLabel: '',
-                    ) ,
-                    label: 'Orders',
-                  ),
-                  BottomNavigationBarItem(
-                    activeIcon: SvgPicture.asset(
-                      'assets/svg/profile.svg',
-                      semanticsLabel: '',
+              child: Obx(() => BottomNavigationBar(
+                  items:  <BottomNavigationBarItem>[
+                    BottomNavigationBarItem(
+                      activeIcon: SvgPicture.asset(
+                        'assets/svg/home.svg',
+                        semanticsLabel: '',
+                      )  ,
+                      icon: SvgPicture.asset(
+                        'assets/svg/home.svg',
+                        colorFilter: const ColorFilter.mode(Color(0xFFBDBDBB), BlendMode.srcIn),
+                        semanticsLabel: '',
+                      ) ,
+                      label: 'Home',
                     ),
-                    icon: SvgPicture.asset(
-                      'assets/svg/profile.svg',
-                      colorFilter: const ColorFilter.mode(Color(0xFFBDBDBB), BlendMode.srcIn),
-                      semanticsLabel: '',
-                    ) ,
-                    label: 'Profile',
+                    BottomNavigationBarItem(
+                      activeIcon: SvgPicture.asset(
+                        'assets/svg/category.svg',
+                        semanticsLabel: '',
+                      ) ,
+                      icon: SvgPicture.asset(
+                        'assets/svg/category.svg',
+                        colorFilter: const ColorFilter.mode(Color(0xFFBDBDBB), BlendMode.srcIn),
+                        semanticsLabel: '',
+                      ) ,
+                      label: 'Categories',
+                    ),
+
+                    BottomNavigationBarItem(
+                      activeIcon: SvgPicture.asset(
+                        'assets/svg/order.svg',
+                        semanticsLabel: '',
+                      ) ,
+                      icon: SvgPicture.asset(
+                        'assets/svg/order.svg',
+                        colorFilter: const ColorFilter.mode(Color(0xFFBDBDBB), BlendMode.srcIn),
+                        semanticsLabel: '',
+                      ) ,
+                      label: 'Orders',
+                    ),
+                    BottomNavigationBarItem(
+                      activeIcon: SvgPicture.asset(
+                        'assets/svg/profile.svg',
+                        semanticsLabel: '',
+                      ),
+                      icon: SvgPicture.asset(
+                        'assets/svg/profile.svg',
+                        colorFilter: const ColorFilter.mode(Color(0xFFBDBDBB), BlendMode.srcIn),
+                        semanticsLabel: '',
+                      ) ,
+                      label: 'Profile',
+                    ),
+                  ],
+                  currentIndex: bottomNavigationController.currentIndex.value,
+                  selectedItemColor: Theme.of(context).colorScheme.primary,
+                  unselectedItemColor: const Color(0xFFBDBDBB),
+                  onTap: (value) => bottomNavigationController.changeIndex(value),
+                  selectedLabelStyle: TextStyle(
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w800,
+                      color: Theme.of(context).colorScheme.primary
+                  ) ,
+                  unselectedLabelStyle: TextStyle(
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w500,
+                      color: const Color(0xFFBDBDBB)
                   ),
-                ],
-                currentIndex: _selectedIndex,
-                selectedItemColor: Theme.of(context).colorScheme.primary,
-                unselectedItemColor: const Color(0xFFBDBDBB),
-                onTap: _onItemTapped,
-                selectedLabelStyle: TextStyle(
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w800,
-                    color: Theme.of(context).colorScheme.primary
-                ) ,
-                unselectedLabelStyle: TextStyle(
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w500,
-                    color: const Color(0xFFBDBDBB)
+                  backgroundColor: Theme.of(context).colorScheme.background,
+                  elevation: 16.0,
                 ),
-                backgroundColor: Theme.of(context).colorScheme.background,
-                elevation: 16.0,
               ),
             )
         )

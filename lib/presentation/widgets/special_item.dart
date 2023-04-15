@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
-
 import '../../config/routes.dart';
+import '../home/model/special_offer_ui.dart';
 
 class SpecialItem extends StatelessWidget {
-  const SpecialItem({super.key, this.backgroundColor});
-
-  final Color? backgroundColor;
+  const SpecialItem({super.key, required this.specialOffer});
+  final SpecialOfferUi specialOffer;
 
   _clickSpecialItem() {
     Get.toNamed(Routes.restaurantRoute,
@@ -24,7 +23,6 @@ class SpecialItem extends StatelessWidget {
           height: 178.h,
           width: MediaQuery.of(context).size.width - 48.w,
           decoration: BoxDecoration(
-            // color: backgroundColor ?? Theme.of(context).colorScheme.primary,
             borderRadius: BorderRadius.circular(36),
           ),
           child: Stack(
@@ -41,14 +39,19 @@ class SpecialItem extends StatelessWidget {
               Positioned(
                   bottom: 16,
                   top: 16,
-                  right: 24,
-                  child: Image.network(
-                      'https://cdn.pixabay.com/photo/2016/04/01/09/41/cherry-1299509_960_720.png')),
+                  right: 16,
+                  child: SizedBox(
+                    width: 180.w,
+                    child: Image.network(
+                      specialOffer.imageUrl,
+                      alignment: Alignment.centerRight,
+                    ),
+                  )),
               Positioned(
                   top: 24.h,
                   left: 40.w,
                   child: Text(
-                    '30%',
+                    '${specialOffer.percentage}%',
                     style: TextStyle(
                         fontSize: 64.sp,
                         fontWeight: FontWeight.w900,

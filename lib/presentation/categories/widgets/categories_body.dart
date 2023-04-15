@@ -10,7 +10,7 @@ class CategoriesBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:  EdgeInsets.symmetric(vertical: 16.h),
-      child:  const CategoriesSection(categories: []),
+      child:   CategoriesSection(),
     );
   }
 }

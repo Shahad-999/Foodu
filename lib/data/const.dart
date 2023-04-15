@@ -109,19 +109,19 @@ const List<SpecialOffer> fakeSpecialOffers = [
   SpecialOffer(
     id: '1',
     imageUrl:
-        'https://images.unsplash.com/photo-1589811503455-152e1a4a4b74?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+        'https://pixabay.com/get/g8d6b3f1412a9c87a7a3fe39e6bc3c47245ed9de6bfa3f4c936c91a83f2b3e18c17bcb7d0e72e74db49dfbd7bae63c530ac285e4f4a8e9696847b3fa7342eff8f77541c8ee73e24c7dce730edddd0ec5c_1920.png',
     percentage: 10,
   ),
   SpecialOffer(
     id: '2',
     imageUrl:
-        'https://images.unsplash.com/photo-1562963877-1c07f0b7a619?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+        'https://freepngimg.com/thumb/salad/23962-5-salad-transparent-background.png',
     percentage: 20,
   ),
   SpecialOffer(
     id: '3',
     imageUrl:
-        'https://images.unsplash.com/photo-1525966222134-08f4c182e960?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+        'https://pixabay.com/get/gcd601e7372e2489e170e21d4e1803a9b7c85eb18ccc7097b3945309d93aba717d17186ec7ac3d0f7975738eed62ca2efdb829dde695eab0ce1f0ff77eaec49f16fef8b091cede5014f3b9da05e3090bd_1920.png',
     percentage: 15,
   ),
   SpecialOffer(
