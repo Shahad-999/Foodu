@@ -20,7 +20,7 @@ class RecommendedSection extends StatelessWidget {
               headerTitle: 'Recommended For You 👌',
               onClickSeeAll: _onClickSeeAll
           ),
-          const RecommendedWithChips()
+          RecommendedWithChips()
         ],
       );
   }

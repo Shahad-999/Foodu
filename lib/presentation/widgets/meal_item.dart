@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:size_config/size_config.dart';
 
+import '../home/model/recommended_meal_ui.dart';
+
 class MealItem extends StatelessWidget {
-  const MealItem({Key? key}) : super(key: key);
+  const MealItem({Key? key, required this.meal}) : super(key: key);
+  final RecommendedMealUi meal;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class MealItem extends StatelessWidget {
                 width: 120,
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
-                    child: Image.asset('assets/images/salad.png')
+                    child: Image.network(meal.imageUrl)
                 ),
               ),
               SizedBox(width: 16.w,),
@@ -32,7 +35,7 @@ class MealItem extends StatelessWidget {
                 children: [
                   SizedBox(height: 16.h,),
                   Text(
-                    'Mixed Salad Bonb.. ',
+                    meal.name,
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                         fontSize: 20.sp,
                         fontWeight: FontWeight.w800
@@ -40,7 +43,7 @@ class MealItem extends StatelessWidget {
                   ),
                   SizedBox(height: 10.h),
                   Text(
-                    '800 m - 4.9 (2.3k)',
+                    '${meal.distance} - ${meal.rating} (${meal.numberOfUpvote}k)',
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         fontWeight: FontWeight.w600,
                         fontSize: 14.sp

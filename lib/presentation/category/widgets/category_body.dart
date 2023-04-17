@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:foodu/presentation/widgets/meal_item.dart';
 import 'package:size_config/size_config.dart';
 
 
@@ -13,7 +12,7 @@ class CategoryBody extends StatelessWidget {
       child: ListView.builder(
         itemCount: 15,
           itemBuilder: (context,index){
-            return const MealItem();
+            return Text('dd'); //todo later MealItem(meal: MealUi())
           }
       ),
     );

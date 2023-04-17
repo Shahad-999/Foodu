@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:size_config/size_config.dart';
 
-import '../../widgets/meal_item.dart';
 
 class SearchBody extends StatelessWidget {
   const SearchBody({Key? key}) : super(key: key);
@@ -13,7 +12,7 @@ class SearchBody extends StatelessWidget {
       child: ListView.builder(
           itemCount: 15,
           itemBuilder: (context,index){
-            return const MealItem();
+            return Text('dd'); //todo later MealItem(meal: MealUi())
           }
       ),
     );

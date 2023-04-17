@@ -127,7 +127,7 @@ const List<SpecialOffer> fakeSpecialOffers = [
   SpecialOffer(
     id: '4',
     imageUrl:
-        'https://images.unsplash.com/photo-1541682673-3a7c2e68bfb5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+        'https://i.ibb.co/SwW1LZP/Daco-1156302.png',
     percentage: 5,
   ),
   SpecialOffer(
@@ -160,7 +160,7 @@ const List<Meal> fakeRecommendedMeal = [
   Meal(
     id: '1',
     name: 'Grilled Chicken',
-    imageUrl: 'https://previews.123rf.com/images/olegtoka/olegtoka1701/olegtoka170100008/70456474-illustration-of-grilled-chicken-drumstick-in-tomato-sauce.jpg',
+    imageUrl: 'https://i.ibb.co/SwW1LZP/Daco-1156302.png',
     rating: 4.5,
     isFavorite: true,
     distance: '2 km',
@@ -173,7 +173,7 @@ const List<Meal> fakeRecommendedMeal = [
   Meal(
     id: '2',
     name: 'Spicy Tuna Roll',
-    imageUrl: 'https://images.unsplash.com/photo-1540774451547-2c7076dc84a7',
+    imageUrl: 'https://i.ibb.co/Q96g2dq/Daco-133440.png',
     rating: 4.7,
     isFavorite: false,
     distance: '3 km',
@@ -186,7 +186,7 @@ const List<Meal> fakeRecommendedMeal = [
   Meal(
     id: '3',
     name: 'Margherita Pizza',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/44/543-pizza-1.svg',
+    imageUrl: 'https://i.ibb.co/0mPTXF8/Daco-5211946.png',
     rating: 4.8,
     isFavorite: true,
     distance: '4 km',
@@ -199,7 +199,7 @@ const List<Meal> fakeRecommendedMeal = [
   Meal(
     id: '4',
     name: 'Beef Burger',
-    imageUrl: 'https://img.freepik.com/premium-vector/burger-fast-food-isolated-icon-hamburger-with-tomato-bow-greens-juicy-fried-beef-cutlet-cheese-slice_502272-1036.jpg?w=740',
+    imageUrl: 'https://i.ibb.co/5Y7QyjT/Daco-2472126.png',
     rating: 4.6,
     isFavorite: false,
     distance: '5 km',
