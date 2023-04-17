@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:foodu/config/service_locator.dart';
+import 'package:foodu/core/config/service_locator.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 
-import 'package:foodu/config/routes.dart';
-import 'package:foodu/config/app_theme.dart';
+import 'package:foodu/core/config/routes.dart';
+import 'package:foodu/core/config/app_theme.dart';
 
 void main() {
   setup();
