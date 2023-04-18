@@ -41,6 +41,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   chip_list: ^2.4.3+8
   get: ^4.6.5
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodu/features/home/presentation/views/widgets/special_offers_body.dart';
+import 'package:foodu/features/explore/presentation/views/widgets/special_offers_body.dart';
 
 import '../../../../core/widgets/navigation_bar.dart';
 

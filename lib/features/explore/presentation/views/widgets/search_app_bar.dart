@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 
-import '../../../core/widgets/search_bar.dart';
+import '../../../../../core/widgets/search_bar.dart';
 
 class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;

@@ -4,7 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:size_config/size_config.dart';
 
 import '../config/routes.dart';
-import '../../features/home/presentation/model/category_ui.dart';
+import '../../features/explore/presentation/model/category_ui.dart';
 
 
 class CategoryItem extends StatelessWidget {

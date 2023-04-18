@@ -4,13 +4,13 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import '../../features/cart/cart_screen.dart';
 import '../../features/categories/categories_screen.dart';
 import '../../features/categories/category/category_screen.dart';
-import '../../features/home/presentation/views/home_screen.dart';
-import '../../features/home/presentation/views/recommended_screen.dart';
+import '../../features/explore/presentation/views/home_screen.dart';
+import '../../features/explore/presentation/views/recommended_screen.dart';
 import '../../features/mealDetails/meal_details_screen.dart';
 import '../../features/onboarding/presentation/on_boarding_screen.dart';
 import '../../features/restaurant/restaurant_screen.dart';
-import '../../features/search/SearchScreen.dart';
-import '../../features/home/presentation/views/Special OffersScreen.dart';
+import '../../features/explore/presentation/views/SearchScreen.dart';
+import '../../features/explore/presentation/views/Special OffersScreen.dart';
 import '../../features/splashScreen/splash_screen.dart';
 
 class Arguments {

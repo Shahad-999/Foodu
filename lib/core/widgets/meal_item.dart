@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:size_config/size_config.dart';
 
-import '../../features/home/presentation/model/recommended_meal_ui.dart';
+import '../../features/explore/presentation/model/recommended_meal_ui.dart';
 
 class MealItem extends StatelessWidget {
   const MealItem({Key? key, required this.meal}) : super(key: key);

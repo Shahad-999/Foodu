@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:foodu/features/categories/categories_screen.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
-import '../home/presentation/views/home_screen.dart';
+import '../explore/presentation/views/home_screen.dart';
 import 'bottom_navigation_controller.dart';
 
 class MainScreen extends StatelessWidget {

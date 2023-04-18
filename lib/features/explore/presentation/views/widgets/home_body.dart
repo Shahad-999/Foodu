@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:foodu/core/widgets/search_bar.dart';
-import 'package:foodu/features/home/presentation/views/widgets/recommended_section.dart';
-import 'package:foodu/features/home/presentation/views/widgets/special_offer_section.dart';
+import 'package:foodu/features/explore/presentation/views/widgets/recommended_section.dart';
+import 'package:foodu/features/explore/presentation/views/widgets/special_offer_section.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 import '../../../../../core/config/routes.dart';

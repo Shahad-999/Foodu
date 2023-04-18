@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 import '../config/routes.dart';
-import '../../features/home/presentation/model/special_offer_ui.dart';
+import '../../features/explore/presentation/model/special_offer_ui.dart';
 
 class SpecialItem extends StatelessWidget {
   const SpecialItem({super.key, required this.specialOffer});
