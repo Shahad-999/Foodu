@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-class RecommendedMealUi extends Equatable {
+class MealUi extends Equatable {
   final String id;
   final String name;
   final String imageUrl;
@@ -10,7 +10,7 @@ class RecommendedMealUi extends Equatable {
   final int numberOfUpvote;
   final String categoryId;
 
-  const RecommendedMealUi({
+  const MealUi({
     required this.id,
     required this.name,
     required this.imageUrl,

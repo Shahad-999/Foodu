@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:size_config/size_config.dart';
 
-import '../../features/explore/presentation/model/recommended_meal_ui.dart';
+import '../../features/explore/presentation/model/meal_ui.dart';
 
 class MealItem extends StatelessWidget {
   const MealItem({Key? key, required this.meal}) : super(key: key);
-  final RecommendedMealUi meal;
+  final MealUi meal;
 
   @override
   Widget build(BuildContext context) {

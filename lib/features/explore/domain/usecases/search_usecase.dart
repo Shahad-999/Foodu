@@ -13,7 +13,7 @@ class SearchUseCase extends BaseUseCase<List<Meal>,String>{
 
   @override
   Future<Either<Failure, List<Meal>>> call([String? param]) {
-    return _repository.getRecommended(param ?? 'all');
+    return _repository.search(param ?? '');
   }
 
 }

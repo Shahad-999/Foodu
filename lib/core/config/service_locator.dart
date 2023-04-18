@@ -14,7 +14,7 @@ setup() {
   getIt.registerSingleton<ExploreRepository>(FakeFoodURepository());
   getIt.registerSingleton<CategoriesUseCase>(CategoriesUseCase());
   getIt.registerSingleton<DiscountUseCase>(DiscountUseCase());
-  getIt.registerSingleton<RecommendedUseCase>(RecommendedUseCase());
+  getIt.registerSingleton<SearchUseCase>(SearchUseCase());
   getIt.registerSingleton<SpecialOffersUseCase>(SpecialOffersUseCase());
 
 }

@@ -85,7 +85,7 @@ class AppRoutes {
     ),
     GetPage(
       name: Routes.searchRoute,
-      page: () => const SearchScreen(),
+      page: () => SearchScreen(),
     ),
     GetPage(
       name: Routes.restaurantRoute,

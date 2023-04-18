@@ -6,10 +6,10 @@ import 'package:size_config/size_config.dart';
 import '../../../../../core/widgets/search_bar.dart';
 
 class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String? title;
+  final String? keyword;
   final List<Widget>? actions;
-
-  const SearchAppBar({Key? key, this.title, this.actions})
+  final Function(String) onClickSearch;
+  const SearchAppBar({Key? key, this.keyword, this.actions, required this.onClickSearch})
       : super(key: key);
 
   @override
@@ -37,8 +37,9 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
             .background,
         title:
           SearchBar(
-            onClickSearch: (_) => {},
+            onClickSearch: onClickSearch,
             widthPadding: 16.w,
+            keyword: keyword,
           ),
         actions: actions,
         elevation: 0,

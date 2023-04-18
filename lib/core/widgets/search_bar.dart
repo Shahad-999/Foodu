@@ -4,9 +4,10 @@ import 'package:size_config/size_config.dart';
 import '../utils/constant.dart';
 
 class SearchBar extends StatelessWidget {
-  const SearchBar({Key? key, required this.onClickSearch, this.widthPadding}) : super(key: key);
+  const SearchBar({Key? key, required this.onClickSearch, this.widthPadding, this.keyword}) : super(key: key);
   final Function(String) onClickSearch;
   final double? widthPadding;
+  final String? keyword;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +25,7 @@ class SearchBar extends StatelessWidget {
             color: Colors.transparent,
             child: Center(
               child: TextField(
+                controller: TextEditingController(text: keyword),
                 onSubmitted: onClickSearch,
                 textAlignVertical: TextAlignVertical.center,
                 cursorColor: Theme.of(context).colorScheme.onSecondary,
