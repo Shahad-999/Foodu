@@ -25,8 +25,8 @@ class HomeBody extends StatelessWidget {
         SizedBox(height: 16.h),
         SpecialOffersSection(),
         CategoriesSection(numberOfCategories: 8 ),
-        const DiscountGuaranteedSection(),
-         RecommendedSection()
+        DiscountGuaranteedSection(),
+        RecommendedSection()
       ],
     );
   }

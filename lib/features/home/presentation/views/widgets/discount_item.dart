@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:size_config/size_config.dart';
 
+import '../../model/discount_meal_ui.dart';
+
 class DiscountItem extends StatelessWidget {
-  const DiscountItem({Key? key}) : super(key: key);
+  const DiscountItem({Key? key, required this.meal}) : super(key: key);
+  final DiscountMealUi meal;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +32,7 @@ class DiscountItem extends StatelessWidget {
 
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(16),
-                          child: Image.asset('assets/images/salad.png')
+                          child: Image.network(meal.imageUrl)
                       ),
                     ),
                     Positioned(
@@ -59,7 +62,7 @@ class DiscountItem extends StatelessWidget {
               ),
               SizedBox(height: 16.h,),
               Text(
-                'Mixed Salad Bonb.. ',
+                meal.name,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w800
@@ -75,7 +78,7 @@ class DiscountItem extends StatelessWidget {
                       child: Row(
                         children: [
                           Text(
-                              '\$6.00',
+                              '\$${meal.price}',
                             style: TextStyle(
                               color: Theme.of(context).colorScheme.primary,
                               fontWeight: FontWeight.w900,
@@ -91,7 +94,7 @@ class DiscountItem extends StatelessWidget {
                           ),
                           SizedBox(width: 8.w),
                           Text(
-                              '\$2.00',
+                              '\$${meal.deliveryCost}',
                             style: Theme.of(context).textTheme.bodySmall?.copyWith(
                               fontWeight: FontWeight.w600,
                               fontSize: 14.sp

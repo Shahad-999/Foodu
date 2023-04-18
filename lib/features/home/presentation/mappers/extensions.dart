@@ -1,10 +1,11 @@
 
-import '../../features/home/domain/models/category.dart';
-import '../../features/home/domain/models/meal.dart';
-import '../../features/home/domain/models/special_offer.dart';
-import '../../features/home/presentation/model/category_ui.dart';
-import '../../features/home/presentation/model/recommended_meal_ui.dart';
-import '../../features/home/presentation/model/special_offer_ui.dart';
+import '../../domain/models/category.dart';
+import '../../domain/models/meal.dart';
+import '../../domain/models/special_offer.dart';
+import '../model/category_ui.dart';
+import '../model/discount_meal_ui.dart';
+import '../model/recommended_meal_ui.dart';
+import '../model/special_offer_ui.dart';
 
 extension CategoryDomainMapper on Category {
   CategoryUi toUiModel(){
@@ -31,13 +32,19 @@ extension ListSpecialOfferDomainMapper on List<SpecialOffer> {
 }
 
 extension MealDomainMapper on Meal {
-  RecommendedMealUi toUiModel(){
+  RecommendedMealUi toRecommendedMealUiModel(){
     return RecommendedMealUi(id: id, name: name, imageUrl: imageUrl, rating: rating, isFavorite: isFavorite, distance: distance, deliveryCost: deliveryCost, numberOfUpvote: numberOfUpvote, categoryId: categoryId);
+  }
+  DiscountMealUi toDiscountMealUiModel(){
+    return DiscountMealUi(id: id, name: name, imageUrl: imageUrl, isFavorite: isFavorite, price: price, deliveryCost: deliveryCost);
   }
 }
 
 extension ListMealDomainMapper on List<Meal> {
-  List<RecommendedMealUi> toUiModel(){
-    return map((e) => e.toUiModel()).toList();
+  List<RecommendedMealUi> toRecommendedMealUiModel(){
+    return map((e) => e.toRecommendedMealUiModel()).toList();
+  }
+  List<DiscountMealUi> toDiscountMealUiModel(){
+    return map((e) => e.toDiscountMealUiModel()).toList();
   }
 }

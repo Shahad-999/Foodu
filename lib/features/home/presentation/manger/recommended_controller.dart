@@ -1,4 +1,4 @@
-import 'package:foodu/core/utils/extensions.dart';
+import 'package:foodu/features/home/presentation/mappers/extensions.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/config/service_locator.dart';
@@ -15,7 +15,7 @@ class RecommendedController extends GetxController{
     _recommendedUseCase
         .getRecommended()
         .then(
-            (items) => recommendedMeals.value = items.toUiModel()
+            (items) => recommendedMeals.value = items.toRecommendedMealUiModel()
     );
   }
 
