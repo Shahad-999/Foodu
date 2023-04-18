@@ -20,22 +20,13 @@ class HomeBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        SizedBox(
-          height: 8.h,
-        ),
-        Hero(
-          tag: 'search',
-          child: SearchBar(
-            onClickSearch: (keyWord) => _navToSearchBar(keyWord),
-          ),
-        ),
-        SizedBox(
-          height: 16.h,
-        ),
-         SpecialOffersSection(),
+        SizedBox(height: 8.h),
+        SearchBar(onClickSearch: (keyWord) => _navToSearchBar(keyWord),),
+        SizedBox(height: 16.h),
+        SpecialOffersSection(),
         CategoriesSection(numberOfCategories: 8 ),
         const DiscountGuaranteedSection(),
-        const RecommendedSection()
+         RecommendedSection()
       ],
     );
   }

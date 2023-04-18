@@ -36,12 +36,9 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
             .colorScheme
             .background,
         title:
-          Hero(
-            tag: 'search',
-            child: SearchBar(
-              onClickSearch: (_) => {},
-              widthPadding: 16.w,
-            ),
+          SearchBar(
+            onClickSearch: (_) => {},
+            widthPadding: 16.w,
           ),
         actions: actions,
         elevation: 0,

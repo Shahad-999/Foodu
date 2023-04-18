@@ -10,8 +10,6 @@ class SpecialOfferController extends GetxController{
 
   SpecialOfferController(): _specialUseCase = getIt.get();
 
-
-
   getSpecialOfferItems(){
     _specialUseCase
         .getSpecialOffers()
