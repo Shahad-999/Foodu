@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:size_config/size_config.dart';
 
-import 'menuItem.dart';
+import 'menu_item.dart';
 
 class RestaurantBody extends StatelessWidget {
   const RestaurantBody({Key? key}) : super(key: key);

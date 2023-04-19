@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/core/config/routes.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
-
-import '../../../core/config/routes.dart';
 
 class MenuItem extends StatelessWidget {
   const MenuItem({Key? key}) : super(key: key);

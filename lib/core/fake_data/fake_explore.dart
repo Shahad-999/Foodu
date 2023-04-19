@@ -1,6 +1,6 @@
-import '../domain/models/category.dart';
-import '../domain/models/meal.dart';
-import '../domain/models/special_offer.dart';
+import '../../features/explore/domain/models/category.dart';
+import '../../features/explore/domain/models/meal.dart';
+import '../../features/explore/domain/models/special_offer.dart';
 
 const List<Category> foodCategories = [
   Category(

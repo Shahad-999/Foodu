@@ -5,7 +5,7 @@ import 'package:foodu/core/config/service_locator.dart';
 import '../../../../core/base/base_use_case.dart';
 import '../../../../core/failure.dart';
 import '../models/category.dart';
-import '../repository.dart';
+import '../explore_repository.dart';
 
 class CategoriesUseCase extends BaseUseCase<List<Category>,NoParam>{
   final ExploreRepository _repository;

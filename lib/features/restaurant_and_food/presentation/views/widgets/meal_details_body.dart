@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:foodu/features/mealDetails/widgets/quantity_picker_view.dart';
+import 'package:foodu/core/widgets/app_button.dart';
 import 'package:size_config/size_config.dart';
-
-import '../../../core/widgets/app_button.dart';
+import 'quantity_picker_view.dart';
 
 class MealDetailsBody extends StatelessWidget {
   const MealDetailsBody({Key? key}) : super(key: key);

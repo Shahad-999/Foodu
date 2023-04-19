@@ -6,11 +6,11 @@ import '../../features/categories/categories_screen.dart';
 import '../../features/categories/category/category_screen.dart';
 import '../../features/explore/presentation/views/home_screen.dart';
 import '../../features/explore/presentation/views/recommended_screen.dart';
-import '../../features/mealDetails/meal_details_screen.dart';
 import '../../features/onboarding/presentation/on_boarding_screen.dart';
-import '../../features/restaurant/restaurant_screen.dart';
 import '../../features/explore/presentation/views/SearchScreen.dart';
 import '../../features/explore/presentation/views/Special OffersScreen.dart';
+import '../../features/restaurant_and_food/presentation/views/meal_details_screen.dart';
+import '../../features/restaurant_and_food/presentation/views/restaurant_screen.dart';
 import '../../features/splashScreen/splash_screen.dart';
 
 class Arguments {

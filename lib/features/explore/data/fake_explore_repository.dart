@@ -1,15 +1,12 @@
-
-
 import 'package:dartz/dartz.dart';
-
 import '../../../core/failure.dart';
 import '../domain/models/category.dart';
 import '../domain/models/meal.dart';
 import '../domain/models/special_offer.dart';
-import '../domain/repository.dart';
-import 'const.dart';
+import '../domain/explore_repository.dart';
+import '../../../core/fake_data/fake_explore.dart';
 
-class FakeFoodURepository implements ExploreRepository{
+class FakeExploreRepository implements ExploreRepository{
 
   @override
   Future<Either<Failure,List<Meal>>> getDiscount() async {

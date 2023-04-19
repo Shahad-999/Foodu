@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:foodu/features/mealDetails/widgets/picker_button.dart';
 import 'package:size_config/size_config.dart';
+import 'picker_button.dart';
 
 class QuantityPickerView extends StatefulWidget {
   const QuantityPickerView({Key? key}) : super(key: key);
