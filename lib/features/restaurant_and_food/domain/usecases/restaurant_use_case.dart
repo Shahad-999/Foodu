@@ -12,6 +12,7 @@ class RestaurantDetailsUseCase extends BaseUseCase<Restaurant,String>{
 
   @override
   Future<Either<Failure, Restaurant>> call([String? param]) {
+    print(param);
     return _repository.getRestaurantDetails(param ?? 'id');
   }
 

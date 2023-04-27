@@ -1,26 +1,63 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:foodu/features/restaurant_and_food/presentation/manger/restaurant_controller.dart';
+import 'package:foodu/features/restaurant_and_food/presentation/states/food_state.dart';
+import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
-
+import '../../models/restaurant_ui.dart';
 import 'menu_item.dart';
 
 class RestaurantBody extends StatelessWidget {
-  const RestaurantBody({Key? key}) : super(key: key);
+  RestaurantBody({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Theme.of(context).colorScheme.background,
-      child: Stack(children: [
+  final RestaurantController controller = Get.find();
+
+  Widget getWidgetState(RestaurantState state, BuildContext context) {
+    switch (state.runtimeType) {
+      case LoadingRestaurantState:
+        {
+          return const Center(child: CircularProgressIndicator());
+        }
+      case LoadedRestaurantState:
+        {
+          return onLoadedData(
+              context, (state as LoadedRestaurantState).restaurant);
+        }
+      case FailRestaurantState:
+        {
+          return Center(
+              child: SvgPicture.asset(
+            'assets/svg/fail.svg',
+            semanticsLabel: '',
+          ));
+        }
+      default:
+        {
+          return Container(
+          );
+        }
+    }
+  }
+
+  Widget onLoadedData(BuildContext context, RestaurantUi data) {
+    return  Stack(children: [
         Positioned(
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
             child: ListView(padding: const EdgeInsets.all(0), children: [
               SizedBox(
                 height: 434.h,
-                child: Image.asset('assets/images/restaurant.png'),
+                width: double.infinity,
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Image.network(
+                      data.imageUrl,
+                      fit: BoxFit.fitWidth,
+                    ),
+                    Container(
+                      color: Colors.black.withOpacity(0.2),
+                    )
+                  ],
+                ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -31,7 +68,7 @@ class RestaurantBody extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          'Big Garden Salad',
+                          data.name,
                           style: Theme.of(context)
                               .textTheme
                               .bodyLarge
@@ -56,7 +93,7 @@ class RestaurantBody extends StatelessWidget {
                         ),
                         SizedBox(width: 8.w),
                         Text(
-                          '4.8',
+                          data.rating,
                           style: Theme.of(context)
                               .textTheme
                               .bodyLarge
@@ -65,7 +102,7 @@ class RestaurantBody extends StatelessWidget {
                         ),
                         SizedBox(width: 8.w),
                         Text(
-                          '( 4.8K Reviews )',
+                          data.numberOfReviews,
                           style: Theme.of(context)
                               .textTheme
                               .labelLarge
@@ -90,7 +127,7 @@ class RestaurantBody extends StatelessWidget {
                         ),
                         SizedBox(width: 8.w),
                         Text(
-                          '2.8 km',
+                          data.distance,
                           style: Theme.of(context)
                               .textTheme
                               .bodyLarge
@@ -115,7 +152,7 @@ class RestaurantBody extends StatelessWidget {
                         ),
                         SizedBox(width: 8.w),
                         Text(
-                          'Offers are available',
+                          data.offersState,
                           style: Theme.of(context)
                               .textTheme
                               .bodyLarge
@@ -162,7 +199,8 @@ class RestaurantBody extends StatelessWidget {
                   ],
                 ),
               ),
-            ])),
+            ]),
+        ),
         Positioned(
             right: 24,
             left: 24,
@@ -173,8 +211,8 @@ class RestaurantBody extends StatelessWidget {
                   onTap: () => {Navigator.of(context).pop()},
                   child: SvgPicture.asset(
                     'assets/svg/back_arrow.svg',
-                    colorFilter: ColorFilter.mode(
-                        Theme.of(context).colorScheme.onBackground,
+                    colorFilter: const ColorFilter.mode(
+                        Colors.white70,
                         BlendMode.srcIn),
                     semanticsLabel: 'Label',
                     width: 28,
@@ -185,8 +223,9 @@ class RestaurantBody extends StatelessWidget {
                 SvgPicture.asset(
                   'assets/svg/heart.svg',
                   colorFilter: ColorFilter.mode(
-                      Theme.of(context).colorScheme.onBackground,
-                      BlendMode.srcIn),
+                     data.favoriteColor, //TODO LATER MAKE IT correct it later
+                      BlendMode.srcIn
+                  ),
                   semanticsLabel: 'Label',
                   width: 24,
                   height: 24,
@@ -194,8 +233,8 @@ class RestaurantBody extends StatelessWidget {
                 SizedBox(width: 16.w),
                 SvgPicture.asset(
                   'assets/svg/sent.svg',
-                  colorFilter: ColorFilter.mode(
-                      Theme.of(context).colorScheme.onBackground,
+                  colorFilter: const ColorFilter.mode(
+                      Colors.white70,
                       BlendMode.srcIn),
                   semanticsLabel: 'Label',
                   width: 24,
@@ -203,7 +242,14 @@ class RestaurantBody extends StatelessWidget {
                 )
               ],
             )),
-      ]),
+      ]);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(() => Container(
+        color: Theme.of(context).colorScheme.background,
+        child: getWidgetState(controller.state.value, context))
     );
   }
 }

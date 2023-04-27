@@ -9,7 +9,7 @@ class FakeFoodRepository extends FoodRepository{
   @override
   Future<Either<Failure, Restaurant>> getRestaurantDetails(String restaurantId) async {
     await Future.delayed(const Duration(seconds: 2));
-    return right(fakeOpenRestaurant);
+    return right(fakeCloseRestaurant);
   }
 
 }

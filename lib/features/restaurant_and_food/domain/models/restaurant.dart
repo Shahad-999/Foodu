@@ -9,7 +9,6 @@ class Restaurant extends Equatable {
   final double numberOfReviews;
   final double distance;
   final double deliveryCost;
-  final bool isDeliveryAvailable;
   final bool isOpen;
 
   const Restaurant({
@@ -21,7 +20,6 @@ class Restaurant extends Equatable {
     required this.numberOfReviews,
     required this.distance,
     required this.deliveryCost,
-    required this.isDeliveryAvailable,
     required this.isOpen,
   });
 
