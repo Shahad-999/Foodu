@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodu/core/config/routes.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
+
 import '../../../../../core/widgets/categories_chip_list.dart';
 import '../../../../../core/widgets/meal_item.dart';
 import '../../manger/recommended_controller.dart';

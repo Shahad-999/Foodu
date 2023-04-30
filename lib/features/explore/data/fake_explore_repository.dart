@@ -1,10 +1,11 @@
 import 'package:dartz/dartz.dart';
+
 import '../../../core/failure.dart';
+import '../../../core/fake_data/fake_explore.dart';
+import '../domain/explore_repository.dart';
 import '../domain/models/category.dart';
 import '../domain/models/meal.dart';
 import '../domain/models/special_offer.dart';
-import '../domain/explore_repository.dart';
-import '../../../core/fake_data/fake_explore.dart';
 
 class FakeExploreRepository implements ExploreRepository{
 

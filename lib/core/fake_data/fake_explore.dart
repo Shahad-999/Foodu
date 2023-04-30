@@ -43,73 +43,73 @@ const List<Category> foodCategories = [
       name: "Seafood",
       imageUrl:
           "https://cdn.pixabay.com/photo/2012/04/12/12/23/sushi-29791_960_720.png"),
-  Category(
-      id: "9",
-      name: "Spices",
-      imageUrl:
-          "https://images.unsplash.com/photo-1579510071315-802f2733b3cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
-  Category(
-      id: "10",
-      name: "Bakery",
-      imageUrl:
-          "https://images.unsplash.com/photo-1582113542582-7d9c9a6766e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
-  Category(
-      id: "11",
-      name: "Breakfast",
-      imageUrl:
-          "https://images.unsplash.com/photo-1548543603-1a90b9d0b2c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
-  Category(
-      id: "12",
-      name: "Lunch",
-      imageUrl:
-          "https://images.unsplash.com/photo-1557954345-bb367928fcab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
-  Category(
-      id: "13",
-      name: "Dinner",
-      imageUrl:
-          "https://images.unsplash.com/photo-1562604467-238959c3b3a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
-  Category(
-      id: "14",
-      name: "Fast Food",
-      imageUrl:
-          "https://images.unsplash.com/photo-1560589878-787d68b672f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
-  Category(
-      id: "15",
-      name: "Healthy",
-      imageUrl:
-          "https://images.unsplash.com/photo-1507721864687-05392a8ea0ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
-  Category(
-      id: "16",
-      name: "Comfort Food",
-      imageUrl:
-          "https://images.unsplash.com/photo-1546069907-efc191b4b05a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
-  Category(
-      id: "17",
-      name: "International Cuisine",
-      imageUrl:
-          "https://images.unsplash.com/photo-1600782660732-58d0cf3f27c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
-  Category(
-      id: "18",
-      name: "Barbecue",
-      imageUrl:
-          "https://images.unsplash.com/photo-1559847844-531569b93631?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
-  Category(
-      id: "19",
-      name: "Soups",
-      imageUrl:
-          "https://images.unsplash.com/photo-1589984426346-a0a9a90e7529?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
-  Category(
-      id: "20",
-      name: "Sandwiches",
-      imageUrl:
-          "https://images.unsplash.com/photo-1603972012955-98d7118de7c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+  // Category(
+  //     id: "9",
+  //     name: "Spices",
+  //     imageUrl:
+  //         "https://images.unsplash.com/photo-1579510071315-802f2733b3cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+  // Category(
+  //     id: "10",
+  //     name: "Bakery",
+  //     imageUrl:
+  //         "https://images.unsplash.com/photo-1582113542582-7d9c9a6766e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+  // Category(
+  //     id: "11",
+  //     name: "Breakfast",
+  //     imageUrl:
+  //         "https://images.unsplash.com/photo-1548543603-1a90b9d0b2c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+  // Category(
+  //     id: "12",
+  //     name: "Lunch",
+  //     imageUrl:
+  //         "https://images.unsplash.com/photo-1557954345-bb367928fcab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+  // Category(
+  //     id: "13",
+  //     name: "Dinner",
+  //     imageUrl:
+  //         "https://images.unsplash.com/photo-1562604467-238959c3b3a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+  // Category(
+  //     id: "14",
+  //     name: "Fast Food",
+  //     imageUrl:
+  //         "https://images.unsplash.com/photo-1560589878-787d68b672f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+  // Category(
+  //     id: "15",
+  //     name: "Healthy",
+  //     imageUrl:
+  //         "https://images.unsplash.com/photo-1507721864687-05392a8ea0ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+  // Category(
+  //     id: "16",
+  //     name: "Comfort Food",
+  //     imageUrl:
+  //         "https://images.unsplash.com/photo-1546069907-efc191b4b05a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+  // Category(
+  //     id: "17",
+  //     name: "International Cuisine",
+  //     imageUrl:
+  //         "https://images.unsplash.com/photo-1600782660732-58d0cf3f27c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+  // Category(
+  //     id: "18",
+  //     name: "Barbecue",
+  //     imageUrl:
+  //         "https://images.unsplash.com/photo-1559847844-531569b93631?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+  // Category(
+  //     id: "19",
+  //     name: "Soups",
+  //     imageUrl:
+  //         "https://images.unsplash.com/photo-1589984426346-a0a9a90e7529?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
+  // Category(
+  //     id: "20",
+  //     name: "Sandwiches",
+  //     imageUrl:
+  //         "https://images.unsplash.com/photo-1603972012955-98d7118de7c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
 ];
 
 const List<SpecialOffer> fakeSpecialOffers = [
   SpecialOffer(
     id: '1',
     imageUrl:
-        'https://pixabay.com/get/g8d6b3f1412a9c87a7a3fe39e6bc3c47245ed9de6bfa3f4c936c91a83f2b3e18c17bcb7d0e72e74db49dfbd7bae63c530ac285e4f4a8e9696847b3fa7342eff8f77541c8ee73e24c7dce730edddd0ec5c_1920.png',
+    'https://freepngimg.com/thumb/salad/23962-5-salad-transparent-background.png',
     percentage: 10,
   ),
   SpecialOffer(
@@ -121,37 +121,37 @@ const List<SpecialOffer> fakeSpecialOffers = [
   SpecialOffer(
     id: '3',
     imageUrl:
-        'https://pixabay.com/get/gcd601e7372e2489e170e21d4e1803a9b7c85eb18ccc7097b3945309d93aba717d17186ec7ac3d0f7975738eed62ca2efdb829dde695eab0ce1f0ff77eaec49f16fef8b091cede5014f3b9da05e3090bd_1920.png',
+    'https://freepngimg.com/thumb/salad/23962-5-salad-transparent-background.png',
     percentage: 15,
   ),
   SpecialOffer(
     id: '4',
     imageUrl:
-        'https://i.ibb.co/SwW1LZP/Daco-1156302.png',
+    'https://freepngimg.com/thumb/salad/23962-5-salad-transparent-background.png',
     percentage: 5,
   ),
   SpecialOffer(
     id: '5',
     imageUrl:
-        'https://images.unsplash.com/photo-1585098264685-5e5f5da38db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    'https://freepngimg.com/thumb/salad/23962-5-salad-transparent-background.png',
     percentage: 25,
   ),
   SpecialOffer(
     id: '6',
     imageUrl:
-        'https://images.unsplash.com/photo-1533651705339-8f7a8e1e1b1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    'https://freepngimg.com/thumb/salad/23962-5-salad-transparent-background.png',
     percentage: 30,
   ),
   SpecialOffer(
     id: '7',
     imageUrl:
-        'https://images.unsplash.com/photo-1584361851221-8801c49ef793?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    'https://freepngimg.com/thumb/salad/23962-5-salad-transparent-background.png',
     percentage: 12,
   ),
   SpecialOffer(
     id: '8',
     imageUrl:
-        'https://images.unsplash.com/photo-1568308140230-16c289a2ca97?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    'https://freepngimg.com/thumb/salad/23962-5-salad-transparent-background.png',
     percentage: 8,
   ),
 ];
@@ -267,7 +267,7 @@ const List<Meal> fakeDiscountMeals = [
   Meal(
     id: '2',
     name: 'Spicy Tuna Roll',
-    imageUrl: 'https://images.unsplash.com/photo-1540774451547-2c7076dc84a7',
+    imageUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba',
     rating: 4.7,
     isFavorite: false,
     distance: '3 km',
@@ -280,7 +280,7 @@ const List<Meal> fakeDiscountMeals = [
   Meal(
     id: '3',
     name: 'Margherita Pizza',
-    imageUrl: 'https://images.unsplash.com/photo-1612711068278-9a27c5db619e',
+    imageUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba',
     rating: 4.8,
     isFavorite: true,
     distance: '4 km',
@@ -293,7 +293,7 @@ const List<Meal> fakeDiscountMeals = [
   Meal(
     id: '4',
     name: 'Beef Burger',
-    imageUrl: 'https://images.unsplash.com/photo-1586871986469-15a19d65465e',
+    imageUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba',
     rating: 4.6,
     isFavorite: false,
     distance: '5 km',
@@ -306,7 +306,7 @@ const List<Meal> fakeDiscountMeals = [
   Meal(
     id: '5',
     name: 'Miso Soup',
-    imageUrl: 'https://images.unsplash.com/photo-1543168123-3ce3d2fefb77',
+    imageUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba',
     rating: 4.4,
     isFavorite: true,
     distance: '1 km',
@@ -319,7 +319,7 @@ const List<Meal> fakeDiscountMeals = [
   Meal(
     id: '6',
     name: 'Pesto Pasta',
-    imageUrl: 'https://images.unsplash.com/photo-1615470699787-64d717b1cc7c',
+    imageUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba',
     rating: 4.9,
     isFavorite: false,
     distance: '2.5 km',
@@ -332,7 +332,7 @@ const List<Meal> fakeDiscountMeals = [
   Meal(
     id: '7',
     name: 'Fish and Chips',
-    imageUrl: 'https://images.unsplash.com/photo-1609318619077-8b41720f17c6',
+    imageUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba',
     rating: 4.3,
     isFavorite: false,
     distance: '6 km',

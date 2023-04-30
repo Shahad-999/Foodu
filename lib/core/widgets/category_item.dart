@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:size_config/size_config.dart';
 
-import '../config/routes.dart';
 import '../../features/explore/presentation/model/category_ui.dart';
+import '../config/routes.dart';
 
 
 class CategoryItem extends StatelessWidget {

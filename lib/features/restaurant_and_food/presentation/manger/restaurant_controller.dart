@@ -18,6 +18,7 @@ class RestaurantController extends GetxController{
   getRestaurantDetails(){
     state.value = LoadingRestaurantState();
     _restaurantUseCase.call(_restaurantId).then((respond) {
+      print(respond);
       respond.fold(
               (l) => state.value = FailRestaurantState(l.message),
               (items) => state.value = LoadedRestaurantState(items.toUiModel())

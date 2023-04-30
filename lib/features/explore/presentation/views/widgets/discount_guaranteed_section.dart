@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:foodu/features/explore/presentation/manger/discount_controller.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
+
 import 'discount_item.dart';
 import 'header_section.dart';
 

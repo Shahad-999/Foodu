@@ -2,6 +2,7 @@
 import 'package:foodu/features/explore/domain/explore_repository.dart';
 import 'package:foodu/features/restaurant_and_food/data/fake_food_repository_imp.dart';
 import 'package:foodu/features/restaurant_and_food/domain/food_repository.dart';
+import 'package:foodu/features/restaurant_and_food/domain/usecases/restaurant_menus_use_case.dart';
 import 'package:foodu/features/restaurant_and_food/domain/usecases/restaurant_use_case.dart';
 import 'package:get_it/get_it.dart';
 
@@ -27,6 +28,7 @@ setup() {
   getIt.registerSingleton<SearchUseCase>(SearchUseCase());
   getIt.registerSingleton<RestaurantDetailsUseCase>(RestaurantDetailsUseCase());
   getIt.registerSingleton<SpecialOffersUseCase>(SpecialOffersUseCase());
+  getIt.registerSingleton<RestaurantMenusUseCase>(RestaurantMenusUseCase());
   //endRegion
 
 }

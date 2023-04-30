@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodu/features/explore/presentation/views/widgets/searchBody.dart';
 import 'package:foodu/features/explore/presentation/views/widgets/search_app_bar.dart';
 import 'package:get/get.dart';
+
 import '../manger/search_controller.dart';
 
 //TODO ADD FILTER LATER

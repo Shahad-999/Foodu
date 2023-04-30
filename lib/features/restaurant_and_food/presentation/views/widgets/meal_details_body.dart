@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:foodu/core/widgets/app_button.dart';
 import 'package:size_config/size_config.dart';
+
 import 'quantity_picker_view.dart';
 
 class MealDetailsBody extends StatelessWidget {

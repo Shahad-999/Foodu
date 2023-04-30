@@ -15,8 +15,8 @@ class LoadingRestaurantState extends RestaurantState{
    LoadingRestaurantState(): super._();
 }
 class LoadedRestaurantState extends RestaurantState{
-  final RestaurantUi restaurant;
-  LoadedRestaurantState(this.restaurant): super._();
+  final RestaurantUi data;
+  LoadedRestaurantState(this.data): super._();
 }
 class FailRestaurantState extends RestaurantState{
   final String message;

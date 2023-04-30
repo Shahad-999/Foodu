@@ -4,6 +4,7 @@ import 'package:foodu/features/explore/presentation/views/widgets/recommended_se
 import 'package:foodu/features/explore/presentation/views/widgets/special_offer_section.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
+
 import '../../../../../core/config/routes.dart';
 import 'categories_section.dart';
 import 'discount_guaranteed_section.dart';

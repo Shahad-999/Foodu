@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/core/config/routes.dart';
+import 'package:foodu/features/restaurant_and_food/presentation/models/menu_ui.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 
-class MenuItem extends StatelessWidget {
-  const MenuItem({Key? key}) : super(key: key);
 
+class MenuItem extends StatelessWidget {
+  const MenuItem({Key? key, required this.meal}) : super(key: key);
+  final MealUi meal;
   _navToMealDetails(String mealId) {
     Get.toNamed(Routes.mealRoute, arguments: {Arguments.mealId: mealId});
   }
@@ -15,7 +17,7 @@ class MenuItem extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8.h),
       child: GestureDetector(
-        onTap: () => _navToMealDetails('jjj'),
+        onTap: () => _navToMealDetails(meal.id),
         child: Container(
           height: 128.h,
           decoration: BoxDecoration(
@@ -26,13 +28,13 @@ class MenuItem extends StatelessWidget {
             child: Row(
               children: [
                 Hero(
-                  tag: 'meal image',
+                  tag: '${meal.id} image',
                   child: SizedBox(
                     height: 100,
                     width: 100,
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(16),
-                        child: Image.asset('assets/images/salad.png')),
+                        child: Image.network(meal.imageUrl)),
                   ),
                 ),
                 SizedBox(
@@ -46,16 +48,16 @@ class MenuItem extends StatelessWidget {
                       height: 16.h,
                     ),
                     Hero(
-                      tag: 'meal name',
+                      tag: '${meal.id} name',
                       child: Text(
-                        'Mixed Salad Bob.. ',
+                        meal.name,
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                             fontSize: 20.sp, fontWeight: FontWeight.w800),
                       ),
                     ),
                     SizedBox(height: 16.h),
                     Text(
-                      '\$6.00',
+                      meal.price,
                       style: TextStyle(
                           color: Theme.of(context).colorScheme.primary,
                           fontWeight: FontWeight.w900,

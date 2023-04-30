@@ -4,8 +4,8 @@ import 'package:foodu/core/config/service_locator.dart';
 
 import '../../../../core/base/base_use_case.dart';
 import '../../../../core/failure.dart';
-import '../models/meal.dart';
 import '../explore_repository.dart';
+import '../models/meal.dart';
 
 class DiscountUseCase extends BaseUseCase<List<Meal>,NoParam>{
   final ExploreRepository _repository;

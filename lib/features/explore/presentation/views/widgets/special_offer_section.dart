@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:foodu/core/widgets/special_item.dart';
 import 'package:foodu/core/config/routes.dart';
+import 'package:foodu/core/widgets/special_item.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 

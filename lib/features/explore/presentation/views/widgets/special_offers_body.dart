@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:foodu/core/widgets/special_item.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
+
 import '../../manger/special_offer_controller.dart';
 
 class SpecialOffersBody extends StatelessWidget {

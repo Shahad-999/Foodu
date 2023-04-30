@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:foodu/features/categories/category/widgets/category_body.dart';
 import 'package:foodu/core/widgets/navigation_bar.dart';
+import 'package:foodu/features/categories/category/widgets/category_body.dart';
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({Key? key}) : super(key: key);

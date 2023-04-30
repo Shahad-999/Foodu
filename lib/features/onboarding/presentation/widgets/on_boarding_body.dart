@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
+
 import '../../../../core/config/routes.dart';
 import 'on_boarding_pages.dart';
 
