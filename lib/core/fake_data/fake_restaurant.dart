@@ -30,17 +30,17 @@ const List<Menu> menus = [
     Menu(
         'Menu',
         [
-            Meal('1', 'Mixed Salad Bo', 6.00, ''),
-            Meal('2', 'Mixed Salad Bo', 6.00, ''),
-            Meal('3', 'Mixed Salad Bo', 6.00, ''),
-            Meal('4', 'Mixed Salad Bo', 6.00, ''),
+            Meal('1', 'Mixed Salad Bo', 6.00, 'https://img.freepik.com/premium-vector/dla-interneta_130388-3885.jpg?w=740'),
+            Meal('2', 'Mixed Salad Bo', 6.00, 'https://img.freepik.com/premium-vector/dla-interneta_130388-3885.jpg?w=740'),
+            Meal('3', 'Mixed Salad Bo', 6.00, 'https://img.freepik.com/premium-vector/dla-interneta_130388-3885.jpg?w=740'),
+            Meal('4', 'Mixed Salad Bo', 6.00, 'https://img.freepik.com/premium-vector/dla-interneta_130388-3885.jpg?w=740'),
         ]
     ),
     Menu(
         'Drinks',
         [
-            Meal('1', 'Water', 1.00, ''),
-            Meal('2', 'Juice', 3.00, ''),
+            Meal('18', 'Water', 1.00, 'https://img.freepik.com/premium-vector/dla-interneta_130388-3885.jpg?w=740'),
+            Meal('20', 'Juice', 3.00, 'https://img.freepik.com/premium-vector/dla-interneta_130388-3885.jpg?w=740'),
         ]
     ),
 ];

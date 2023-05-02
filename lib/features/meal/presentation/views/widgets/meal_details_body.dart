@@ -1,15 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:foodu/core/widgets/app_button.dart';
+import 'package:foodu/features/meal/presentation/states/meal_state.dart';
+import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 
+import '../../../../../core/utils/constant.dart';
+import '../../manger/meal_controller.dart';
+import '../../models/meal_details_ui.dart';
 import 'quantity_picker_view.dart';
 
 class MealDetailsBody extends StatelessWidget {
-  const MealDetailsBody({Key? key}) : super(key: key);
+  MealDetailsBody({Key? key}) : super(key: key);
+  final MealController _mealController = Get.find();
 
+  Widget getWidgetState(MealState state, BuildContext context) {
+    switch (state.runtimeType) {
+      case LoadingMealState:
+        {
+          return const Center(child: CircularProgressIndicator());
+        }
+      case LoadedMealState:
+        {
+          return onLoadedData(context, (state as LoadedMealState).data);
+        }
+      case FailMealState:
+        {
+          return Center(
+              child: SvgPicture.asset(
+                'assets/svg/fail.svg',
+                semanticsLabel: '',
+              ));
+        }
+      default:
+        {
+          return Container();
+        }
+    }
+  }
   @override
   Widget build(BuildContext context) {
+    return Obx(() => getWidgetState(_mealController.state.value, context));
+  }
+
+  Widget onLoadedData(BuildContext context,MealDetailsUi meal){
     return Container(
       color: Theme.of(context).colorScheme.background,
       child: Stack(children: [
@@ -20,65 +54,50 @@ class MealDetailsBody extends StatelessWidget {
             right: 0,
             child: ListView(padding: const EdgeInsets.all(0), children: [
               Hero(
-                tag: 'meal image',
+                tag: imageTag(_mealController.mealId),
                 child: SizedBox(
-                height: 434.h,
-                child: Image.asset(
-                    'assets/images/salad.png',
+                  height: 434.h,
+                  child: Image.network(
+                    meal.imageUrl,
                     fit: BoxFit.contain,
                   ),
                 ),
               ),
-
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(height: 16.h),
-                    Hero(
-                      tag: 'meal name',
-                      child: Text(
-                        'Mixed vegetable salad',
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyLarge
-                            ?.copyWith(
-                            fontSize: 28.sp, fontWeight: FontWeight.bold),
-                      ),
+                    Text(
+                      meal.name,
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          fontSize: 28.sp, fontWeight: FontWeight.bold),
                     ),
-
                     SizedBox(height: 16.h),
                     const Divider(thickness: 1.5),
                     SizedBox(height: 16.h),
-
                     Text(
-                      'This vegetable salad is a healthy and delicious summer salad made with fresh raw veggies,avocado, nuts, seeds. herbs and feta in a light.',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall
-                          ?.copyWith(
+                      meal.description,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           fontSize: 16.sp, fontWeight: FontWeight.w600),
                     ),
-
                     SizedBox(height: 16.h),
                     const Divider(thickness: 1.5),
                     SizedBox(height: 16.h),
-
                     const QuantityPickerView(),
-
                   ],
                 ),
               ),
             ])),
         Positioned(
-          right: 16,
+            right: 16,
             left: 16,
             bottom: 40,
             child: AppButton(
-              buttonText: 'Add to Basket - \$l2.00',
-              onTap: ()=> {},
-        )),
+              buttonText: 'Add to Basket - ${meal.price}',
+              onTap: () => {},
+            )),
         Positioned(
             right: 24,
             left: 24,
@@ -93,7 +112,7 @@ class MealDetailsBody extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
                       color:
-                          Theme.of(context).colorScheme.secondary.withAlpha(30),
+                      Theme.of(context).colorScheme.secondary.withAlpha(30),
                     ),
                     child: SvgPicture.asset(
                       'assets/svg/back_arrow.svg',
@@ -114,7 +133,7 @@ class MealDetailsBody extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100),
                     color:
-                        Theme.of(context).colorScheme.secondary.withAlpha(30),
+                    Theme.of(context).colorScheme.secondary.withAlpha(30),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(4.0),
@@ -133,5 +152,6 @@ class MealDetailsBody extends StatelessWidget {
             )),
       ]),
     );
+
   }
 }

@@ -4,6 +4,8 @@ import 'package:foodu/features/restaurant_and_food/presentation/models/menu_ui.d
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 
+import '../../../../../core/utils/constant.dart';
+
 
 class MenuItem extends StatelessWidget {
   const MenuItem({Key? key, required this.meal}) : super(key: key);
@@ -28,7 +30,7 @@ class MenuItem extends StatelessWidget {
             child: Row(
               children: [
                 Hero(
-                  tag: '${meal.id} image',
+                  tag: imageTag(meal.id),
                   child: SizedBox(
                     height: 100,
                     width: 100,
@@ -47,13 +49,10 @@ class MenuItem extends StatelessWidget {
                     SizedBox(
                       height: 16.h,
                     ),
-                    Hero(
-                      tag: '${meal.id} name',
-                      child: Text(
-                        meal.name,
-                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            fontSize: 20.sp, fontWeight: FontWeight.w800),
-                      ),
+                    Text(
+                      meal.name,
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          fontSize: 20.sp, fontWeight: FontWeight.w800),
                     ),
                     SizedBox(height: 16.h),
                     Text(
