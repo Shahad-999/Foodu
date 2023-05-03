@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:foodu/core/widgets/app_button.dart';
 import 'package:foodu/features/meal/presentation/states/meal_state.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
-
 import '../../../../../core/utils/constant.dart';
 import '../../manger/meal_controller.dart';
 import '../../models/meal_details_ui.dart';
+import 'add_basket_button.dart';
 import 'quantity_picker_view.dart';
 
 class MealDetailsBody extends StatelessWidget {
@@ -90,14 +89,7 @@ class MealDetailsBody extends StatelessWidget {
                 ),
               ),
             ])),
-        Positioned(
-            right: 16,
-            left: 16,
-            bottom: 40,
-            child: AppButton(
-              buttonText: 'Add to Basket - ${meal.price}',
-              onTap: () => {},
-            )),
+        const AddBasketButton(),
         Positioned(
             right: 24,
             left: 24,
@@ -152,6 +144,5 @@ class MealDetailsBody extends StatelessWidget {
             )),
       ]),
     );
-
   }
 }
