@@ -18,7 +18,7 @@ class AddBasketButton extends StatelessWidget {
               bottom: 40,
               child: Obx(()=>AppButton(
                 buttonText: 'Add to Basket - \$${controller.price * controller.quantity.value}',
-                onTap: controller.onClickAddToBasket(),
+                onTap: controller.onClickAddToBasket,
               ),
               ));
         }
