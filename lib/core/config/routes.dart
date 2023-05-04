@@ -1,9 +1,10 @@
+import 'package:foodu/features/cart_and_orders/presentation/views/checkout_orders_screen.dart';
 import 'package:foodu/features/mainScreens/main_binding.dart';
 import 'package:foodu/features/mainScreens/main_screen.dart';
 import 'package:foodu/features/meal/presentation/meal_binding.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
-import '../../features/cart/cart_screen.dart';
+import '../../features/cart_and_orders/presentation/views/cart_screen.dart';
 import '../../features/categories/categories_screen.dart';
 import '../../features/categories/category/category_screen.dart';
 import '../../features/explore/presentation/views/SearchScreen.dart';
@@ -38,6 +39,7 @@ class Routes {
   static const String searchRoute = '/search_screen';
   static const String restaurantRoute = '/restaurant_screen';
   static const String mealRoute = '/meal_screen';
+  static const String checkoutOrdersRoute = '/checkout_orders_screen';
 }
 
 class AppRoutes {
@@ -99,6 +101,10 @@ class AppRoutes {
       name: Routes.mealRoute,
       page: () => const MealDetailsScreen(),
       binding: MealBinding()
+    ),
+    GetPage(
+      name: Routes.checkoutOrdersRoute,
+      page: () => const CheckoutOrdersScreen(),
     ),
   ];
 }

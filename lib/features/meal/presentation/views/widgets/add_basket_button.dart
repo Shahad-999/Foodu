@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:foodu/core/config/routes.dart';
 import 'package:foodu/core/widgets/app_button.dart';
 import 'package:get/get.dart';
 
@@ -7,6 +8,12 @@ import '../../manger/meal_controller.dart';
 
 class AddBasketButton extends StatelessWidget {
   const AddBasketButton({Key? key}) : super(key: key);
+
+  moveToCheckoutScreen(){
+    Get.toNamed(
+      Routes.checkoutOrdersRoute,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +25,10 @@ class AddBasketButton extends StatelessWidget {
               bottom: 40,
               child: Obx(()=>AppButton(
                 buttonText: 'Add to Basket - \$${controller.price * controller.quantity.value}',
-                onTap: controller.onClickAddToBasket,
+                onTap: () {
+                  controller.onClickAddToBasket();
+                  moveToCheckoutScreen();
+                }
               ),
               ));
         }
