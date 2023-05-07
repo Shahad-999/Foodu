@@ -43,7 +43,8 @@ class MealController extends GetxController{
     }
   }
 
-  onClickAddToBasket(){
+  Future<String> onClickAddToBasket(){
     //TODO LATER WITH ANOTHER USE CASE
+    return Future(() => '1');
   }
 }

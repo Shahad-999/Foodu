@@ -24,6 +24,8 @@ class Arguments {
   static const String searchKeyWord = 'SEARCH_KEY_WORD';
   static const String mealId = 'MEAL_ID';
   static const String restaurantId = 'RESTAURANT_ID';
+
+  static const String orderId = 'ORDER_ID';
 }
 
 class Routes {

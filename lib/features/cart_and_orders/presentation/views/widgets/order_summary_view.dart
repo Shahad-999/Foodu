@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/features/cart_and_orders/presentation/models/order_summary_ui.dart';
+
+import 'order_summary_item_view.dart';
 
 class OrderSummaryView extends StatelessWidget {
-  const OrderSummaryView({Key? key}) : super(key: key);
-
+  const OrderSummaryView({Key? key, required this.orders}) : super(key: key);
+  final List<OrderMealUi> orders;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,7 +32,7 @@ class OrderSummaryView extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             ListView.separated(
-                itemCount: 5,
+                itemCount: orders.length,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 separatorBuilder: (context, index) {
@@ -39,85 +42,7 @@ class OrderSummaryView extends StatelessWidget {
                   );
                 },
                 itemBuilder: (context, index) {
-                  return Row(
-                    children: [
-                      SizedBox(
-                        height: 60,
-                        width: 60,
-                        child: ClipRRect(
-                            borderRadius: BorderRadius.circular(16),
-                            child: Image.asset('assets/images/salad.png')),
-                      ),
-                      const SizedBox(width: 16),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Mixed Vegetable Salad',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge
-                                  ?.copyWith(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w600),
-                              maxLines: 1,
-                            ),
-                            const SizedBox(height: 10),
-                            Text(
-                              '\$2.00',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall
-                                  ?.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .primary),
-                            )
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                              height: 32,
-                              width: 32,
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color:
-                                        Theme.of(context).colorScheme.primary,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8)),
-                              child: Center(
-                                child: Text(
-                                  '1x',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall
-                                      ?.copyWith(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .primary,
-                                          fontWeight: FontWeight.w900),
-                                ),
-                              )),
-                          SizedBox(
-                              height: 32,
-                              width: 32,
-                              child: Center(
-                                  child: Icon(
-                                Icons.edit,
-                                color: Theme.of(context).colorScheme.primary,
-                                    size: 16,
-                              )))
-                        ],
-                      )
-                    ],
-                  );
+                  return OrderMealItemView(mealOrder: orders[index]);
                 })
           ],
         ),
@@ -125,3 +50,5 @@ class OrderSummaryView extends StatelessWidget {
     );
   }
 }
+
+

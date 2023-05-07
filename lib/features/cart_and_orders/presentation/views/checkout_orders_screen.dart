@@ -10,7 +10,7 @@ class CheckoutOrdersScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: const NavigationAppBar(title: 'Checkout Orders'),
-      body: const CheckoutOrdersBody(),
+      body: CheckoutOrdersBody(),
     );
   }
 }
