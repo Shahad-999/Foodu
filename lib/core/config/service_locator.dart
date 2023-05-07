@@ -1,4 +1,7 @@
 
+import 'package:foodu/features/cart_and_orders/data/fake_orders_repository_imp.dart';
+import 'package:foodu/features/cart_and_orders/domain/order_repository.dart';
+import 'package:foodu/features/cart_and_orders/domain/usecases/order_summary_use_case.dart';
 import 'package:foodu/features/explore/domain/explore_repository.dart';
 import 'package:foodu/features/meal/domain/meal_repository.dart';
 import 'package:foodu/features/restaurant_and_food/data/fake_food_repository_imp.dart';
@@ -23,6 +26,7 @@ setup() {
   getIt.registerSingleton<ExploreRepository>(FakeExploreRepository());
   getIt.registerSingleton<FoodRepository>(FakeFoodRepository());
   getIt.registerSingleton<MealRepository>(FakeMealRepository());
+  getIt.registerSingleton<OrdersRepository>(FakeOrdersRepository());
   //endRegion
 
 
@@ -34,6 +38,7 @@ setup() {
   getIt.registerSingleton<SpecialOffersUseCase>(SpecialOffersUseCase());
   getIt.registerSingleton<RestaurantMenusUseCase>(RestaurantMenusUseCase());
   getIt.registerSingleton<MealDetailsUseCase>(MealDetailsUseCase());
+  getIt.registerSingleton<OrderSummaryUseCase>(OrderSummaryUseCase());
   //endRegion
 
 }

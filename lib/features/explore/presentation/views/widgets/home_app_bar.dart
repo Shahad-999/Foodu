@@ -40,7 +40,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               )
             ),
           ),
-          SizedBox(
+            SizedBox(
             width: 16.w,
           ),
           Expanded(
