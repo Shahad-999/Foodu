@@ -7,7 +7,7 @@ class CancelledOrderItemView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 140,
+      height: 148,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(32),
           color: Theme.of(context).colorScheme.secondary),
@@ -34,7 +34,7 @@ class CancelledOrderItemView extends StatelessWidget {
                       .bodyLarge
                       ?.copyWith(fontSize: 20, fontWeight: FontWeight.w800),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 12),
                 Text(
                   '3 items - 1.4 km',
                   style: Theme.of(context)
@@ -43,7 +43,7 @@ class CancelledOrderItemView extends StatelessWidget {
                       ?.copyWith(fontWeight: FontWeight.w500, fontSize: 14),
                   textAlign: TextAlign.start,
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 12),
                 Row(
                   children: [
                     Text(
