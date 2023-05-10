@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class OrderActionButtons extends StatelessWidget {
-  const OrderActionButtons({Key? key, required this.focusButtonText, required this.unFocusButtonText}) : super(key: key);
+  const OrderActionButtons({Key? key, required this.focusButtonText, required this.unFocusButtonText, required this.onClickUnFocusButton, required this.onClickFocusButton}) : super(key: key);
   final String focusButtonText ;
   final String unFocusButtonText ;
+  final VoidCallback onClickUnFocusButton;
+  final VoidCallback onClickFocusButton;
 
   //ToDO later pass on tap functions
   @override
@@ -13,7 +15,7 @@ class OrderActionButtons extends StatelessWidget {
       children: [
         Expanded(
           child: GestureDetector(
-            onTap: () {},
+            onTap: onClickUnFocusButton,
             child: Container(
                 decoration: BoxDecoration(
                     border: Border.all(
@@ -38,7 +40,7 @@ class OrderActionButtons extends StatelessWidget {
         const SizedBox(width: 16),
         Expanded(
           child: GestureDetector(
-            onTap: () {},
+            onTap: onClickFocusButton,
             child: Container(
                 decoration: BoxDecoration(
                     color: Theme.of(context).colorScheme.primary,

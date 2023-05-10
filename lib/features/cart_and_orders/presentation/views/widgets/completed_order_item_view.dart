@@ -20,7 +20,12 @@ class CompletedOrderItemView extends StatelessWidget {
           children: [
             const GeneralOrderDetailsItem(labelText: 'Completed'),
             const Divider(thickness: 1).marginSymmetric(vertical: 8),
-            const OrderActionButtons(focusButtonText: 'Order Again', unFocusButtonText: 'Leave a Review'),
+            OrderActionButtons(
+              focusButtonText: 'Order Again',
+              unFocusButtonText: 'Leave a Review',
+              onClickFocusButton: () {},
+              onClickUnFocusButton: () {},
+            ),
           ],
         ),
       ),
