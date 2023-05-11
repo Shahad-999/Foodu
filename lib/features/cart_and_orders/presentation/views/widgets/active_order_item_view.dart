@@ -17,12 +17,12 @@ class ActiveOrderItemView extends StatelessWidget {
   }
 
   onClickTrackDriver(){
-    // Get.toNamed(
-    //     Routes.trackDriverRoute,
-    //   arguments: {
-    //       Arguments.orderId : 'orderId'
-    //   }
-    // );
+    Get.toNamed(
+        Routes.trackDriverRoute,
+      arguments: {
+          Arguments.orderId : 'orderId'
+      }
+    );
   }
 
   @override
@@ -41,7 +41,7 @@ class ActiveOrderItemView extends StatelessWidget {
             OrderActionButtons(
                 focusButtonText: 'Track Driver',
                 unFocusButtonText: 'Cancel Order',
-              onClickFocusButton: (){},
+              onClickFocusButton: onClickTrackDriver,
               onClickUnFocusButton: onClickCancelOrder,
             ),
           ],

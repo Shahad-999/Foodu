@@ -12,6 +12,11 @@ class CompletedOrderItemView extends StatelessWidget {
     Get.toNamed(Routes.reviewRoute, arguments: {Arguments.orderId: 'orderId'});
   }
 
+  onCLickOrderAgain() {
+    Get.toNamed(Routes.checkoutOrdersRoute,
+        arguments: {Arguments.orderId: 'orderId'});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,7 +33,7 @@ class CompletedOrderItemView extends StatelessWidget {
             OrderActionButtons(
               focusButtonText: 'Order Again',
               unFocusButtonText: 'Leave a Review',
-              onClickFocusButton: () {},
+              onClickFocusButton: onCLickOrderAgain,
               onClickUnFocusButton: onClickLeaveReview,
             ),
           ],
