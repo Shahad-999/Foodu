@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:size_config/size_config.dart';
 
 class AppButton extends StatelessWidget {
-  const AppButton({Key? key, required this.buttonText, required this.onTap}) : super(key: key);
+  const AppButton({Key? key, required this.buttonText, required this.onTap, this.isFocus = true, this.padding}) : super(key: key);
 
   final String buttonText;
   final VoidCallback onTap;
+  final bool isFocus;
+  final EdgeInsetsGeometry? padding;
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      padding: padding == null ?  EdgeInsets.symmetric(horizontal: 16.w) : padding! ,
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          height: 50.h,
+          height: 50,
           decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary,
+              color: isFocus ? Theme.of(context).colorScheme.primary :  Theme.of(context).colorScheme.tertiaryContainer,
               borderRadius: BorderRadius.circular(100)),
           child: Center(
             child:  Text(
@@ -23,7 +25,7 @@ class AppButton extends StatelessWidget {
               style: TextStyle(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: isFocus ? Colors.white :  Theme.of(context).colorScheme.primary,
                 decoration: TextDecoration.none
               ),
             ),

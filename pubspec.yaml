@@ -42,6 +42,7 @@ dependencies:
   chip_list: ^2.4.3+8
   get: ^4.6.5
   dartz: ^0.10.1
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:

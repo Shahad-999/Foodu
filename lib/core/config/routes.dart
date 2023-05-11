@@ -1,10 +1,14 @@
+import 'package:foodu/features/cart_and_orders/presentation/views/cancel_order_screen.dart';
 import 'package:foodu/features/cart_and_orders/presentation/views/checkout_orders_screen.dart';
+import 'package:foodu/features/cart_and_orders/presentation/views/orders_screen.dart';
+import 'package:foodu/features/cart_and_orders/presentation/views/track_driver_screen.dart';
 import 'package:foodu/features/mainScreens/main_binding.dart';
 import 'package:foodu/features/mainScreens/main_screen.dart';
 import 'package:foodu/features/meal/presentation/meal_binding.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import '../../features/cart_and_orders/presentation/views/cart_screen.dart';
+import '../../features/cart_and_orders/presentation/views/review_screen.dart';
 import '../../features/categories/categories_screen.dart';
 import '../../features/categories/category/category_screen.dart';
 import '../../features/explore/presentation/views/SearchScreen.dart';
@@ -42,6 +46,11 @@ class Routes {
   static const String restaurantRoute = '/restaurant_screen';
   static const String mealRoute = '/meal_screen';
   static const String checkoutOrdersRoute = '/checkout_orders_screen';
+  static const String ordersRoute = '/orders_screen';
+  static const String cancelOrderRoute = '/cancel_order_screen';
+  static const String reviewRoute = '/review_screen';
+  static const String trackDriverRoute = '/track_driver_screen';
+
 }
 
 class AppRoutes {
@@ -72,6 +81,10 @@ class AppRoutes {
           GetPage(
             name: Routes.categoriesRoute,
             page: () => const CategoriesScreen(),
+          ),
+          GetPage(
+            name: Routes.ordersRoute,
+            page: () => const OrdersScreen(),
           ),
         ]),
     GetPage(
@@ -107,6 +120,18 @@ class AppRoutes {
     GetPage(
       name: Routes.checkoutOrdersRoute,
       page: () => const CheckoutOrdersScreen(),
+    ),
+    GetPage(
+      name: Routes.cancelOrderRoute,
+      page: () => const CancelOrderScreen(),
+    ),
+    GetPage(
+      name: Routes.reviewRoute,
+      page: () => const ReviewScreen(),
+    ),
+    GetPage(
+      name: Routes.trackDriverRoute,
+      page: () => const TrackDriverScreen(),
     ),
   ];
 }
