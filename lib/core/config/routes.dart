@@ -7,6 +7,7 @@ import 'package:foodu/features/meal/presentation/meal_binding.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import '../../features/cart_and_orders/presentation/views/cart_screen.dart';
+import '../../features/cart_and_orders/presentation/views/review_screen.dart';
 import '../../features/categories/categories_screen.dart';
 import '../../features/categories/category/category_screen.dart';
 import '../../features/explore/presentation/views/SearchScreen.dart';
@@ -46,6 +47,8 @@ class Routes {
   static const String checkoutOrdersRoute = '/checkout_orders_screen';
   static const String ordersRoute = '/orders_screen';
   static const String cancelOrderRoute = '/cancel_order_screen';
+  static const String reviewRoute = '/review_screen';
+
 }
 
 class AppRoutes {
@@ -119,6 +122,10 @@ class AppRoutes {
     GetPage(
       name: Routes.cancelOrderRoute,
       page: () => const CancelOrderScreen(),
+    ),
+    GetPage(
+      name: Routes.reviewRoute,
+      page: () => const ReviewScreen(),
     ),
   ];
 }

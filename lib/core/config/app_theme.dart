@@ -18,8 +18,8 @@ class AppTheme {
       tertiary: Color(0x8BCDDED5),
       primaryContainer: Color(0xFFFEFFFE),
       shadow: Color(0xFFEEFAF2),
-        onSurfaceVariant: Color(0xFF9E9E9E)
-
+        onSurfaceVariant: Color(0xFF9E9E9E),
+        tertiaryContainer: Color(0xFFE3F5E9)
     ),
     textTheme:  TextTheme(
       bodyLarge:  TextStyle(
@@ -55,7 +55,8 @@ class AppTheme {
           tertiary: Color(0xFF192E26),
           primaryContainer: Color(0xFF1F222A),
           shadow: Color(0xFF1F2D2D),
-        onSurfaceVariant: Color(0xFF59595A)
+        onSurfaceVariant: Color(0xFF59595A),
+        tertiaryContainer: Color(0xFF35383F)
 
       ),
       textTheme: TextTheme(

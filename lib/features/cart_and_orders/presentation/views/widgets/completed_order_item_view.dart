@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/core/config/routes.dart';
 import 'package:foodu/features/cart_and_orders/presentation/views/widgets/general_order_details_item.dart';
 import 'package:get/get.dart';
 
@@ -6,6 +7,10 @@ import 'order_actions_buttons.dart';
 
 class CompletedOrderItemView extends StatelessWidget {
   const CompletedOrderItemView({Key? key}) : super(key: key);
+
+  onClickLeaveReview() {
+    Get.toNamed(Routes.reviewRoute, arguments: {Arguments.orderId: 'orderId'});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +29,7 @@ class CompletedOrderItemView extends StatelessWidget {
               focusButtonText: 'Order Again',
               unFocusButtonText: 'Leave a Review',
               onClickFocusButton: () {},
-              onClickUnFocusButton: () {},
+              onClickUnFocusButton: onClickLeaveReview,
             ),
           ],
         ),

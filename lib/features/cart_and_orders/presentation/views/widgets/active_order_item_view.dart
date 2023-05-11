@@ -16,6 +16,15 @@ class ActiveOrderItemView extends StatelessWidget {
     );
   }
 
+  onClickTrackDriver(){
+    // Get.toNamed(
+    //     Routes.trackDriverRoute,
+    //   arguments: {
+    //       Arguments.orderId : 'orderId'
+    //   }
+    // );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
