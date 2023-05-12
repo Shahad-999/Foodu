@@ -5,6 +5,7 @@ import 'package:foodu/features/cart_and_orders/presentation/views/track_driver_s
 import 'package:foodu/features/mainScreens/main_binding.dart';
 import 'package:foodu/features/mainScreens/main_screen.dart';
 import 'package:foodu/features/meal/presentation/meal_binding.dart';
+import 'package:foodu/features/profile_screen/presentation/views/screens/my_favorite_restaurant_screen.dart';
 import 'package:foodu/features/profile_screen/presentation/views/screens/profile_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
@@ -52,6 +53,8 @@ class Routes {
   static const String reviewRoute = '/review_screen';
   static const String trackDriverRoute = '/track_driver_screen';
   static const String profileRoute = '/profile_screen';
+  static const String myFavoriteRestaurantsRoute = '/my_favorite_restaurants_screen';
+
 
 }
 
@@ -138,6 +141,10 @@ class AppRoutes {
     GetPage(
       name: Routes.trackDriverRoute,
       page: () => const TrackDriverScreen(),
+    ),
+    GetPage(
+      name: Routes.myFavoriteRestaurantsRoute,
+      page: () => const MyFavoriteRestaurantScreen(),
     ),
   ];
 }

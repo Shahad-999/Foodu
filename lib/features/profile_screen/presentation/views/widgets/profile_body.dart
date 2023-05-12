@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/core/config/routes.dart';
+import 'package:get/get.dart';
 
 import 'profile_action_row.dart';
 import 'profile_header.dart';
 
 class ProfileBody extends StatelessWidget {
   const ProfileBody({Key? key}) : super(key: key);
+
+  onClickMyFavoriteRestaurants() {
+    Get.toNamed(
+      Routes.myFavoriteRestaurantsRoute,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +27,7 @@ class ProfileBody extends StatelessWidget {
         ProfileActionRow.icon(
           iconData: Icons.calendar_month_rounded,
           text: 'My Favorite Restaurant',
-          onClickItem: () {},
+          onClickItem: onClickMyFavoriteRestaurants,
         ),
         ProfileActionRow(
           icon: 'assets/svg/profile.svg',
@@ -41,12 +49,10 @@ class ProfileBody extends StatelessWidget {
           text: 'Language',
           onClickItem: () {},
         ),
-
         const ProfileActionRow.icon(
           iconData: Icons.logout,
           text: 'Logout',
         ),
-
       ],
     );
   }
