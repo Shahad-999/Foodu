@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:size_config/size_config.dart';
-
 import '../../features/explore/presentation/model/meal_ui.dart';
 
 class MealItem extends StatelessWidget {
@@ -10,9 +8,9 @@ class MealItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w,vertical: 8.h),
+      padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 8),
       child: Container(
-        height: 150.h,
+        height: 150,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(32),
           color: Theme.of(context).colorScheme.secondary
@@ -29,66 +27,57 @@ class MealItem extends StatelessWidget {
                     child: Image.network(meal.imageUrl)
                 ),
               ),
-              SizedBox(width: 16.w,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 16.h,),
-                  Text(
-                    meal.name,
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w800
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 16),
+                    Text(
+                      meal.name,
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w800
+                      ),
+                      maxLines: 1,
                     ),
-                  ),
-                  SizedBox(height: 10.h),
-                  Text(
-                    '${meal.distance} - ${meal.rating} (${meal.numberOfUpvote}k)',
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp
+                    const SizedBox(height: 16),
+                    Text(
+                      '${meal.distance} - ${meal.rating} (${meal.numberOfUpvote}k)',
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14
+                      ),
+                      textAlign: TextAlign.start,
                     ),
-                    textAlign: TextAlign.start,
-                  ),
-                  SizedBox(height: 10.h),
-                  SizedBox(
-                    width: 200.w,
-                    child: Row(
+                    const SizedBox(height: 16),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Expanded(
-                          flex: 4,
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.delivery_dining_rounded,
-                                color: Theme.of(context).colorScheme.primary,
-                              ),
-                              SizedBox(width: 8.w),
-                              Text(
-                                '\$2.00',
-                                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 14.sp
-                                ),
-                              )
-                              ,],
+                        Icon(
+                          Icons.delivery_dining_rounded,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                        const SizedBox(width: 8),
+                        Text(
+                          '\$2.00',
+                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14
                           ),
                         ),
-                        const Expanded(
-                          flex: 1,
-                          child: Align(
-                            alignment: Alignment.centerRight,
-                            child: Icon(
-                              Icons.favorite_border,
-                              color: Color(0xFFFF0025),
-                              size: 32,
-                            ),
-                          ),
+                        const SizedBox(height: 16),
+                        const Spacer(),
+                        const Icon(
+                          Icons.favorite_border,
+                          color: Color(0xFFFF0025),
+                          size: 24,
                         ),
+                        const SizedBox(width: 8),
                       ],
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               )
             ],
           ),
