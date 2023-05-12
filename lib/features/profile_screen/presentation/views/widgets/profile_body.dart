@@ -14,6 +14,12 @@ class ProfileBody extends StatelessWidget {
     );
   }
 
+  onClickProfile() {
+    Get.toNamed(
+      Routes.editProfileRoute,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -32,7 +38,7 @@ class ProfileBody extends StatelessWidget {
         ProfileActionRow(
           icon: 'assets/svg/profile.svg',
           text: 'Profile',
-          onClickItem: () {},
+          onClickItem: onClickProfile,
         ),
         ProfileActionRow.icon(
           iconData: Icons.location_on_outlined,
