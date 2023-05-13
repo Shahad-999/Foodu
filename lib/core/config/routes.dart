@@ -5,6 +5,7 @@ import 'package:foodu/features/cart_and_orders/presentation/views/track_driver_s
 import 'package:foodu/features/mainScreens/main_binding.dart';
 import 'package:foodu/features/mainScreens/main_screen.dart';
 import 'package:foodu/features/meal/presentation/meal_binding.dart';
+import 'package:foodu/features/profile_screen/presentation/views/screens/addresses_screen.dart';
 import 'package:foodu/features/profile_screen/presentation/views/screens/edit_profile_screen.dart';
 import 'package:foodu/features/profile_screen/presentation/views/screens/my_favorite_restaurant_screen.dart';
 import 'package:foodu/features/profile_screen/presentation/views/screens/profile_screen.dart';
@@ -56,6 +57,7 @@ class Routes {
   static const String profileRoute = '/profile_screen';
   static const String myFavoriteRestaurantsRoute = '/my_favorite_restaurants_screen';
   static const String editProfileRoute = '/edit_profile_screen';
+  static const String addressRoute = '/address_screen';
 
 
 }
@@ -151,6 +153,10 @@ class AppRoutes {
     GetPage(
       name: Routes.editProfileRoute,
       page: () => const EditProfileScreen(),
+    ),
+    GetPage(
+      name: Routes.addressRoute,
+      page: () => const AddressesScreen(),
     ),
   ];
 }

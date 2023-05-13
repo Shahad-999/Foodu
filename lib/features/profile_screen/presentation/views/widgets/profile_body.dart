@@ -20,6 +20,12 @@ class ProfileBody extends StatelessWidget {
     );
   }
 
+  onClickAddress() {
+    Get.toNamed(
+      Routes.addressRoute,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -43,7 +49,7 @@ class ProfileBody extends StatelessWidget {
         ProfileActionRow.icon(
           iconData: Icons.location_on_outlined,
           text: 'Address',
-          onClickItem: () {},
+          onClickItem: onClickAddress,
         ),
         ProfileActionRow(
           icon: 'assets/svg/notification.svg',
