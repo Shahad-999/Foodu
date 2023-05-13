@@ -1,9 +1,7 @@
 
 
 import 'package:dartz/dartz.dart';
-
 import 'package:foodu/core/failure.dart';
-
 import 'package:foodu/features/meal/domain/models/meal_details.dart';
 
 import '../../../core/fake_data/fake_meal.dart';
