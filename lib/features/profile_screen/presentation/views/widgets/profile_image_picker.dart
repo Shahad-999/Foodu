@@ -23,28 +23,31 @@ class _ProfileImagePickerState extends State<ProfileImagePicker> {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: onTapImage,
-        child: image == null
-            ? Container(
-                height: MediaQuery.of(context).size.width * 0.3,
-                width: MediaQuery.of(context).size.width * 0.3,
-                decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary,
-                    shape: BoxShape.circle,
-                    gradient: const LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
+        child: Container(
+          height: MediaQuery.of(context).size.width * 0.3,
+          width: MediaQuery.of(context).size.width * 0.3,
+          decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.primary,
+              shape: BoxShape.circle,
+              gradient: image == null
+                  ? const LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
                           Color(0xFF86BA97),
                           Color(0xFF1BAC4B),
-                        ])))
-            : Transform.scale(
-                scale: 0.5,
-                alignment:
-                    Alignment.topCenter, // Adjust the scale factor as desired
-                child: CircleAvatar(
-                  radius: MediaQuery.of(context).size.width * 0.4,
-                  backgroundImage: FileImage(File(image!.path)),
-                ),
-              ));
+                        ])
+                  : null),
+          child: image != null
+              ? Transform.scale(
+                  scale: 1,
+                  alignment:
+                      Alignment.center,
+                  child: CircleAvatar(
+                    backgroundImage: FileImage(File(image!.path)),
+                  ),
+                )
+              : null,
+        ));
   }
 }

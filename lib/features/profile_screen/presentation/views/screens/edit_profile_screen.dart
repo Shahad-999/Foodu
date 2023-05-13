@@ -14,7 +14,7 @@ class EditProfileScreen extends StatelessWidget {
           .colorScheme
           .background,
       appBar: const NavigationAppBar(title: 'Profile'),
-      body: const EditProfileBody(),
+      body: EditProfileBody(),
     );
   }
 }
