@@ -26,6 +26,12 @@ class ProfileBody extends StatelessWidget {
     );
   }
 
+  onClickLanguage() {
+    Get.toNamed(
+      Routes.languageRoute,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -51,15 +57,10 @@ class ProfileBody extends StatelessWidget {
           text: 'Address',
           onClickItem: onClickAddress,
         ),
-        ProfileActionRow(
-          icon: 'assets/svg/notification.svg',
-          text: 'Notification',
-          onClickItem: () {},
-        ),
         ProfileActionRow.icon(
           iconData: Icons.language_outlined,
           text: 'Language',
-          onClickItem: () {},
+          onClickItem: onClickLanguage,
         ),
         const ProfileActionRow.icon(
           iconData: Icons.logout,

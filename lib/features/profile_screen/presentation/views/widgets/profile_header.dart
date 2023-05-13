@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/core/config/routes.dart';
+import 'package:get/get.dart';
 
 class ProfileHeader extends StatelessWidget {
   const ProfileHeader({Key? key}) : super(key: key);
+
+  onClickEdit() {
+    Get.toNamed(
+      Routes.editProfileRoute,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,15 +61,18 @@ class ProfileHeader extends StatelessWidget {
         const SizedBox(
           width: 16,
         ),
-        SizedBox(
-            height: 48,
-            width: 48,
-            child: Center(
-                child: Icon(
-                  Icons.edit,
-                  color: Theme.of(context).colorScheme.primary,
-                  size: 24,
-                ))),
+        GestureDetector(
+          onTap: onClickEdit,
+          child: SizedBox(
+              height: 48,
+              width: 48,
+              child: Center(
+                  child: Icon(
+                    Icons.edit,
+                    color: Theme.of(context).colorScheme.primary,
+                    size: 24,
+                  ))),
+        ),
       ],
     );
   }

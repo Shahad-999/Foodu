@@ -21,6 +21,7 @@ import '../../features/explore/presentation/views/home_screen.dart';
 import '../../features/explore/presentation/views/recommended_screen.dart';
 import '../../features/meal/presentation/views/meal_details_screen.dart';
 import '../../features/onboarding/presentation/on_boarding_screen.dart';
+import '../../features/profile_screen/presentation/views/screens/language_screen.dart';
 import '../../features/restaurant_and_food/presentation/restaurant_and_food_binding.dart';
 import '../../features/restaurant_and_food/presentation/views/restaurant_screen.dart';
 import '../../features/splashScreen/splash_screen.dart';
@@ -58,6 +59,7 @@ class Routes {
   static const String myFavoriteRestaurantsRoute = '/my_favorite_restaurants_screen';
   static const String editProfileRoute = '/edit_profile_screen';
   static const String addressRoute = '/address_screen';
+  static const String languageRoute = '/language_screen';
 
 
 }
@@ -157,6 +159,10 @@ class AppRoutes {
     GetPage(
       name: Routes.addressRoute,
       page: () => const AddressesScreen(),
+    ),
+    GetPage(
+      name: Routes.languageRoute,
+      page: () => const LanguageScreen(),
     ),
   ];
 }
