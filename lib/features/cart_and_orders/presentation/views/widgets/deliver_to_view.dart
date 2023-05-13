@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/core/config/routes.dart';
+import 'package:get/get.dart';
 
 class DeliverToView extends StatelessWidget {
   const DeliverToView({Key? key}) : super(key: key);
 
   onClickDeliverAddress(){
-
+     Get.toNamed(
+        Routes.addressRoute,
+      );
   }
   @override
   Widget build(BuildContext context) {

@@ -5,6 +5,10 @@ import 'package:foodu/features/cart_and_orders/presentation/views/track_driver_s
 import 'package:foodu/features/mainScreens/main_binding.dart';
 import 'package:foodu/features/mainScreens/main_screen.dart';
 import 'package:foodu/features/meal/presentation/meal_binding.dart';
+import 'package:foodu/features/profile_screen/presentation/views/screens/addresses_screen.dart';
+import 'package:foodu/features/profile_screen/presentation/views/screens/edit_profile_screen.dart';
+import 'package:foodu/features/profile_screen/presentation/views/screens/my_favorite_restaurant_screen.dart';
+import 'package:foodu/features/profile_screen/presentation/views/screens/profile_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import '../../features/cart_and_orders/presentation/views/cart_screen.dart';
@@ -17,6 +21,7 @@ import '../../features/explore/presentation/views/home_screen.dart';
 import '../../features/explore/presentation/views/recommended_screen.dart';
 import '../../features/meal/presentation/views/meal_details_screen.dart';
 import '../../features/onboarding/presentation/on_boarding_screen.dart';
+import '../../features/profile_screen/presentation/views/screens/language_screen.dart';
 import '../../features/restaurant_and_food/presentation/restaurant_and_food_binding.dart';
 import '../../features/restaurant_and_food/presentation/views/restaurant_screen.dart';
 import '../../features/splashScreen/splash_screen.dart';
@@ -50,6 +55,12 @@ class Routes {
   static const String cancelOrderRoute = '/cancel_order_screen';
   static const String reviewRoute = '/review_screen';
   static const String trackDriverRoute = '/track_driver_screen';
+  static const String profileRoute = '/profile_screen';
+  static const String myFavoriteRestaurantsRoute = '/my_favorite_restaurants_screen';
+  static const String editProfileRoute = '/edit_profile_screen';
+  static const String addressRoute = '/address_screen';
+  static const String languageRoute = '/language_screen';
+
 
 }
 
@@ -85,6 +96,10 @@ class AppRoutes {
           GetPage(
             name: Routes.ordersRoute,
             page: () => const OrdersScreen(),
+          ),
+          GetPage(
+            name: Routes.profileRoute,
+            page: () => const ProfileScreen(),
           ),
         ]),
     GetPage(
@@ -132,6 +147,22 @@ class AppRoutes {
     GetPage(
       name: Routes.trackDriverRoute,
       page: () => const TrackDriverScreen(),
+    ),
+    GetPage(
+      name: Routes.myFavoriteRestaurantsRoute,
+      page: () => const MyFavoriteRestaurantScreen(),
+    ),
+    GetPage(
+      name: Routes.editProfileRoute,
+      page: () => const EditProfileScreen(),
+    ),
+    GetPage(
+      name: Routes.addressRoute,
+      page: () => const AddressesScreen(),
+    ),
+    GetPage(
+      name: Routes.languageRoute,
+      page: () => const LanguageScreen(),
     ),
   ];
 }

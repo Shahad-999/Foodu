@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:foodu/features/cart_and_orders/presentation/views/orders_screen.dart';
 import 'package:foodu/features/categories/categories_screen.dart';
+import 'package:foodu/features/profile_screen/presentation/views/screens/profile_screen.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
 
@@ -16,9 +17,7 @@ class MainScreen extends StatelessWidget {
     const HomeScreen(),
     const CategoriesScreen(),
     const OrdersScreen(),
-    const Text(
-      'Index 2: School',
-    ),
+    const ProfileScreen(),
   ];
 
   @override

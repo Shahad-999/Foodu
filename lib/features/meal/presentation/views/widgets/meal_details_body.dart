@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:foodu/features/meal/presentation/states/meal_state.dart';
 import 'package:get/get.dart';
 import 'package:size_config/size_config.dart';
+
 import '../../../../../core/utils/constant.dart';
 import '../../manger/meal_controller.dart';
 import '../../models/meal_details_ui.dart';
