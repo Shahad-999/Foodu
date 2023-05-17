@@ -44,6 +44,7 @@ dependencies:
   dartz: ^0.10.1
   flutter_rating_bar: ^4.0.1
   image_picker: ^0.8.7+5
+  dio: ^5.1.2
 
 dev_dependencies:
   flutter_test:

@@ -25,10 +25,3 @@ extension ListMenuMealDomainMapper on List<Meal> {
   }
 }
 
-extension Pirnt on Object {
-  Object toUiModel() {
-    print(this);
-    return this;
-  }
-}
-
