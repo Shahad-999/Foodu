@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:foodu/core/widgets/app_button.dart';
-import 'package:foodu/features/cart_and_orders/presentation/manger/order_summary_controller.dart';
+import 'package:foodu/features/cart_and_orders/presentation/controllers/order_summary_controller.dart';
 import 'package:foodu/features/cart_and_orders/presentation/models/order_summary_ui.dart';
 import 'package:foodu/features/cart_and_orders/presentation/states/order_summary_state.dart';
 import 'package:foodu/features/cart_and_orders/presentation/views/widgets/deliver_to_view.dart';
