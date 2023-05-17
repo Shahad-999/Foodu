@@ -1,9 +1,9 @@
 import 'package:foodu/core/config/routes.dart';
+import 'package:foodu/features/explore/domain/usecases/search_usecase.dart';
 import 'package:foodu/features/explore/presentation/mappers/extensions.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/config/service_locator.dart';
-import '../../domain/usecases/recommended_usecase.dart';
 import '../states/search_state.dart';
 
 class SearchController extends GetxController {

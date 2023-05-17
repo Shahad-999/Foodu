@@ -4,7 +4,6 @@ import 'package:foodu/features/explore/data/data_sources/remote_explore_data_sou
 import 'package:foodu/features/explore/data/mappers/mappers.dart';
 
 import '../../../core/failure.dart';
-import '../../../core/fake_data/fake_explore.dart';
 import '../domain/explore_repository.dart';
 import '../domain/models/category.dart';
 import '../domain/models/meal.dart';
@@ -57,7 +56,11 @@ class ExploreRepositoryImp implements ExploreRepository {
 
   @override
   Future<Either<Failure, List<Meal>>> search(String keyWord) async {
-    await Future.delayed(const Duration(seconds: 3));
-    return right(fakeRecommendedMeal);
+    try{
+      final data = await _remoteDataSource.search(keyWord);
+      return right(data.toMealModel());
+    }catch(l){
+      return left(Failure('no internet'));
+    }
   }
 }

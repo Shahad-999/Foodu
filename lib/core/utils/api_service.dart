@@ -11,8 +11,8 @@ class ApiService {
 
   ApiService(): _dio = getIt.get();
 
-  Future<dynamic> get({required String endPoint}) async {
-    var response = await _dio.get('$baseUrl$endPoint');
+  Future<dynamic> get({required String endPoint ,Map<String, dynamic>? queryParameters}) async {
+    var response = await _dio.get('$baseUrl$endPoint',queryParameters: queryParameters);
     final  responseDecoded = jsonDecode(response.data);
 
     return responseDecoded;

@@ -7,9 +7,9 @@ import '../../../../core/base/base_use_case.dart';
 import '../explore_repository.dart';
 import '../models/meal.dart';
 
-class SearchUseCase extends BaseUseCase<List<Meal>,String>{
+class RecommendedUseCase extends BaseUseCase<List<Meal>,String>{
   final ExploreRepository _repository;
-  SearchUseCase() : _repository = getIt.get();
+  RecommendedUseCase() : _repository = getIt.get();
 
 
   @override

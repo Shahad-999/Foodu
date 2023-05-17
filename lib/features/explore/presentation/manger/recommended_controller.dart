@@ -6,7 +6,7 @@ import '../../domain/usecases/recommended_usecase.dart';
 import '../model/meal_ui.dart';
 
 class RecommendedController extends GetxController {
-  final SearchUseCase _recommendedUseCase;
+  final RecommendedUseCase _recommendedUseCase;
   final recommendedMeals = <MealUi>[].obs;
 
   RecommendedController() : _recommendedUseCase = getIt.get();
