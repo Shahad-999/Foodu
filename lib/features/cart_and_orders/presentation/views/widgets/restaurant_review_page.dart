@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:foodu/features/cart_and_orders/presentation/controllers/order_review_controller.dart';
+import 'package:get/get.dart';
 
 class RestaurantReviewPage extends StatelessWidget {
-  const RestaurantReviewPage({Key? key}) : super(key: key);
+  RestaurantReviewPage({Key? key}) : super(key: key);
+  final OrderReviewController _controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             height: 200,
             width: 200,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24)
-            ),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(24)),
             child: Image.asset('assets/images/logo_foodu.png'),
           ),
           const SizedBox(height: 16),
@@ -52,10 +53,9 @@ class RestaurantReviewPage extends StatelessWidget {
             ),
             itemSize: 48,
             onRatingUpdate: (rating) {
-              // print(rating);
+              _controller.onRestaurantRatingUpdate(rating);
             },
           ),
-          const SizedBox(height: 24),
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/core/widgets/app_button.dart';
+import 'package:foodu/features/cart_and_orders/presentation/controllers/cancel_order_controller.dart';
 import 'package:get/get.dart';
 
 class CancelOrderBody extends StatefulWidget {
@@ -10,7 +11,13 @@ class CancelOrderBody extends StatefulWidget {
 }
 
 class _CancelOrderBodyState extends State<CancelOrderBody> {
+
+  CancelController controller = Get.put(CancelController());
+
+  int _value = 0;
+
   onClickSubmit() {
+    controller.sentCancelReason(_value);
     showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -65,19 +72,6 @@ class _CancelOrderBodyState extends State<CancelOrderBody> {
         });
   }
 
-  final reasons = [
-    'Waiting for long time',
-    'Unable to contact driver',
-    'Driver denied to go to destination',
-    'Driver denied to come to pickup',
-    'Wrong address shown',
-    'The price is not reasonable',
-    'I want to order another restaurant',
-    'I just want to cancel',
-    'Others',
-  ];
-  int _value = 1;
-
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -99,7 +93,7 @@ class _CancelOrderBodyState extends State<CancelOrderBody> {
               ).marginSymmetric(horizontal: 16),
               const Divider(thickness: 1)
                   .marginSymmetric(vertical: 8, horizontal: 16),
-              for (int index = 0; index < reasons.length; index++)
+              for (int index = 0; index < controller.reasons.length; index++)
                 Row(
                   children: [
                     Radio(
@@ -117,7 +111,7 @@ class _CancelOrderBodyState extends State<CancelOrderBody> {
                       ),
                     ),
                     Text(
-                      reasons[index],
+                      controller.reasons[index],
                       style: Theme.of(context)
                           .textTheme
                           .bodyLarge

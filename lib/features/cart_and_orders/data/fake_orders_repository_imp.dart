@@ -20,4 +20,28 @@ class FakeOrdersRepository extends OrdersRepository{
     return left(Failure('message'));
   }
 
+  @override
+  Future sentCancelOrderReason(String message) {
+    // TODO: implement sentCancelOrderReason
+    throw UnimplementedError();
+  }
+
+  @override
+  Future sentDriverRating({required double rating, required String orderId}) {
+    // TODO: implement sentDriverRating
+    throw UnimplementedError();
+  }
+
+  @override
+  Future sentOrderReview({required String feedback, required String orderId}) {
+    // TODO: implement sentOrderReview
+    throw UnimplementedError();
+  }
+
+  @override
+  Future sentRestaurantRating({required double rating, required String orderId}) {
+    // TODO: implement sentRestaurantRating
+    throw UnimplementedError();
+  }
+
 }

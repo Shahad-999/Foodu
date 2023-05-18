@@ -1,7 +1,8 @@
-import 'package:foodu/features/cart_and_orders/presentation/views/cancel_order_screen.dart';
-import 'package:foodu/features/cart_and_orders/presentation/views/checkout_orders_screen.dart';
-import 'package:foodu/features/cart_and_orders/presentation/views/orders_screen.dart';
-import 'package:foodu/features/cart_and_orders/presentation/views/track_driver_screen.dart';
+import 'package:foodu/features/cart_and_orders/presentation/views/review_binding.dart';
+import 'package:foodu/features/cart_and_orders/presentation/views/screens/cancel_order_screen.dart';
+import 'package:foodu/features/cart_and_orders/presentation/views/screens/checkout_orders_screen.dart';
+import 'package:foodu/features/cart_and_orders/presentation/views/screens/orders_screen.dart';
+import 'package:foodu/features/cart_and_orders/presentation/views/screens/track_driver_screen.dart';
 import 'package:foodu/features/mainScreens/main_binding.dart';
 import 'package:foodu/features/mainScreens/main_screen.dart';
 import 'package:foodu/features/meal/presentation/meal_binding.dart';
@@ -11,8 +12,8 @@ import 'package:foodu/features/profile_screen/presentation/views/screens/my_favo
 import 'package:foodu/features/profile_screen/presentation/views/screens/profile_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
-import '../../features/cart_and_orders/presentation/views/cart_screen.dart';
-import '../../features/cart_and_orders/presentation/views/review_screen.dart';
+import '../../features/cart_and_orders/presentation/views/screens/cart_screen.dart';
+import '../../features/cart_and_orders/presentation/views/screens/review_screen.dart';
 import '../../features/categories/categories_screen.dart';
 import '../../features/categories/category/category_screen.dart';
 import '../../features/explore/presentation/views/SearchScreen.dart';
@@ -143,6 +144,7 @@ class AppRoutes {
     GetPage(
       name: Routes.reviewRoute,
       page: () => const ReviewScreen(),
+      binding: ReviewBinding()
     ),
     GetPage(
       name: Routes.trackDriverRoute,

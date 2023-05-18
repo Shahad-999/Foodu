@@ -14,7 +14,7 @@ class ReviewsPages extends StatelessWidget {
     return PageView(
       controller: pageController,
       physics: const NeverScrollableScrollPhysics(),
-      children: const [
+      children:  [
         OrderReviewPage(),
         DriverReviewPage(),
         RestaurantReviewPage(),

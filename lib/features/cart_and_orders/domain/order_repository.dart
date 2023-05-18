@@ -4,8 +4,17 @@ import 'package:foodu/features/cart_and_orders/domain/models/order_summary.dart'
 
 import 'models/cart_item.dart';
 
+abstract class OrdersRepository {
+  Future<Either<Failure, OrderSummary>> getOrderSummary(String orderId);
 
-abstract class OrdersRepository{
-  Future<Either<Failure,OrderSummary>> getOrderSummary(String orderId);
-  Future<Either<Failure,List<CartItem>>> getCartContent();
+  Future<Either<Failure, List<CartItem>>> getCartContent();
+
+  Future sentCancelOrderReason(String message);
+
+  Future sentOrderReview({required String feedback, required String orderId});
+
+  Future sentRestaurantRating(
+      {required double rating, required String orderId});
+
+  Future sentDriverRating({required double rating, required String orderId});
 }

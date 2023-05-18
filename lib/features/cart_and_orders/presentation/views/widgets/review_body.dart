@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/core/widgets/app_button.dart';
+import 'package:foodu/features/cart_and_orders/presentation/controllers/order_review_controller.dart';
 import 'package:foodu/features/cart_and_orders/presentation/views/widgets/reviews_pages.dart';
 import 'package:get/get.dart';
 
@@ -26,6 +27,7 @@ class _ReviewBodyState extends State<ReviewBody> {
   navToNextPage() {
     num currentPage =
         pageController!.hasClients ? pageController?.page ?? 0 : 0;
+    sentReview(currentPage);
     if (currentPage == pages - 1) {
       Get.back();
     } else {
@@ -34,6 +36,15 @@ class _ReviewBodyState extends State<ReviewBody> {
     }
   }
 
+  sentReview(num currentPage){
+    if(currentPage == 0){
+      Get.find<OrderReviewController>().sentOrderReview();
+    }else if(currentPage == 1){
+      Get.find<OrderReviewController>().sentDriverRating();
+    }else{
+      Get.find<OrderReviewController>().sentRestaurantRating();
+    }
+  }
   onClickCancel() {
     Get.back();
   }
