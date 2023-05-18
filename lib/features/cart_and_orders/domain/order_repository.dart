@@ -17,4 +17,6 @@ abstract class OrdersRepository {
       {required double rating, required String orderId});
 
   Future sentDriverRating({required double rating, required String orderId});
+
+  Future addOrderToCart({required OrderSummary orderSummary});
 }

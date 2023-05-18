@@ -12,6 +12,7 @@ extension OrderSummaryDomainMapper on OrderSummary {
   }
 }
 
+
 extension OrderMealDomainMapper on OrderMeal {
   OrderMealUi toUiModel() {
     return OrderMealUi(

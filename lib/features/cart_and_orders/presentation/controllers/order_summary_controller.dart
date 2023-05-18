@@ -23,7 +23,7 @@ class OrderController extends GetxController {
     });
   }
 
-  onClickAddToBasket() {
-    //TODO LATER WITH ANOTHER USE CASE
+  Future onClickAddToBasket() async {
+    return await _orderUseCase.addToCart();
   }
 }

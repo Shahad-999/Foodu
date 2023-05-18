@@ -75,7 +75,11 @@ class CheckoutOrdersBody extends StatelessWidget {
             bottom: 0,
             child: AppButton(
               buttonText: 'Place order',
-              onTap: () {},
+              onTap: () async{
+                await _orderController.onClickAddToBasket();
+                Get.close(2);
+                
+              },
             ).marginOnly(bottom: 40)),
       ],
     );
