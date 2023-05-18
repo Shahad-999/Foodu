@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:foodu/core/failure.dart';
 import 'package:foodu/features/cart_and_orders/domain/models/cart_item.dart';
+import 'package:foodu/features/cart_and_orders/domain/models/order.dart';
 import 'package:foodu/features/cart_and_orders/domain/models/order_summary.dart';
 
 import '../../../core/fake_data/fake_meal.dart';
@@ -47,6 +48,48 @@ class FakeOrdersRepository extends OrdersRepository {
   Future addOrderToCart({required OrderSummary orderSummary}) async {
     print(orderSummary.orders);
     // TODO: implement addOrderToCart
-    return Future((){});
+    return Future(() {});
+  }
+
+  @override
+  Future<Either<Failure, List<OrderItem>>> getActiveOrders() async {
+    await Future.delayed(const Duration(seconds: 2));
+    return right([
+      const OrderItem(
+          id: 'id',
+          name: 'BUrger WOW',
+          imageUrl: '',
+          distance: 3.2,
+          price: 6.5,
+          quantity: 2)
+    ]);
+  }
+
+  @override
+  Future<Either<Failure, List<OrderItem>>> getCancelledOrders() async {
+    await Future.delayed(const Duration(seconds: 2));
+    return right([
+      const OrderItem(
+          id: 'id',
+          name: 'BUrger WOW',
+          imageUrl: '',
+          distance: 3.2,
+          price: 6.5,
+          quantity: 2)
+    ]);
+  }
+
+  @override
+  Future<Either<Failure, List<OrderItem>>> getCompletedOrders() async {
+    await Future.delayed(const Duration(seconds: 2));
+    return right([
+      const OrderItem(
+          id: 'id',
+          name: 'BUrger WOW',
+          imageUrl: '',
+          distance: 3.2,
+          price: 6.5,
+          quantity: 2)
+    ]);
   }
 }

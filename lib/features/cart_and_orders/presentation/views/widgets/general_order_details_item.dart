@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/features/cart_and_orders/presentation/models/order_ui.dart';
 import 'package:get/get.dart';
 
 class GeneralOrderDetailsItem extends StatelessWidget {
@@ -6,13 +7,13 @@ class GeneralOrderDetailsItem extends StatelessWidget {
       {Key? key,
       this.labelDecoration,
       required this.labelText,
-      this.labelColor})
+      this.labelColor, required this.order})
       : super(key: key);
 
   final Decoration? labelDecoration;
   final String labelText;
   final Color? labelColor;
-  //TODO later pass info
+  final OrderUi order;
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +24,14 @@ class GeneralOrderDetailsItem extends StatelessWidget {
             child: SizedBox(
                 height: 120,
                 width: 120,
-                child: Image.asset('assets/images/salad.png'))),
+                child: Image.network(order.imageUrl))),
         const SizedBox(width: 16),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 16),
             Text(
-              'Bite Me Sandwiches',
+              order.mealName,
               style: Theme.of(context)
                   .textTheme
                   .bodyLarge
@@ -38,7 +39,7 @@ class GeneralOrderDetailsItem extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Text(
-              '3 items - 1.4 km',
+              '${order.quantity} - ${order.distance}',
               style: Theme.of(context)
                   .textTheme
                   .bodySmall
@@ -49,7 +50,7 @@ class GeneralOrderDetailsItem extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  '\$32.00',
+                  order.price,
                   style: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.w900,

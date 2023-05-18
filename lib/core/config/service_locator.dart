@@ -2,8 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:foodu/core/utils/api_service.dart';
 import 'package:foodu/features/cart_and_orders/data/fake_orders_repository_imp.dart';
 import 'package:foodu/features/cart_and_orders/domain/order_repository.dart';
+import 'package:foodu/features/cart_and_orders/domain/usecases/active_order_use_case.dart';
 import 'package:foodu/features/cart_and_orders/domain/usecases/cancel_order_use_case.dart';
+import 'package:foodu/features/cart_and_orders/domain/usecases/cancelled_order_use_case.dart';
 import 'package:foodu/features/cart_and_orders/domain/usecases/cart_use_case.dart';
+import 'package:foodu/features/cart_and_orders/domain/usecases/completed_order_use_case.dart';
 import 'package:foodu/features/cart_and_orders/domain/usecases/order_summary_use_case.dart';
 import 'package:foodu/features/cart_and_orders/domain/usecases/review_use_case.dart';
 import 'package:foodu/features/explore/data/data_sources/remote_explore_data_source.dart';
@@ -53,5 +56,8 @@ setup() {
   getIt.registerSingleton<RestaurantMenusUseCase>(RestaurantMenusUseCase());
   getIt.registerSingleton<MealDetailsUseCase>(MealDetailsUseCase());
   getIt.registerSingleton<OrderSummaryUseCase>(OrderSummaryUseCase());
+  getIt.registerSingleton<ActiveOrdersUseCase>(ActiveOrdersUseCase());
+  getIt.registerSingleton<CompletedOrdersUseCase>(CompletedOrdersUseCase());
+  getIt.registerSingleton<CancelledOrdersUseCase>(CancelledOrdersUseCase());
   //endRegion
 }

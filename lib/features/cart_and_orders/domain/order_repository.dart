@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:foodu/core/failure.dart';
+import 'package:foodu/features/cart_and_orders/domain/models/order.dart';
 import 'package:foodu/features/cart_and_orders/domain/models/order_summary.dart';
 
 import 'models/cart_item.dart';
@@ -19,4 +20,10 @@ abstract class OrdersRepository {
   Future sentDriverRating({required double rating, required String orderId});
 
   Future addOrderToCart({required OrderSummary orderSummary});
+
+  Future<Either<Failure, List<OrderItem>>> getActiveOrders();
+
+  Future<Either<Failure, List<OrderItem>>> getCompletedOrders();
+
+  Future<Either<Failure, List<OrderItem>>> getCancelledOrders();
 }
