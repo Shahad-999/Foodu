@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:size_config/size_config.dart';
 
 import 'on_boarding_page_view.dart';
 
@@ -12,7 +11,7 @@ class OnBoardingPages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 730.h,
+        height: 730,
         child: PageView(
           controller: pageController,
           children: const [

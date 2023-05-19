@@ -21,7 +21,7 @@ import '../../features/explore/presentation/views/screens/Special OffersScreen.d
 import '../../features/explore/presentation/views/screens/home_screen.dart';
 import '../../features/explore/presentation/views/screens/recommended_screen.dart';
 import '../../features/meal/presentation/views/meal_details_screen.dart';
-import '../../features/onboarding/presentation/on_boarding_screen.dart';
+import '../../features/on_boarding/presentation/on_boarding_screen.dart';
 import '../../features/profile_screen/presentation/views/screens/language_screen.dart';
 import '../../features/restaurant_and_food/presentation/restaurant_and_food_binding.dart';
 import '../../features/restaurant_and_food/presentation/views/restaurant_screen.dart';

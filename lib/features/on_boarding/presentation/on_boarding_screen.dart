@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodu/features/onboarding/presentation/widgets/on_boarding_body.dart';
+import 'package:foodu/features/on_boarding/presentation/widgets/on_boarding_body.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);

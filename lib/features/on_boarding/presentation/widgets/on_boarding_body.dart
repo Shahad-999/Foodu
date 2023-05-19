@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:size_config/size_config.dart';
 
 import '../../../../core/config/routes.dart';
 import 'on_boarding_pages.dart';
@@ -56,42 +55,39 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
       child: Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         body: Padding(
-          padding: EdgeInsets.symmetric(vertical: 48.h),
+          padding: const EdgeInsets.symmetric(vertical: 48),
           child: Column(
             children: [
               Expanded(
                   flex: 1,
                   child: Align(
                       alignment: Alignment.center,
-                      child: OnBoardingPages(pageController: pageController!))
-        ),
+                      child: OnBoardingPages(pageController: pageController!))),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: GestureDetector(
                       onTap: navToNextPage,
                       child: Container(
-                        height: 50.h,
+                        height: 50,
                         decoration: BoxDecoration(
                             color: Theme.of(context).colorScheme.primary,
                             borderRadius: BorderRadius.circular(100)),
-                        child: Center(
-                          child:  Text(
-                              'Next',
-                              style: TextStyle(
-                                fontSize: 16.sp,
+                        child: const Center(
+                          child: Text(
+                            'Next',
+                            style: TextStyle(
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white
-                              ),
-                            ),
+                                color: Colors.white),
                           ),
                         ),
+                      ),
                     ),
                   ),
-                  SizedBox(height: 40.h,),
-
+                  const SizedBox(height: 40),
                 ],
               ),
             ],

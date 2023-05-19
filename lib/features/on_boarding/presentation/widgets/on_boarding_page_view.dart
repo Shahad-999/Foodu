@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:size_config/size_config.dart';
 
 class OnBoardingPageView extends StatelessWidget {
   const OnBoardingPageView(
@@ -17,11 +16,11 @@ class OnBoardingPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 36.w),
+      padding: const EdgeInsets.symmetric(horizontal: 36),
       child: Column(
         children: [
           SizedBox(
-              height: 536.h,
+              height: 536,
               child: Stack(children: [
                 Positioned(
                     right: 8,
@@ -41,34 +40,32 @@ class OnBoardingPageView extends StatelessWidget {
                     top: 0,
                     bottom: 100,
                     child: SizedBox(
-                        height: 350.h,
-                        width: 400.w,
+                        height: 350,
+                        width: 400,
                         child: Align(
-                          alignment: Alignment.bottomCenter,
-                            child: SvgPicture.asset(image, semanticsLabel: title)))
-                )
+                            alignment: Alignment.bottomCenter,
+                            child: SvgPicture.asset(image,
+                                semanticsLabel: title))))
               ])),
           SizedBox(
-            height: 60.h,
+            height: 60,
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Text(
                 title,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      fontSize: 40.sp,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold,
                     ),
                 textAlign: TextAlign.center,
               ),
             ),
           ),
-          SizedBox(
-            height: 24.h,
-          ),
+          const SizedBox(height: 24),
           Text(
             description,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  fontSize: 18.sp,
+                  fontSize: 18,
                   fontWeight: FontWeight.w500,
                 ),
             textAlign: TextAlign.center,
