@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/core/config/routes.dart';
 import 'package:foodu/core/widgets/app_button.dart';
+import 'package:foodu/features/meal/presentation/controllers/meal_controller.dart';
 import 'package:get/get.dart';
 
-import '../../manger/meal_controller.dart';
 
 class AddBasketButton extends StatelessWidget {
   const AddBasketButton({Key? key}) : super(key: key);

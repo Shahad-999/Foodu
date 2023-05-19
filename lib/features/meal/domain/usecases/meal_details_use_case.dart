@@ -15,4 +15,7 @@ class MealDetailsUseCase extends BaseUseCase<MealDetails,String>{
     return _repository.getMealDetails(param ?? 'id');
   }
 
+  Future<String> addToCart({required String mealId, required int quantity}){
+    return _repository.addToCart(mealId: mealId, quantity: quantity);
+  }
 }

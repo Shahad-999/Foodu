@@ -14,5 +14,11 @@ class FakeMealRepository extends MealRepository{
     return right(fakeMealDetails);
   }
 
+  @override
+  Future<String> addToCart({required String mealId, required int quantity}) async {
+    await Future.delayed(const Duration(seconds: 2));
+    return 'orderId';
+  }
+
 
 }

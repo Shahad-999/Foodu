@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:foodu/features/meal/presentation/controllers/meal_controller.dart';
 import 'package:foodu/features/meal/presentation/states/meal_state.dart';
 import 'package:get/get.dart';
-import 'package:size_config/size_config.dart';
 
 import '../../../../../core/utils/constant.dart';
-import '../../manger/meal_controller.dart';
 import '../../models/meal_details_ui.dart';
 import 'add_basket_button.dart';
 import 'quantity_picker_view.dart';
@@ -56,7 +55,7 @@ class MealDetailsBody extends StatelessWidget {
               Hero(
                 tag: imageTag(_mealController.mealId),
                 child: SizedBox(
-                  height: 434.h,
+                  height: 434,
                   child: Image.network(
                     meal.imageUrl,
                     fit: BoxFit.contain,
@@ -64,27 +63,27 @@ class MealDetailsBody extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 16.h),
+                    const SizedBox(height: 16),
                     Text(
                       meal.name,
                       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          fontSize: 28.sp, fontWeight: FontWeight.bold),
+                          fontSize: 28, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 16.h),
+                    const SizedBox(height: 16),
                     const Divider(thickness: 1.5),
-                    SizedBox(height: 16.h),
+                    const SizedBox(height: 16),
                     Text(
                       meal.description,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          fontSize: 16.sp, fontWeight: FontWeight.w600),
+                          fontSize: 16, fontWeight: FontWeight.w600),
                     ),
-                    SizedBox(height: 16.h),
+                    const SizedBox(height: 16),
                     const Divider(thickness: 1.5),
-                    SizedBox(height: 16.h),
+                    const SizedBox(height: 16),
                     const QuantityPickerView(),
                   ],
                 ),
@@ -119,7 +118,7 @@ class MealDetailsBody extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                SizedBox(width: 16.w),
+                const SizedBox(width: 16),
                 Container(
                   height: 32,
                   width: 32,

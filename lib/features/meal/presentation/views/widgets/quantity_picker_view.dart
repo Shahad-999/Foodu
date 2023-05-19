@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:foodu/features/meal/presentation/manger/meal_controller.dart';
+import 'package:foodu/features/meal/presentation/controllers/meal_controller.dart';
 import 'package:get/get.dart';
-import 'package:size_config/size_config.dart';
 
 import 'picker_button.dart';
 
@@ -20,9 +19,7 @@ class QuantityPickerView extends StatelessWidget {
               icon: Icons.remove,
               onClick: controller.onClickDecrease,
             ),
-            SizedBox(
-              width: 40.w,
-            ),
+            const SizedBox(width: 40),
             SizedBox(
               width: 30,
               child: Obx(()=> Text(
@@ -31,14 +28,12 @@ class QuantityPickerView extends StatelessWidget {
                       .of(context)
                       .textTheme
                       .bodyLarge
-                      ?.copyWith(fontSize: 32.sp, fontWeight: FontWeight.bold),
+                      ?.copyWith(fontSize: 32, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
               ),
             ),
-            SizedBox(
-              width: 40.w,
-            ),
+            const SizedBox(width: 40),
             ButtonPicker(
               icon: Icons.add_rounded,
               onClick: controller.onClickIncrease,

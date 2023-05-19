@@ -44,7 +44,6 @@ class MealController extends GetxController{
   }
 
   Future<String> onClickAddToBasket(){
-    //TODO LATER WITH ANOTHER USE CASE
-    return Future(() => '1');
+    return _mealUseCase.addToCart(mealId: mealId, quantity: quantity.value);
   }
 }

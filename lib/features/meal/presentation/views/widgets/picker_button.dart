@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:size_config/size_config.dart';
 
 class ButtonPicker extends StatelessWidget {
   const ButtonPicker({Key? key, required this.icon, required this.onClick})
@@ -12,8 +11,8 @@ class ButtonPicker extends StatelessWidget {
     return GestureDetector(
       onTap: onClick,
       child: Container(
-        height: 56.h,
-        width: 56.w,
+        height: 56,
+        width: 56,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
