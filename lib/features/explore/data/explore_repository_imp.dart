@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:foodu/core/config/service_locator.dart';
+import 'package:foodu/core/fake_data/fake_explore.dart';
 import 'package:foodu/features/explore/data/data_sources/remote_explore_data_source.dart';
 import 'package:foodu/features/explore/data/mappers/mappers.dart';
 
@@ -62,5 +63,11 @@ class ExploreRepositoryImp implements ExploreRepository {
     }catch(l){
       return left(Failure('no internet'));
     }
+  }
+
+  @override
+  Future<Either<Failure, List<Meal>>> getCategoryMeals(String categoryId) async{
+    await Future.delayed(const Duration(seconds: 3));
+    return right(fakeRecommendedMeal);
   }
 }

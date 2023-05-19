@@ -39,4 +39,10 @@ class FakeExploreRepository implements ExploreRepository{
     return right(fakeRecommendedMeal);
   }
 
+  @override
+  Future<Either<Failure, List<Meal>>> getCategoryMeals(String categoryId) async{
+    await Future.delayed(const Duration(seconds: 3));
+    return right(fakeRecommendedMeal);
+  }
+
 }

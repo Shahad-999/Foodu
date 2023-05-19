@@ -13,4 +13,6 @@ abstract class ExploreRepository{
   Future<Either<Failure,List<Meal>>> getRecommended(String categoryId);
   Future<Either<Failure,List<Meal>>> search(String keyWord);
 
+  Future<Either<Failure, List<Meal>>> getCategoryMeals(String categoryId);
+
 }

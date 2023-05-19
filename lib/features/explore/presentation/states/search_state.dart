@@ -1,13 +1,14 @@
 import '../model/meal_ui.dart';
 abstract class State{}
-abstract class SearchState{}
-class InitialSearchState extends SearchState{}
-class LoadingSearchState extends SearchState{}
-class LoadedSearchState extends SearchState{
+abstract class MainState{}
+class InitialMainState extends MainState{}
+class LoadingMainState extends MainState{}
+class EmptyMainState extends MainState{}
+class LoadedMainState extends MainState{
   final List<MealUi> items;
-  LoadedSearchState(this.items);
+  LoadedMainState(this.items);
 }
-class FailSearchState extends SearchState{
+class FailMainState extends MainState{
   final String message;
-  FailSearchState(this.message);
+  FailMainState(this.message);
 }

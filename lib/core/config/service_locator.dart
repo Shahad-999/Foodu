@@ -12,6 +12,7 @@ import 'package:foodu/features/cart_and_orders/domain/usecases/review_use_case.d
 import 'package:foodu/features/explore/data/data_sources/remote_explore_data_source.dart';
 import 'package:foodu/features/explore/data/explore_repository_imp.dart';
 import 'package:foodu/features/explore/domain/explore_repository.dart';
+import 'package:foodu/features/explore/domain/usecases/category_usecase.dart';
 import 'package:foodu/features/explore/domain/usecases/search_usecase.dart';
 import 'package:foodu/features/meal/domain/meal_repository.dart';
 import 'package:foodu/features/restaurant_and_food/data/fake_food_repository_imp.dart';
@@ -59,5 +60,6 @@ setup() {
   getIt.registerSingleton<ActiveOrdersUseCase>(ActiveOrdersUseCase());
   getIt.registerSingleton<CompletedOrdersUseCase>(CompletedOrdersUseCase());
   getIt.registerSingleton<CancelledOrdersUseCase>(CancelledOrdersUseCase());
+  getIt.registerSingleton<CategoryUseCase>(CategoryUseCase());
   //endRegion
 }

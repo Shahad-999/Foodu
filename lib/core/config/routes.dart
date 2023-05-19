@@ -117,7 +117,7 @@ class AppRoutes {
     ),
     GetPage(
       name: Routes.categoryDetailsRoute,
-      page: () => const CategoryScreen(),
+      page: () => CategoryScreen(),
     ),
     GetPage(
       name: Routes.searchRoute,

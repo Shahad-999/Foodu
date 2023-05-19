@@ -12,7 +12,7 @@ class SearchBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16),
+        padding: const EdgeInsets.only(top: 16),
         child: Obx(
           () => StateHandler(
               state: _controller.meals.value,
