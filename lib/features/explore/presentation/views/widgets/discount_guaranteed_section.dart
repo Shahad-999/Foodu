@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:foodu/features/explore/presentation/manger/discount_controller.dart';
+import 'package:foodu/features/explore/presentation/controllers/discount_controller.dart';
 import 'package:get/get.dart';
-import 'package:size_config/size_config.dart';
 
 import 'discount_item.dart';
 import 'header_section.dart';
@@ -17,7 +16,7 @@ class DiscountGuaranteedSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(()=> SizedBox(
-          height: 365.h,
+          height: 365,
           child: Column(
             children: [
               HeaderSection(
@@ -25,9 +24,9 @@ class DiscountGuaranteedSection extends StatelessWidget {
                   onClickSeeAll: () => _onClickSeeAll(context)
               ),
               SizedBox(
-                height: 307.h,
+                height: 307,
                 child: ListView.builder(
-                    padding: EdgeInsets.only(left: 24.w),
+                    padding: const EdgeInsets.only(left: 24),
                     shrinkWrap: true,
                     itemCount: _controller.meals.take(10).length,
                     scrollDirection: Axis.horizontal,

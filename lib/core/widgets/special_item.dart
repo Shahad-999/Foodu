@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:size_config/size_config.dart';
 
 import '../../features/explore/presentation/model/special_offer_ui.dart';
 import '../config/routes.dart';
@@ -17,12 +16,12 @@ class SpecialItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(right: 24.w),
+      padding: const EdgeInsets.only(right: 24),
       child: GestureDetector(
         onTap: _clickSpecialItem,
         child: Container(
-          height: 178.h,
-          width: MediaQuery.of(context).size.width - 48.w,
+          height: 178,
+          width: MediaQuery.of(context).size.width - 48,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(36),
           ),
@@ -42,29 +41,29 @@ class SpecialItem extends StatelessWidget {
                   top: 16,
                   right: 16,
                   child: SizedBox(
-                    width: 180.w,
+                    width: 180,
                     child: Image.network(
                       specialOffer.imageUrl,
                       alignment: Alignment.centerRight,
                     ),
                   )),
               Positioned(
-                  top: 24.h,
-                  left: 40.w,
+                  top: 24,
+                  left: 40,
                   child: Text(
                     '${specialOffer.percentage}%',
-                    style: TextStyle(
-                        fontSize: 64.sp,
+                    style: const TextStyle(
+                        fontSize: 64,
                         fontWeight: FontWeight.w900,
                         color: Colors.white),
                   )),
-              Positioned(
-                  top: 100.h,
-                  left: 40.w,
+              const Positioned(
+                  top: 100,
+                  left: 40,
                   child: Text(
                     'Discount only \n valid for today ',
                     style: TextStyle(
-                      fontSize: 18.sp,
+                      fontSize: 18,
                       fontWeight: FontWeight.w900,
                       color: Colors.white,
                     ),

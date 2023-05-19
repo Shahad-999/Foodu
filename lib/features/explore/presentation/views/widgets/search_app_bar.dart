@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:size_config/size_config.dart';
 
 import '../../../../../core/widgets/search_bar.dart';
 
@@ -15,10 +14,10 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 16.h),
+      padding: const EdgeInsets.only(top: 16),
       child: AppBar(
         leading: IconButton(
-          padding: EdgeInsets.only( left: 24.w),
+          padding: const EdgeInsets.only( left: 24),
           icon : SvgPicture.asset(
             'assets/svg/back_arrow.svg',
             colorFilter: ColorFilter.mode(Theme.of(context).colorScheme.onBackground,BlendMode.srcIn),
@@ -38,12 +37,12 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
         title:
           SearchBar(
             onClickSearch: onClickSearch,
-            widthPadding: 16.w,
+            widthPadding: 16,
             keyword: keyword,
           ),
         actions: actions,
         elevation: 0,
-        leadingWidth: 48.w,
+        leadingWidth: 48,
       ),
     );
   }

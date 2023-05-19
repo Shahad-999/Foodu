@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:foodu/core/widgets/special_item.dart';
+import 'package:foodu/features/explore/presentation/controllers/special_offer_controller.dart';
 import 'package:get/get.dart';
-import 'package:size_config/size_config.dart';
 
-import '../../manger/special_offer_controller.dart';
 
 class SpecialOffersBody extends StatelessWidget {
    SpecialOffersBody({Key? key}) : super(key: key);
@@ -13,12 +12,12 @@ class SpecialOffersBody extends StatelessWidget {
    @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(vertical: 16.h),
+      padding:  const EdgeInsets.symmetric(vertical: 16),
       child: Obx(() => ListView.builder(
             itemCount: _specialOfferController.specialOffers.length,
             itemBuilder: (context,index){
               return Padding(
-                padding:  EdgeInsets.only(top: 8.h,bottom: 8.h,left: 24.w),
+                padding:  const EdgeInsets.only(top: 8,bottom: 8,left: 24),
                 child:  SpecialItem(
                   specialOffer: _specialOfferController.specialOffers[index],
                 ),

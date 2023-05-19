@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/core/widgets/category_item.dart';
+import 'package:foodu/features/explore/presentation/controllers/categories_controller.dart';
 import 'package:get/get.dart';
-import 'package:size_config/size_config.dart';
 
-import '../../../../../core/widgets/category_item.dart';
-import '../../manger/categories_controller.dart';
 
 class CategoriesSection extends StatelessWidget {
    CategoriesSection(
@@ -19,7 +18,7 @@ class CategoriesSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
         child: Obx(() => GridView.builder(
               itemCount: _categoriesController.categories.isEmpty ? 0 : numberOfCategories ?? _categoriesController.categories.length,
               shrinkWrap: true,
@@ -27,10 +26,9 @@ class CategoriesSection extends StatelessWidget {
               itemBuilder: (context, index) {
                 return CategoryItem(category: _categoriesController.categories[index]);
               },
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4,
-                  childAspectRatio: MediaQuery.of(context).size.width /
-                      (MediaQuery.of(context).size.height / 1.8))
+                  childAspectRatio: 1/1.2)
           ),
         )
     );

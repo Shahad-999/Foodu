@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:foodu/features/cart_and_orders/presentation/views/screens/orders_screen.dart';
-import 'package:foodu/features/categories/categories_screen.dart';
+import 'package:foodu/features/explore/presentation/views/screens/categories_screen.dart';
+import 'package:foodu/features/explore/presentation/views/screens/home_screen.dart';
 import 'package:foodu/features/profile_screen/presentation/views/screens/profile_screen.dart';
 import 'package:get/get.dart';
-import 'package:size_config/size_config.dart';
 
-import '../explore/presentation/views/home_screen.dart';
-import 'bottom_navigation_controller.dart';
+import '../../controllers/bottom_navigation_controller.dart';
 
 class MainScreen extends StatelessWidget {
 
@@ -102,12 +101,12 @@ class MainScreen extends StatelessWidget {
                   unselectedItemColor: const Color(0xFFBDBDBB),
                   onTap: (value) => bottomNavigationController.changeIndex(value),
                   selectedLabelStyle: TextStyle(
-                      fontSize: 10.sp,
+                      fontSize: 10,
                       fontWeight: FontWeight.w800,
                       color: Theme.of(context).colorScheme.primary
                   ) ,
                   unselectedLabelStyle: TextStyle(
-                      fontSize: 10.sp,
+                      fontSize: 10,
                       fontWeight: FontWeight.w500,
                       color: const Color(0xFFBDBDBB)
                   ),

@@ -3,7 +3,6 @@ import 'package:foodu/core/widgets/search_bar.dart';
 import 'package:foodu/features/explore/presentation/views/widgets/recommended_section.dart';
 import 'package:foodu/features/explore/presentation/views/widgets/special_offer_section.dart';
 import 'package:get/get.dart';
-import 'package:size_config/size_config.dart';
 
 import '../../../../../core/config/routes.dart';
 import 'categories_section.dart';
@@ -21,9 +20,9 @@ class HomeBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        SizedBox(height: 8.h),
+        const SizedBox(height: 8),
         SearchBar(onClickSearch: (keyWord) => _navToSearchBar(keyWord),),
-        SizedBox(height: 16.h),
+        const SizedBox(height: 16),
         SpecialOffersSection(),
         CategoriesSection(numberOfCategories: 8 ),
         DiscountGuaranteedSection(),

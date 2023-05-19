@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:size_config/size_config.dart';
 
 
 class CategoryBody extends StatelessWidget {
@@ -8,7 +7,7 @@ class CategoryBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(vertical: 16.h),
+      padding:  const EdgeInsets.symmetric(vertical: 16),
       child: ListView.builder(
         itemCount: 15,
           itemBuilder: (context,index){

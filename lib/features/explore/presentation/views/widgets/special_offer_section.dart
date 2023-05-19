@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/core/config/routes.dart';
 import 'package:foodu/core/widgets/special_item.dart';
+import 'package:foodu/features/explore/presentation/controllers/special_offer_controller.dart';
 import 'package:get/get.dart';
-import 'package:size_config/size_config.dart';
 
-import '../../manger/special_offer_controller.dart';
 import 'header_section.dart';
 
 class SpecialOffersSection extends StatelessWidget {
@@ -21,7 +20,7 @@ class SpecialOffersSection extends StatelessWidget {
     return Obx(() =>
     _specialOfferController.specialOffers.isEmpty ? Container()
         : SizedBox(
-        height: 230.h,
+        height: 230,
         child: Column(
           children: [
             HeaderSection(
@@ -29,9 +28,9 @@ class SpecialOffersSection extends StatelessWidget {
               onClickSeeAll: _onClickSeeAll
             ),
             SizedBox(
-              height: 178.h,
+              height: 178,
               child: ListView.builder(
-                padding: EdgeInsets.only(top: 8.h,left: 24.w),
+                padding: const EdgeInsets.only(top: 8,left: 24),
                 shrinkWrap: true,
                 itemCount: _specialOfferController.specialOffers.take(3).length,
                 scrollDirection: Axis.horizontal,

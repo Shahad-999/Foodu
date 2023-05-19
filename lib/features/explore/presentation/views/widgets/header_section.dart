@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:size_config/size_config.dart';
 
 class HeaderSection extends StatelessWidget {
   const HeaderSection({Key? key, required this.headerTitle, required this.onClickSeeAll}) : super(key: key);
@@ -9,14 +8,14 @@ class HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Row(
         children: [
           Expanded(
               child: Text(
                 headerTitle,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  fontSize: 20.sp,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold
                 ),
               )
@@ -27,7 +26,7 @@ class HeaderSection extends StatelessWidget {
               'See All',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.primary,
-                  fontSize: 20.sp,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
           
               ),

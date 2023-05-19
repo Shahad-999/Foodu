@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/features/explore/presentation/views/widgets/recommended_body.dart';
 
-import '../../../../core/widgets/navigation_bar.dart';
+import '../../../../../core/widgets/navigation_bar.dart';
 
 class RecommendedScreen extends StatelessWidget {
   const RecommendedScreen({Key? key}) : super(key: key);
