@@ -23,7 +23,7 @@ class OrderController extends GetxController {
     });
   }
 
-  Future onClickAddToBasket() async {
-    return await _orderUseCase.addToCart();
+  Future sentOrder() async {
+    return await _orderUseCase.sentOrder();
   }
 }

@@ -19,7 +19,7 @@ abstract class OrdersRepository {
 
   Future sentDriverRating({required double rating, required String orderId});
 
-  Future addOrderToCart({required OrderSummary orderSummary});
+  Future sentOrder({required OrderSummary orderSummary});
 
   Future<Either<Failure, List<OrderItem>>> getActiveOrders();
 

@@ -45,7 +45,7 @@ class FakeOrdersRepository extends OrdersRepository {
   }
 
   @override
-  Future addOrderToCart({required OrderSummary orderSummary}) async {
+  Future sentOrder({required OrderSummary orderSummary}) async {
     print(orderSummary.orders);
     // TODO: implement addOrderToCart
     return Future(() {});

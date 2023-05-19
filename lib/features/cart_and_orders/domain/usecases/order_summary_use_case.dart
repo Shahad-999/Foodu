@@ -22,8 +22,8 @@ class OrderSummaryUseCase extends BaseUseCase<OrderSummary, String> {
             }));
   }
 
-  Future addToCart() {
-    return _repository.addOrderToCart(orderSummary: _orderSummary);
+  Future sentOrder() {
+    return _repository.sentOrder(orderSummary: _orderSummary);
   }
 
 }

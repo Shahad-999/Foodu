@@ -76,7 +76,7 @@ class CheckoutOrdersBody extends StatelessWidget {
             child: AppButton(
               buttonText: 'Place order',
               onTap: () async{
-                await _orderController.onClickAddToBasket();
+                await _orderController.sentOrder();
                 Get.close(2);
                 
               },
