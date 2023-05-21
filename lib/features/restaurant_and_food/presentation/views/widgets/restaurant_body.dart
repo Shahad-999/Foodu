@@ -5,7 +5,6 @@ import 'package:foodu/features/restaurant_and_food/presentation/manger/restauran
 import 'package:foodu/features/restaurant_and_food/presentation/states/food_state.dart';
 import 'package:foodu/features/restaurant_and_food/presentation/states/menu_state.dart';
 import 'package:get/get.dart';
-import 'package:size_config/size_config.dart';
 
 import '../../models/restaurant_ui.dart';
 import 'menu_item.dart';
@@ -45,7 +44,7 @@ class RestaurantBody extends StatelessWidget {
       Positioned(
         child: ListView(padding: const EdgeInsets.all(0), children: [
           SizedBox(
-            height: 434.h,
+            height: 434,
             width: double.infinity,
             child: Stack(
               fit: StackFit.expand,
@@ -61,17 +60,19 @@ class RestaurantBody extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 16.h),
+                const SizedBox(height: 16),
                 Row(
                   children: [
                     Text(
                       data.name,
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          fontSize: 28.sp, fontWeight: FontWeight.bold),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge
+                          ?.copyWith(fontSize: 28, fontWeight: FontWeight.bold),
                     ),
                     const Spacer(),
                     Icon(
@@ -80,26 +81,30 @@ class RestaurantBody extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: 16.h),
+                const SizedBox(height: 16),
                 const Divider(thickness: 1.5),
-                SizedBox(height: 16.h),
+                const SizedBox(height: 16),
                 Row(
                   children: [
                     const Icon(
                       Icons.star,
                       color: Color(0xFFF9A417),
                     ),
-                    SizedBox(width: 8.w),
+                    const SizedBox(width: 8),
                     Text(
                       data.rating,
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          fontSize: 20.sp, fontWeight: FontWeight.bold),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge
+                          ?.copyWith(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(width: 8.w),
+                    const SizedBox(width: 8),
                     Text(
                       data.numberOfReviews,
-                      style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                          fontSize: 15.sp, fontWeight: FontWeight.bold),
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelLarge
+                          ?.copyWith(fontSize: 15, fontWeight: FontWeight.bold),
                     ),
                     const Spacer(),
                     Icon(
@@ -108,20 +113,22 @@ class RestaurantBody extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: 16.h),
+                const SizedBox(height: 16),
                 const Divider(thickness: 1.5),
-                SizedBox(height: 16.h),
+                const SizedBox(height: 16),
                 Row(
                   children: [
                     Icon(
                       Icons.location_on_rounded,
                       color: Theme.of(context).colorScheme.primary,
                     ),
-                    SizedBox(width: 8.w),
+                    const SizedBox(width: 8),
                     Text(
                       data.distance,
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          fontSize: 20.sp, fontWeight: FontWeight.bold),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge
+                          ?.copyWith(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     const Spacer(),
                     Icon(
@@ -130,20 +137,22 @@ class RestaurantBody extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: 16.h),
+                const SizedBox(height: 16),
                 const Divider(thickness: 1.5),
-                SizedBox(height: 16.h),
+                const SizedBox(height: 16),
                 Row(
                   children: [
                     Icon(
                       Icons.event_available,
                       color: Theme.of(context).colorScheme.primary,
                     ),
-                    SizedBox(width: 8.w),
+                    const SizedBox(width: 8),
                     Text(
                       data.offersState,
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          fontSize: 20.sp, fontWeight: FontWeight.bold),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge
+                          ?.copyWith(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     const Spacer(),
                     Icon(
@@ -152,9 +161,9 @@ class RestaurantBody extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: 16.h),
+                const SizedBox(height: 16),
                 const Divider(thickness: 1.5),
-                SizedBox(height: 20.h),
+                const SizedBox(height: 20),
                 handleMenuState(context)
               ],
             ),
@@ -188,7 +197,7 @@ class RestaurantBody extends StatelessWidget {
                 width: 24,
                 height: 24,
               ),
-              SizedBox(width: 16.w),
+              const SizedBox(width: 16),
               SvgPicture.asset(
                 'assets/svg/sent.svg',
                 colorFilter:
@@ -212,7 +221,7 @@ class RestaurantBody extends StatelessWidget {
   Widget menus(BuildContext context, MenuState state) {
     if (state is LoadedMenuState) {
       return ListView.builder(
-        padding: EdgeInsets.symmetric(vertical: 8.h),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         itemCount: state.data.length,
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
@@ -225,17 +234,17 @@ class RestaurantBody extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .bodyLarge
-                      ?.copyWith(fontSize: 24.sp, fontWeight: FontWeight.bold),
+                      ?.copyWith(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 ListView.builder(
-                    padding: EdgeInsets.symmetric(vertical: 8.h),
+                    padding: const EdgeInsets.symmetric(vertical: 8),
                     itemCount: state.data[index].items.length,
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, mealIndex) {
-                      return  MenuItem(meal: state.data[index].items[mealIndex]);
+                      return MenuItem(meal: state.data[index].items[mealIndex]);
                     }),
-                SizedBox(height: 20.h),
+                const SizedBox(height: 20),
               ]);
         },
       );

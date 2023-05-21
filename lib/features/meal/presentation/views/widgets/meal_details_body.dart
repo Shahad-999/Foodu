@@ -85,6 +85,7 @@ class MealDetailsBody extends StatelessWidget {
                     const Divider(thickness: 1.5),
                     const SizedBox(height: 16),
                     const QuantityPickerView(),
+                    const SizedBox(height: 120)
                   ],
                 ),
               ),

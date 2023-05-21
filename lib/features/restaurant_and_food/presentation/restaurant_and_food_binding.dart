@@ -7,7 +7,6 @@ class RestaurantAndFoodBinding implements Bindings{
   @override
   void dependencies() {
     Get.lazyPut(() => RestaurantController()..getRestaurantDetails(), fenix: true);
-    // Get.lazyPut(() => RestaurantMenusController()..getMenus(), fenix: true);
   }
 
 }
