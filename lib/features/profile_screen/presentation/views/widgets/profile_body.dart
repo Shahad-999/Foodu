@@ -70,11 +70,11 @@ class ProfileBody extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 8.0),
           child: Divider(thickness: 1),
         ),
-        ProfileActionRow.icon(
-          iconData: Icons.calendar_month_rounded,
-          text: 'My Favorite Restaurant',
-          onClickItem: onClickMyFavoriteRestaurants,
-        ),
+        // ProfileActionRow.icon(
+        //   iconData: Icons.calendar_month_rounded,
+        //   text: 'My Favorite Restaurant',
+        //   onClickItem: onClickMyFavoriteRestaurants,
+        // ),
         ProfileActionRow(
           icon: 'assets/svg/profile.svg',
           text: 'Profile',

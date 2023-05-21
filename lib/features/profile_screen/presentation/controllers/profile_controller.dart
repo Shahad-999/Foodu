@@ -11,6 +11,7 @@ class ProfileController extends GetxController {
   ProfileController() : _profileUseCase = getIt.get();
 
   getProfileInfo() {
+    profileDetails.value = LoadingProfileState();
     _profileUseCase.call().then((respond) {
       respond.fold((l) => {}, (items) {
         profileDetails.value = (LoadedProfileState(items.toUiModel()));

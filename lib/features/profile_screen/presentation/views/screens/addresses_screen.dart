@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/core/widgets/navigation_bar.dart';
-
 import '../widgets/addresses_body.dart';
 
 class AddressesScreen extends StatelessWidget {
@@ -14,7 +13,7 @@ class AddressesScreen extends StatelessWidget {
           .colorScheme
           .background,
       appBar: const NavigationAppBar(title: 'Address'),
-      body: const AddressesBody(),
+      body: AddressesBody(),
     );
   }
 }
