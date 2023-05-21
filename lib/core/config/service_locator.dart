@@ -15,6 +15,9 @@ import 'package:foodu/features/explore/domain/explore_repository.dart';
 import 'package:foodu/features/explore/domain/usecases/category_usecase.dart';
 import 'package:foodu/features/explore/domain/usecases/search_usecase.dart';
 import 'package:foodu/features/meal/domain/meal_repository.dart';
+import 'package:foodu/features/profile_screen/data/fake_profile_repository_imp.dart';
+import 'package:foodu/features/profile_screen/domain/profile_repository.dart';
+import 'package:foodu/features/profile_screen/domain/usecases/profile_details_use_case.dart';
 import 'package:foodu/features/restaurant_and_food/data/fake_food_repository_imp.dart';
 import 'package:foodu/features/restaurant_and_food/domain/food_repository.dart';
 import 'package:foodu/features/restaurant_and_food/domain/usecases/restaurant_menus_use_case.dart';
@@ -41,6 +44,7 @@ setup() {
   getIt.registerSingleton<FoodRepository>(FakeFoodRepository());
   getIt.registerSingleton<MealRepository>(FakeMealRepository());
   getIt.registerSingleton<OrdersRepository>(FakeOrdersRepository());
+  getIt.registerSingleton<ProfileRepository>(FakeProfileRepositoryImp());
   //endRegion
 
 
@@ -61,5 +65,6 @@ setup() {
   getIt.registerSingleton<CompletedOrdersUseCase>(CompletedOrdersUseCase());
   getIt.registerSingleton<CancelledOrdersUseCase>(CancelledOrdersUseCase());
   getIt.registerSingleton<CategoryUseCase>(CategoryUseCase());
+  getIt.registerSingleton<ProfileDetailsUseCase>(ProfileDetailsUseCase());
   //endRegion
 }

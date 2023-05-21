@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/core/config/routes.dart';
+import 'package:foodu/features/profile_screen/presentation/controllers/profile_controller.dart';
+import 'package:foodu/features/profile_screen/presentation/models/profile_details_ui.dart';
+import 'package:foodu/features/profile_screen/presentation/states/profile_state.dart';
 import 'package:get/get.dart';
 
 import 'profile_action_row.dart';
 import 'profile_header.dart';
 
 class ProfileBody extends StatelessWidget {
-  const ProfileBody({Key? key}) : super(key: key);
+  ProfileBody({Key? key}) : super(key: key);
+  final ProfileController _controller = Get.find()..getProfileInfo();
 
   onClickMyFavoriteRestaurants() {
     Get.toNamed(
@@ -34,10 +38,34 @@ class ProfileBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Obx(
+        () => handleStateWidget(_controller.profileDetails.value, context));
+  }
+
+  Widget handleStateWidget(ProfileState value, BuildContext context) {
+    switch (value.runtimeType) {
+      case LoadingProfileState:
+        {
+          return const Center(child: CircularProgressIndicator());
+        }
+      case LoadedProfileState:
+        {
+          return onLoadedData(context, (value as LoadedProfileState).data);
+        }
+      default:
+        {
+          return Container();
+        }
+    }
+  }
+
+  Widget onLoadedData(BuildContext context, ProfileDetailsUi data) {
     return ListView(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       children: [
-        const ProfileHeader(),
+        ProfileHeader(
+          profileDetails: data,
+        ),
         const Padding(
           padding: EdgeInsets.symmetric(vertical: 8.0),
           child: Divider(thickness: 1),

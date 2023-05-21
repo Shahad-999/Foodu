@@ -10,7 +10,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: const ProfileAppBar(),
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: const ProfileBody(),
+      body: ProfileBody(),
     );
   }
 }

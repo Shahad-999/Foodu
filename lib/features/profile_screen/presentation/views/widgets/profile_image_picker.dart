@@ -3,9 +3,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-class ProfileImagePicker extends StatefulWidget {
-  const ProfileImagePicker({Key? key}) : super(key: key);
+import 'profile_image.dart';
 
+class ProfileImagePicker extends StatefulWidget {
+  const ProfileImagePicker({Key? key, this.imageUrl}) : super(key: key);
+
+  final String? imageUrl;
   @override
   State<ProfileImagePicker> createState() => _ProfileImagePickerState();
 }
@@ -23,31 +26,19 @@ class _ProfileImagePickerState extends State<ProfileImagePicker> {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: onTapImage,
-        child: Container(
-          height: MediaQuery.of(context).size.width * 0.3,
-          width: MediaQuery.of(context).size.width * 0.3,
-          decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary,
-              shape: BoxShape.circle,
-              gradient: image == null
-                  ? const LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                          Color(0xFF86BA97),
-                          Color(0xFF1BAC4B),
-                        ])
-                  : null),
-          child: image != null
-              ? Transform.scale(
-                  scale: 1,
-                  alignment:
-                      Alignment.center,
-                  child: CircleAvatar(
-                    backgroundImage: FileImage(File(image!.path)),
-                  ),
-                )
-              : null,
+        child: ProfileImage(
+          size: MediaQuery.of(context).size.width * 0.3,
+          image:  widget.imageUrl != null ? getImageFromUrl(widget.imageUrl!): getImageFromDevice(image?.path),
         ));
   }
+
+
+  ImageProvider? getImageFromDevice(String? path){
+    return path == null ? null : FileImage(File(path));
+  }
+
+  ImageProvider? getImageFromUrl(String url){
+    return NetworkImage(url);
+  }
+
 }
