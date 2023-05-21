@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:size_config/size_config.dart';
 
 class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget{
   final String? title;
@@ -12,7 +11,7 @@ class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget{
   Widget build(BuildContext context) {
     return AppBar(
       leading: IconButton(
-        padding: EdgeInsets.only(top: 16.h, left: 24.w),
+        padding: const EdgeInsets.only(top: 16, left: 24),
         icon : SvgPicture.asset(
             'assets/svg/back_arrow.svg',
             colorFilter: ColorFilter.mode(Theme.of(context).colorScheme.onBackground,BlendMode.srcIn),
@@ -26,18 +25,18 @@ class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget{
       ),
       backgroundColor: Theme.of(context).colorScheme.background,
       title: title != null ? Padding(
-        padding: EdgeInsets.only(top: 16.h),
+        padding: const EdgeInsets.only(top: 16),
         child: Text(
           title!,
           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-            fontSize: 24.sp,
+            fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
         ),
       ) : null ,
       actions: actions,
       elevation: 0,
-      leadingWidth: 56.w,
+      leadingWidth: 56,
     );
   }
 

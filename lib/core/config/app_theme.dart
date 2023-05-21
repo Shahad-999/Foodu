@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:size_config/size_config.dart';
 //TODO LATER EDIT THEME
 class AppTheme {
   AppTheme._();
@@ -21,22 +20,22 @@ class AppTheme {
         onSurfaceVariant: Color(0xFF9E9E9E),
         tertiaryContainer: Color(0xFFE3F5E9)
     ),
-    textTheme:  TextTheme(
+    textTheme:  const TextTheme(
       bodyLarge:  TextStyle(
-        color: const Color(0xFF212121),
-        fontSize: 16.sp
+        color: Color(0xFF212121),
+        fontSize: 16
       ),
-      bodyMedium: const TextStyle(
+      bodyMedium: TextStyle(
           color: Color(0xFF212121)
       ),
-      bodySmall: const TextStyle(
+      bodySmall: TextStyle(
           color: Color(0xFF616161)
       ),
-      titleMedium: const TextStyle(
+      titleMedium: TextStyle(
         color: Color(0xDE04294E)
       ),
 
-      labelLarge:const TextStyle(
+      labelLarge:TextStyle(
           color: Color(0xFF737273)
       ),
     )
@@ -59,18 +58,18 @@ class AppTheme {
         tertiaryContainer: Color(0xFF35383F)
 
       ),
-      textTheme: TextTheme(
+      textTheme: const TextTheme(
         bodyLarge: TextStyle(
-            color: const Color(0xFFFFFFFF),
-          fontSize: 16.sp
+            color: Color(0xFFFFFFFF),
+          fontSize: 16
         ),
-        bodyMedium: const TextStyle(
+        bodyMedium: TextStyle(
             color: Color(0xFFFFFFFF)
         ),
-        bodySmall: const TextStyle(
+        bodySmall: TextStyle(
             color: Color(0xFFE0E0E0)
         ),
-        labelLarge:const TextStyle(
+        labelLarge:TextStyle(
             color: Color(0xFFE0E1E3)
         ),
       )

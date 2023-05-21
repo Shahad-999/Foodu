@@ -1,6 +1,5 @@
 import 'package:chip_list/chip_list.dart';
 import 'package:flutter/material.dart';
-import 'package:size_config/size_config.dart';
 
 class CategoriesChipList extends StatefulWidget {
   const CategoriesChipList({super.key});
@@ -25,7 +24,7 @@ class _CategoriesChipListState extends State<CategoriesChipList> {
     return ListView(
       scrollDirection: Axis.horizontal,
       children: [
-        SizedBox(width: 24.w),
+        const SizedBox(width: 24),
         ChipList(
           listOfChipNames: _list,
           activeBgColorList: [Theme.of(context).colorScheme.primary],
@@ -35,9 +34,9 @@ class _CategoriesChipListState extends State<CategoriesChipList> {
           listOfChipIndicesCurrentlySeclected: [0],
           inactiveBorderColorList: [Theme.of(context).colorScheme.primary],
           activeBorderColorList: const [Colors.transparent],
-          style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
         ),
-        SizedBox(width: 24.w),
+        const SizedBox(width: 24),
       ],
     );
   }

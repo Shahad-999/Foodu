@@ -30,7 +30,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  size_config: ^2.0.3
   flutter_svg: ^2.0.0+1
   equatable: ^2.0.5
   get_it: ^7.2.0

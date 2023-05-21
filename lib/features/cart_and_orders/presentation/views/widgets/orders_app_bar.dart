@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:size_config/size_config.dart';
 
 class OrdersAppBar extends StatelessWidget implements PreferredSizeWidget {
   const OrdersAppBar({Key? key}) : super(key: key);
@@ -26,7 +25,7 @@ class OrdersAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       elevation: 0,
-      leadingWidth: 56.w,
+      leadingWidth: 56,
       bottom: TabBar(
         tabs: const [
           Tab(text: 'Active'),

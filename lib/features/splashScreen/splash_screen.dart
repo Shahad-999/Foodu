@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:size_config/size_config.dart';
 
 import '../../core/config/routes.dart';
 
@@ -39,8 +38,8 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: 50.h,
-              width: 50.w,
+              height: 50,
+              width: 50,
               child: Image.asset(
                 'assets/images/logo_foodu.png'
               ),
@@ -48,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Text(
                 'Foodu',
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                fontSize: 45.sp,
+                fontSize: 45,
                 fontWeight: FontWeight.bold
               ),
             )

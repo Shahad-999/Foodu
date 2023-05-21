@@ -296,14 +296,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
-  size_config:
-    dependency: "direct main"
-    description:
-      name: size_config
-      sha256: "912d8e55bb563a71e30f66be0719d2a6437c3500adb01b9e52681dc2362d62e0"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.3"
   sky_engine:
     dependency: transitive
     description: flutter

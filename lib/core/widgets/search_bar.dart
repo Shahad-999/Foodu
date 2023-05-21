@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:size_config/size_config.dart';
 
 import '../utils/constant.dart';
 
@@ -14,9 +13,9 @@ class SearchBar extends StatelessWidget {
     return Hero(
       tag: searchTag,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: widthPadding ?? 24.w),
+        padding: EdgeInsets.symmetric(horizontal: widthPadding ?? 24),
         child: Container(
-          height: 56.h,
+          height: 56,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
               color: Theme.of(context).colorScheme.secondary
@@ -34,7 +33,7 @@ class SearchBar extends StatelessWidget {
                   hintText: 'What are you craving ? ',
                   hintStyle: TextStyle(
                     color: Theme.of(context).colorScheme.onSecondary,
-                    fontSize: 15.sp,
+                    fontSize: 15,
                   ),
                   prefixIcon: Icon(
                       Icons.search_outlined,
