@@ -13,7 +13,7 @@ class LanguageScreen extends StatelessWidget {
           .colorScheme
           .background,
       appBar: const NavigationAppBar(title: 'Language'),
-      body: const LanguageBody(),
+      body: LanguageBody(),
     );
   }
 }

@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/features/profile_screen/presentation/controllers/language_controller.dart';
+import 'package:get/get.dart';
 
-class LanguageBody extends StatefulWidget {
-  const LanguageBody({Key? key}) : super(key: key);
+class LanguageBody extends StatelessWidget {
+  LanguageBody({Key? key}) : super(key: key);
 
-  @override
-  State<LanguageBody> createState() => _LanguageBodyState();
-}
+  final LanguageController _controller = Get.put(LanguageController());
 
-class _LanguageBodyState extends State<LanguageBody> {
-  final List<String> language =['Arabic','English','Spanish','French'];
-
-  int _value =0;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16),
       child: ListView.builder(
-          itemCount: language.length,
+          itemCount: _controller.language.length,
           itemBuilder: (context, index) {
             return  Padding(
                 padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 24),
@@ -24,25 +20,26 @@ class _LanguageBodyState extends State<LanguageBody> {
                   children: [
                     Expanded(
                       child: Text(
-                        language[index],
+                        _controller.language[index].name.capitalizeFirst!,
                         style: Theme.of(context)
                             .textTheme
                             .bodyLarge
                             ?.copyWith(fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ),
-                    Radio(
-                      value: index,
-                      groupValue: _value,
-                      onChanged: (value) {
-                        setState(() {
-                          _value = value!;
-                        });
-                      },
-                      fillColor: MaterialStateProperty.resolveWith<Color>(
-                            (Set<MaterialState> states) {
-                          return Theme.of(context).colorScheme.primary;
+                    Obx(() =>  Radio(
+                        value: index,
+                        groupValue: _controller.selectedLanguageIndex.value,
+                        onChanged: (value) {
+                          if(value is int){
+                            _controller.onChangeLanguageSelected(value);
+                          }
                         },
+                        fillColor: MaterialStateProperty.resolveWith<Color>(
+                              (Set<MaterialState> states) {
+                            return Theme.of(context).colorScheme.primary;
+                          },
+                        ),
                       ),
                     )
                   ],

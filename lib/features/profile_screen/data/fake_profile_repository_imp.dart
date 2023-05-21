@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:foodu/core/failure.dart';
+import 'package:foodu/core/utils/language.dart';
 import 'package:foodu/features/profile_screen/domain/models/address.dart';
 import 'package:foodu/features/profile_screen/domain/models/profile_details.dart';
 import 'package:foodu/features/profile_screen/domain/profile_repository.dart';
@@ -31,5 +32,14 @@ class FakeProfileRepositoryImp extends ProfileRepository {
       Address(title: 'Home', fullAddress: 'Times Square NYC , Manhattan'),
       Address(title: 'Home', fullAddress: 'Times Square NYC , Manhattan'),
     ]);
+  }
+
+  @override
+  Future<Either<Failure, Language>> getCurrentLanguage() async{
+    return right(Language.arabic);
+  }
+  @override
+  Future changeLanguage(Language language) async{
+    Future((){});
   }
 }

@@ -18,6 +18,7 @@ import 'package:foodu/features/meal/domain/meal_repository.dart';
 import 'package:foodu/features/profile_screen/data/fake_profile_repository_imp.dart';
 import 'package:foodu/features/profile_screen/domain/profile_repository.dart';
 import 'package:foodu/features/profile_screen/domain/usecases/address_use_case.dart';
+import 'package:foodu/features/profile_screen/domain/usecases/language_use_case.dart';
 import 'package:foodu/features/profile_screen/domain/usecases/profile_details_use_case.dart';
 import 'package:foodu/features/restaurant_and_food/data/fake_food_repository_imp.dart';
 import 'package:foodu/features/restaurant_and_food/domain/food_repository.dart';
@@ -68,5 +69,6 @@ setup() {
   getIt.registerSingleton<CategoryUseCase>(CategoryUseCase());
   getIt.registerSingleton<ProfileDetailsUseCase>(ProfileDetailsUseCase());
   getIt.registerSingleton<AddressUseCase>(AddressUseCase());
+  getIt.registerSingleton<LanguageUseCase>(LanguageUseCase());
   //endRegion
 }
