@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:foodu/core/utils/api_service.dart';
-import 'package:foodu/features/cart_and_orders/data/fake_orders_repository_imp.dart';
+import 'package:foodu/features/cart_and_orders/data/data_sources/remote_order_data_source.dart';
+import 'package:foodu/features/cart_and_orders/data/orders_repository_imp.dart';
 import 'package:foodu/features/cart_and_orders/domain/order_repository.dart';
 import 'package:foodu/features/cart_and_orders/domain/usecases/active_order_use_case.dart';
 import 'package:foodu/features/cart_and_orders/domain/usecases/cancel_order_use_case.dart';
@@ -40,12 +41,13 @@ setup() {
       Dio()..interceptors.add(LogInterceptor(requestBody: true)));
   getIt.registerSingleton<ApiService>(ApiService());
   getIt.registerSingleton<RemoteExploreDataSource>(RemoteExploreDataSource());
+  getIt.registerSingleton<RemoteOrdersDataSource>(RemoteOrdersDataSource());
 
   //repositoryRegion
   getIt.registerSingleton<ExploreRepository>(ExploreRepositoryImp());
   getIt.registerSingleton<FoodRepository>(FakeFoodRepository());
   getIt.registerSingleton<MealRepository>(FakeMealRepository());
-  getIt.registerSingleton<OrdersRepository>(FakeOrdersRepository());
+  getIt.registerSingleton<OrdersRepository>(OrdersRepositoryImp());
   getIt.registerSingleton<ProfileRepository>(FakeProfileRepositoryImp());
   //endRegion
 
