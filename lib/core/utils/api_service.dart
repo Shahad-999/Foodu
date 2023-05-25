@@ -13,7 +13,7 @@ class ApiService {
     return response.data;
   }
   
-  Future<void> post({required String endPoint ,Object? data,Map<String,dynamic>? queryParameters})async{
+  Future<dynamic> post({required String endPoint ,Object? data,Map<String,dynamic>? queryParameters})async{
     await _dio.post(endPoint,data: data,queryParameters: queryParameters);
   }
 
