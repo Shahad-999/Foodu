@@ -20,7 +20,7 @@ class FakeOrdersRepository extends OrdersRepository {
   }
 
   @override
-  Future sentCancelOrderReason(String message) {
+  Future sentCancelOrderReason(String message ,String orderId) {
     // TODO: implement sentCancelOrderReason
     throw UnimplementedError();
   }

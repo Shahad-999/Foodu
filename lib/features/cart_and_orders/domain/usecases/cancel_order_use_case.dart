@@ -6,8 +6,8 @@ class CancelOrderUseCase {
   final OrdersRepository _repository;
   CancelOrderUseCase() : _repository = getIt.get();
 
-  Future sentCancelOrder({required String message}) {
-    return _repository.sentCancelOrderReason(message);
+  Future sentCancelOrder({required String message,required  String orderId}) {
+    return _repository.sentCancelOrderReason(message,orderId);
   }
 
 }

@@ -37,9 +37,9 @@ class OrdersRepositoryImp extends OrdersRepository {
   }
 
   @override
-  Future sentCancelOrderReason(String message) async {
+  Future sentCancelOrderReason(String message, String orderId) async {
     return await _remoteOrdersDataSource.sentCancelOrderReason(
-        message, 'orderId');
+        message, orderId);
   }
 
   @override

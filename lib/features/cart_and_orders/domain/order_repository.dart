@@ -10,7 +10,7 @@ abstract class OrdersRepository {
 
   Future<Either<Failure, List<CartItem>>> getCartContent();
 
-  Future sentCancelOrderReason(String message);
+  Future sentCancelOrderReason(String message, String orderId);
 
   Future sentOrderReview({required String feedback, required String orderId});
 

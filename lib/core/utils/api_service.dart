@@ -4,7 +4,7 @@ import 'package:foodu/core/config/service_locator.dart';
 class ApiService {
   final Dio _dio;
 
-  final baseUrl = 'http://192.168.0.190:5555/';
+  final baseUrl = 'http://192.168.0.191:5555/';
 
   ApiService(): _dio = getIt.get();
 

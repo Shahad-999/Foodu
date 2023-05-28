@@ -10,7 +10,7 @@ class SpecialItem extends StatelessWidget {
 
   _clickSpecialItem() {
     Get.toNamed(Routes.restaurantRoute,
-        arguments: {Arguments.restaurantId: 'SS'});
+        arguments: {Arguments.restaurantId: '1'});
   }
 
   @override

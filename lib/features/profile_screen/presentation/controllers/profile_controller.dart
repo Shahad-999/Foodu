@@ -25,7 +25,9 @@ class ProfileController extends GetxController {
     required String image,
     required num phoneNumber,
   }) async{
-    return await _profileUseCase.updateProfileDetails(
+
+    await _profileUseCase.updateProfileDetails(
         name: name, email: email, image: image, phoneNumber: phoneNumber);
+    getProfileInfo();
   }
 }
