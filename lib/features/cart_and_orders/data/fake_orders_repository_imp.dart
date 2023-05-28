@@ -21,33 +21,28 @@ class FakeOrdersRepository extends OrdersRepository {
 
   @override
   Future sentCancelOrderReason(String message ,String orderId) {
-    // TODO: implement sentCancelOrderReason
     throw UnimplementedError();
   }
 
   @override
   Future sentDriverRating({required double rating, required String orderId}) {
-    // TODO: implement sentDriverRating
     throw UnimplementedError();
   }
 
   @override
   Future sentOrderReview({required String feedback, required String orderId}) {
-    // TODO: implement sentOrderReview
     throw UnimplementedError();
   }
 
   @override
   Future sentRestaurantRating(
       {required double rating, required String orderId}) {
-    // TODO: implement sentRestaurantRating
     throw UnimplementedError();
   }
 
   @override
   Future sentOrder({required OrderSummary orderSummary}) async {
     print(orderSummary.orders);
-    // TODO: implement addOrderToCart
     return Future(() {});
   }
 
