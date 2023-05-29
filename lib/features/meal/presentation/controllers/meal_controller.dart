@@ -18,7 +18,7 @@ class MealController extends GetxController{
   MealController():
         _mealUseCase = getIt.get();
 
-  getMealDetails(){
+  Future getMealDetails(){
     state.value = LoadingMealState();
     _mealUseCase.call(mealId).then((respond) {
       respond.fold(
@@ -29,6 +29,7 @@ class MealController extends GetxController{
               }
       );
     });
+    return Future((){});
   }
 
   onClickIncrease(){

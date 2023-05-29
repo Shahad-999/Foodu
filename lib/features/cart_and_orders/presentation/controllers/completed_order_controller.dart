@@ -11,7 +11,7 @@ class CompletedOrderController extends GetxController {
 
   CompletedOrderController() : _completedOrdersUseCase = getIt.get();
 
-  fetchOrders() {
+  Future fetchOrders() {
     _completedOrdersUseCase.call().then((respond) {
       respond.fold(
               (l) => {
@@ -25,5 +25,7 @@ class CompletedOrderController extends GetxController {
                 }
               });
     });
+    return Future((){});
+
   }
 }

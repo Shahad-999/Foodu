@@ -45,7 +45,10 @@ class CancelledOrderPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => getWidgetState(_controller.orders.value, context));
+    return Obx(() => RefreshIndicator(
+      onRefresh: _controller.fetchOrders,
+      child: getWidgetState(_controller.orders.value, context))
+      );
   }
 
   Widget onLoadedData(BuildContext context, List<OrderUi> data) {

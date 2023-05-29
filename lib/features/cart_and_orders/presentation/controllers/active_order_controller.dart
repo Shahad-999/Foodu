@@ -11,7 +11,7 @@ class ActiveOrderController extends GetxController {
 
   ActiveOrderController() : _activeOrdersUseCase = getIt.get();
 
-  fetchOrders() {
+  Future fetchOrders() {
     _activeOrdersUseCase.call().then((respond) {
       respond.fold(
               (l) => {
@@ -25,5 +25,6 @@ class ActiveOrderController extends GetxController {
                 }
               });
     });
+    return Future((){});
   }
 }

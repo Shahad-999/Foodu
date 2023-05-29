@@ -11,7 +11,7 @@ class CancelledOrderController extends GetxController {
 
   CancelledOrderController() : _cancelledOrdersUseCase = getIt.get();
 
-  fetchOrders() {
+  Future fetchOrders() {
     _cancelledOrdersUseCase.call().then((respond) {
       respond.fold(
               (l) => {
@@ -25,5 +25,6 @@ class CancelledOrderController extends GetxController {
                 }
               });
     });
+    return Future((){});
   }
 }

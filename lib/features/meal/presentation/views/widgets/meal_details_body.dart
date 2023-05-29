@@ -39,7 +39,13 @@ class MealDetailsBody extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
-    return Obx(() => getWidgetState(_mealController.state.value, context));
+    return Obx(() => RefreshIndicator(
+      onRefresh: _mealController.getMealDetails,
+        child: getWidgetState(_mealController.state.value, context),
+
+
+      )
+    );
   }
 
   Widget onLoadedData(BuildContext context,MealDetailsUi meal){
