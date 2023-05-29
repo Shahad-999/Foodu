@@ -29,6 +29,14 @@ class CartBody extends StatelessWidget {
                 semanticsLabel: '',
               ));
         }
+      case EmptyCartState:
+        {
+          return Center(
+              child: SvgPicture.asset(
+                'assets/svg/empty.svg',
+                semanticsLabel: '',
+              ));
+        }
       default:
         {
           return Container();

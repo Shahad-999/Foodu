@@ -34,7 +34,7 @@ class CompletedOrderPage extends StatelessWidget {
         {
           return Center(
               child: SvgPicture.asset(
-                'assets/svg/fail.svg',
+                'assets/svg/empty.svg',
                 semanticsLabel: '',
               ));
         }

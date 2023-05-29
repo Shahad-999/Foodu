@@ -25,7 +25,7 @@ class StateHandler<T extends MainState> extends StatelessWidget {
     } else if (state is EmptyMainState) {
       return Center(
           child: SvgPicture.asset(
-        'assets/svg/fail.svg',
+        'assets/svg/empty.svg',
         semanticsLabel: '',
       ));//TODO CHANGE IT LATER
     } else {

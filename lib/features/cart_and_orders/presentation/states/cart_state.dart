@@ -7,6 +7,7 @@ class CartState{
    factory CartState.initial() = InitialCartState;
    factory CartState.loading() = LoadingCartState;
    factory CartState.error(String message) = FailCartState;
+   factory CartState.empty() = EmptyCartState;
  }
 
 class InitialCartState extends CartState{
@@ -22,4 +23,8 @@ class LoadedCartState extends CartState{
 class FailCartState extends CartState{
   final String message;
   FailCartState(this.message): super._();
+}
+
+class EmptyCartState extends CartState{
+  EmptyCartState(): super._();
 }
