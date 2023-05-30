@@ -15,7 +15,7 @@
 - [Clean Architecture](https://medium.com/ruangguru/an-introduction-to-flutter-clean-architecture-ae00154001b0):Clean Architecture promotes modular, testable, and maintainable code through the separation of concerns and independent layers of abstraction.
 
   
-  ## Features :
+## Features :
 
 - Explore a wide variety of food and restaurants.
 - Search for specific cuisines, dishes, or restaurants.
@@ -26,15 +26,11 @@
 - Access additional features such as  discounts.
 - User-friendly interface for a smooth and intuitive food ordering process.
 
-# FoodU API
+## FoodU API
 
 The FoodU API provides endpoints for exploring food categories, managing the cart, retrieving meal details, updating the profile, and interacting with restaurants. It allows users to browse meals, add them to the cart, place orders, and manage their profile information.
 
-## Base URL
-
-The base URL for the FoodU API is: `http://example.com/api/foodu`
-
-## Endpoints
+<h3 >Endpoints</h3>
 
 ### Explore
 
@@ -73,6 +69,5 @@ The base URL for the FoodU API is: `http://example.com/api/foodu`
 - **GET `/restaurant/{restaurantId}`**: Retrieves details of a restaurant.
 - **GET `/menus/{restaurantId}`**: Retrieves the menus of a restaurant.
 
-Note: Replace http://example.com/api/foodu with the actual base URL of the API in your implementation.
   
 
