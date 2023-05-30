@@ -12,6 +12,7 @@ class CancelledOrderController extends GetxController {
   CancelledOrderController() : _cancelledOrdersUseCase = getIt.get();
 
   Future fetchOrders() {
+    orders.value = LoadingOrdersState();
     _cancelledOrdersUseCase.call().then((respond) {
       respond.fold(
               (l) => {

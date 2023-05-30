@@ -12,6 +12,7 @@ class RemoteExploreDataSource {
   static const String _categoryIdKey = 'category_id';
   static const String _discountEndPoint = 'discount';
   static const String _recommendedEndPoint = 'recommended';
+  static const String _categoryMealEndPoint = 'category';
   static const String _specialOfferEndPoint = 'specialOffer';
   static const String _categoryEndPoint = 'categories';
   static const String _searchEndPoint = 'search';
@@ -63,6 +64,17 @@ class RemoteExploreDataSource {
       // queryParameters: {
       //     _searchKeyWordKey : keyWord
       // }
+    ) as List<dynamic>;
+    List<MealDto> meals = [];
+    for (var item in data) {
+      meals.add(MealDto.fromJson(item));
+    }
+    return meals;
+  }
+
+  Future<List<MealDto>> getCategoryMeals(String categoryId) async{
+    final data = await _apiService.get(
+        endPoint: "$_categoryMealEndPoint/$categoryId",
     ) as List<dynamic>;
     List<MealDto> meals = [];
     for (var item in data) {

@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:foodu/core/widgets/categories_chip_list.dart';
 import 'package:foodu/core/widgets/meal_item.dart';
 import 'package:foodu/features/explore/presentation/controllers/recommended_controller.dart';
 import 'package:get/get.dart';
@@ -13,7 +12,7 @@ class RecommendedBody extends StatelessWidget {
     return Padding(
         padding: const EdgeInsets.only(top: 16),
         child: ListView(children: [
-          const SizedBox(height: 50, child: CategoriesChipList()),
+          // const SizedBox(height: 50, child: CategoriesChipList()),
           GetBuilder<RecommendedController>(
             builder: (controller) {
               return ListView.builder(

@@ -27,7 +27,7 @@ class StateHandler<T extends MainState> extends StatelessWidget {
           child: SvgPicture.asset(
         'assets/svg/empty.svg',
         semanticsLabel: '',
-      ));//TODO CHANGE IT LATER
+      ));
     } else {
       return const Center();
     }

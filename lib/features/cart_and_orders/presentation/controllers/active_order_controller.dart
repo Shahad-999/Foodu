@@ -12,6 +12,7 @@ class ActiveOrderController extends GetxController {
   ActiveOrderController() : _activeOrdersUseCase = getIt.get();
 
   Future fetchOrders() {
+    orders.value = LoadingOrdersState();
     _activeOrdersUseCase.call().then((respond) {
       respond.fold(
               (l) => {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodu/features/profile_screen/presentation/views/widgets/profile_image.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/config/routes.dart';
@@ -20,20 +21,21 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            height: 48,
-            width: 48,
-            decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
-                shape: BoxShape.circle,
-                gradient: const LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFF86BA97),
-                      Color(0xFF1BAC4B),
-                    ])),
-          ),
+          const ProfileImage(size: 48, image: NetworkImage('https://avatars.githubusercontent.com/u/118618262?v=4')),
+          // Container(
+          //   height: 48,
+          //   width: 48,
+          //   decoration: BoxDecoration(
+          //       color: Theme.of(context).colorScheme.primary,
+          //       shape: BoxShape.circle,
+          //       gradient: const LinearGradient(
+          //           begin: Alignment.topCenter,
+          //           end: Alignment.bottomCenter,
+          //           colors: [
+          //             Color(0xFF86BA97),
+          //             Color(0xFF1BAC4B),
+          //           ])),
+          // ),
           const SizedBox(width: 16),
           Expanded(
             child: Column(

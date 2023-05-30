@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:foodu/core/config/routes.dart';
-import 'package:foodu/core/widgets/categories_chip_list.dart';
 import 'package:foodu/core/widgets/meal_item.dart';
 import 'package:foodu/features/explore/presentation/controllers/recommended_controller.dart';
 import 'package:get/get.dart';
@@ -29,7 +28,7 @@ class RecommendedSection extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           children: [
-            const SizedBox(height: 50, child: CategoriesChipList()),
+            // const SizedBox(height: 50, child: CategoriesChipList()),
             Obx(
               () => ListView.builder(
                   itemCount: _recommendedController.recommendedMeals.length,
