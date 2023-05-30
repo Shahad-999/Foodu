@@ -10,8 +10,8 @@ class RestaurantScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () => Future.value(true),
-      child:  AnnotatedRegion<SystemUiOverlayStyle>(
-          value: const SystemUiOverlayStyle(
+      child:  const AnnotatedRegion<SystemUiOverlayStyle>(
+          value: SystemUiOverlayStyle(
             statusBarColor: Colors.transparent,
           ),
           child: RestaurantBody()),
