@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:foodu/features/cart_and_orders/presentation/controllers/active_order_controller.dart';
 import 'package:foodu/features/cart_and_orders/presentation/controllers/completed_order_controller.dart';
 import 'package:foodu/features/cart_and_orders/presentation/models/order_ui.dart';
 import 'package:foodu/features/cart_and_orders/presentation/states/orders_state.dart';
@@ -45,10 +46,17 @@ class CompletedOrderPage extends StatelessWidget {
     }
   }
 
+
+  Future onRefresh() async{
+    Get.find<ActiveOrderController>().fetchOrders();
+    Get.find<CompletedOrderController>().fetchOrders();
+    return await _controller.fetchOrders();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Obx(() => RefreshIndicator(
-      onRefresh: _controller.fetchOrders,
+      onRefresh: onRefresh,
       child: getWidgetState(_controller.orders.value, context))
       );
   }
