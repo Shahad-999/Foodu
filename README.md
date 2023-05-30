@@ -5,6 +5,9 @@
 <p align="center">This is a Flutter app that transforms food delivery. Explore, order, and savor restaurant delights from your home</p>
 </p>
 
+![6](https://github.com/Shahad-999/Foodu/assets/118618262/e7e20821-9dcd-423f-af7f-dc7ca5d0b14b)
+
+
 ## Dependencies/Tools :
 - [get_it](https://pub.dev/packages/get_it) : Simple Service Locator for Dart and Flutter projects.
 - [get](https://pub.dev/packages/get) : A package that simplifies dependency injection in Dart and Flutter.
