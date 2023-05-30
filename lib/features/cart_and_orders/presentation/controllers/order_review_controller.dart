@@ -34,9 +34,11 @@ class OrderReviewController extends GetxController {
     Emoji.star, // ⭐
     Emoji.handsRaised, // 🙌
     Emoji.grimacingFace, // 😬
+    Emoji.thinkingFace,
     Emoji.heartEyes, // 😍
     Emoji.clappingHands, // 👏
     Emoji.fire, // 🔥
+    Emoji.starryEyes
   ];
 
   sentOrderReview(){
