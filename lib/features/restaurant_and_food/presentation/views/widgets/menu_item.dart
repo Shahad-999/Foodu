@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/core/config/routes.dart';
 import 'package:foodu/features/restaurant_and_food/presentation/models/menu_ui.dart';
@@ -35,7 +36,9 @@ class MenuItem extends StatelessWidget {
                     width: 100,
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(16),
-                        child: Image.network(meal.imageUrl)),
+                        child: CachedNetworkImage(
+                          imageUrl: meal.imageUrl,
+                        )),
                   ),
                 ),
                 const SizedBox(

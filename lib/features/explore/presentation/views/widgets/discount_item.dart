@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../model/discount_meal_ui.dart';
@@ -8,12 +9,10 @@ class DiscountItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-      padding:  const EdgeInsets.only(right: 8),
+    return Padding(
+      padding: const EdgeInsets.only(right: 8),
       child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(32)
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
         color: Theme.of(context).colorScheme.primaryContainer,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -28,11 +27,11 @@ class DiscountItem extends StatelessWidget {
                     SizedBox(
                       height: 190,
                       width: 190,
-
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(16),
-                          child: Image.network(meal.imageUrl)
-                      ),
+                          child: CachedNetworkImage(
+                            imageUrl: meal.imageUrl,
+                          )),
                     ),
                     Positioned(
                       top: 12,
@@ -41,17 +40,15 @@ class DiscountItem extends StatelessWidget {
                         width: 56,
                         height: 24,
                         decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.primary,
-                          borderRadius: BorderRadius.circular(4)
-                        ),
+                            color: Theme.of(context).colorScheme.primary,
+                            borderRadius: BorderRadius.circular(4)),
                         child: const Center(
                           child: Text(
                             'PROMO',
                             style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 10,
-                              fontWeight: FontWeight.bold
-                            ),
+                                color: Colors.white,
+                                fontSize: 10,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -59,25 +56,26 @@ class DiscountItem extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 16,),
+              const SizedBox(
+                height: 16,
+              ),
               Text(
                 meal.name,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w800
-                ),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge
+                    ?.copyWith(fontSize: 20, fontWeight: FontWeight.w800),
               ),
               const SizedBox(height: 8),
               const Spacer(),
               Row(
                 children: [
                   Text(
-                      '\$${meal.price}',
+                    '\$${meal.price}',
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 20
-                    ),
+                        color: Theme.of(context).colorScheme.primary,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 20),
                   ),
                   VerticalDivider(
                     color: Theme.of(context).colorScheme.onBackground,
@@ -88,15 +86,14 @@ class DiscountItem extends StatelessWidget {
                   ),
                   const SizedBox(width: 8),
                   Text(
-                      '\$${meal.deliveryCost}',
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 14
-                    ),
+                    '\$${meal.deliveryCost}',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall
+                        ?.copyWith(fontWeight: FontWeight.w600, fontSize: 14),
                   ),
                 ],
               ),
-
             ],
           ),
         ),

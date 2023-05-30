@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -6,6 +7,7 @@ import '../config/routes.dart';
 
 class SpecialItem extends StatelessWidget {
   const SpecialItem({super.key, required this.specialOffer});
+
   final SpecialOfferUi specialOffer;
 
   _clickSpecialItem() {
@@ -42,8 +44,8 @@ class SpecialItem extends StatelessWidget {
                   right: 16,
                   child: SizedBox(
                     width: 180,
-                    child: Image.network(
-                      specialOffer.imageUrl,
+                    child: CachedNetworkImage(
+                      imageUrl: specialOffer.imageUrl,
                       alignment: Alignment.centerRight,
                     ),
                   )),

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:foodu/features/restaurant_and_food/presentation/manger/menus_controller.dart';
@@ -49,8 +50,8 @@ class RestaurantBody extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                Image.network(
-                  data.imageUrl,
+                CachedNetworkImage(
+                  imageUrl: data.imageUrl,
                   fit: BoxFit.fitWidth,
                 ),
                 Container(

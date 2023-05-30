@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/features/cart_and_orders/presentation/models/cart_item_ui.dart';
 
@@ -47,7 +48,9 @@ class CartItem extends StatelessWidget {
                   width: 120,
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(16),
-                      child: Image.network(item.imageUrl)),
+                      child: CachedNetworkImage(
+                        imageUrl: item.imageUrl,
+                      )),
                 ),
                 const SizedBox(
                   width: 16,

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/features/cart_and_orders/presentation/models/order_ui.dart';
 import 'package:get/get.dart';
@@ -7,7 +8,8 @@ class GeneralOrderDetailsItem extends StatelessWidget {
       {Key? key,
       this.labelDecoration,
       required this.labelText,
-      this.labelColor, required this.order})
+      this.labelColor,
+      required this.order})
       : super(key: key);
 
   final Decoration? labelDecoration;
@@ -24,7 +26,9 @@ class GeneralOrderDetailsItem extends StatelessWidget {
             child: SizedBox(
                 height: 120,
                 width: 120,
-                child: Image.network(order.imageUrl))),
+                child: CachedNetworkImage(
+                  imageUrl: order.imageUrl,
+                ))),
         const SizedBox(width: 16),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/core/config/routes.dart';
 import 'package:get/get.dart';
@@ -15,13 +16,12 @@ class MealItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
       child: Container(
         height: 150,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(32),
-          color: Theme.of(context).colorScheme.secondary
-        ),
+            borderRadius: BorderRadius.circular(32),
+            color: Theme.of(context).colorScheme.secondary),
         child: GestureDetector(
           onTap: _navToMealDetails,
           child: Padding(
@@ -33,8 +33,9 @@ class MealItem extends StatelessWidget {
                   width: 120,
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(16),
-                      child: Image.network(meal.imageUrl)
-                  ),
+                      child: CachedNetworkImage(
+                        imageUrl: meal.imageUrl,
+                      )),
                 ),
                 const SizedBox(width: 16),
                 Expanded(
@@ -45,18 +46,14 @@ class MealItem extends StatelessWidget {
                       Text(
                         meal.name,
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w800
-                        ),
+                            fontSize: 20, fontWeight: FontWeight.w800),
                         maxLines: 1,
                       ),
                       const SizedBox(height: 16),
                       Text(
                         '${meal.distance} - ${meal.rating} (${meal.numberOfUpvote}k)',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14
-                        ),
+                            fontWeight: FontWeight.w600, fontSize: 14),
                         textAlign: TextAlign.start,
                       ),
                       const SizedBox(height: 16),
@@ -70,10 +67,11 @@ class MealItem extends StatelessWidget {
                           const SizedBox(width: 8),
                           Text(
                             '\$2.00',
-                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14
-                            ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodySmall
+                                ?.copyWith(
+                                    fontWeight: FontWeight.w600, fontSize: 14),
                           ),
                           const SizedBox(height: 16),
                           const Spacer(),

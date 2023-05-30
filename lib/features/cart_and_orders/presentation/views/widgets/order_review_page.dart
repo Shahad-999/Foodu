@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:foodu/features/cart_and_orders/presentation/controllers/order_review_controller.dart';
 import 'package:foodu/features/cart_and_orders/utils/emoji.dart';
@@ -50,8 +51,9 @@ class OrderReviewPage extends StatelessWidget {
                             )
                           : null,
                       child: Center(
-                        child: Image.network(_controller.emoji[index].toImage())
-                            .marginAll(16),
+                        child: CachedNetworkImage(
+                          imageUrl: _controller.emoji[index].toImage(),
+                        ).marginAll(16),
                       ),
                     ).marginAll(8)),
               );

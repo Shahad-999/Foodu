@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:foodu/features/meal/presentation/controllers/meal_controller.dart';
@@ -27,9 +28,9 @@ class MealDetailsBody extends StatelessWidget {
         {
           return Center(
               child: SvgPicture.asset(
-                'assets/svg/fail.svg',
-                semanticsLabel: '',
-              ));
+            'assets/svg/fail.svg',
+            semanticsLabel: '',
+          ));
         }
       default:
         {
@@ -37,18 +38,16 @@ class MealDetailsBody extends StatelessWidget {
         }
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Obx(() => RefreshIndicator(
-      onRefresh: _mealController.getMealDetails,
-        child: getWidgetState(_mealController.state.value, context),
-
-
-      )
-    );
+          onRefresh: _mealController.getMealDetails,
+          child: getWidgetState(_mealController.state.value, context),
+        ));
   }
 
-  Widget onLoadedData(BuildContext context,MealDetailsUi meal){
+  Widget onLoadedData(BuildContext context, MealDetailsUi meal) {
     return Container(
       color: Theme.of(context).colorScheme.background,
       child: Stack(children: [
@@ -62,8 +61,8 @@ class MealDetailsBody extends StatelessWidget {
                 tag: imageTag(_mealController.mealId),
                 child: SizedBox(
                   height: 434,
-                  child: Image.network(
-                    meal.imageUrl,
+                  child: CachedNetworkImage(
+                    imageUrl: meal.imageUrl,
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -76,16 +75,20 @@ class MealDetailsBody extends StatelessWidget {
                     const SizedBox(height: 16),
                     Text(
                       meal.name,
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          fontSize: 28, fontWeight: FontWeight.bold),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge
+                          ?.copyWith(fontSize: 28, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 16),
                     const Divider(thickness: 1.5),
                     const SizedBox(height: 16),
                     Text(
                       meal.description,
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          fontSize: 16, fontWeight: FontWeight.w600),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodySmall
+                          ?.copyWith(fontSize: 16, fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 16),
                     const Divider(thickness: 1.5),
@@ -111,7 +114,7 @@ class MealDetailsBody extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
                       color:
-                      Theme.of(context).colorScheme.secondary.withAlpha(30),
+                          Theme.of(context).colorScheme.secondary.withAlpha(30),
                     ),
                     child: SvgPicture.asset(
                       'assets/svg/back_arrow.svg',
@@ -132,7 +135,7 @@ class MealDetailsBody extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100),
                     color:
-                    Theme.of(context).colorScheme.secondary.withAlpha(30),
+                        Theme.of(context).colorScheme.secondary.withAlpha(30),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(4.0),

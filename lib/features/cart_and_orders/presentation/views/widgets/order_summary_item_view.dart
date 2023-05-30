@@ -1,12 +1,14 @@
-
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/order_summary_ui.dart';
 
 class OrderMealItemView extends StatelessWidget {
-  const OrderMealItemView({Key? key, required this.mealOrder}) : super(key: key);
+  const OrderMealItemView({Key? key, required this.mealOrder})
+      : super(key: key);
 
   final OrderMealUi mealOrder;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -16,7 +18,9 @@ class OrderMealItemView extends StatelessWidget {
           width: 60,
           child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
-              child: Image.network(mealOrder.imageUrl)),
+              child: CachedNetworkImage(
+                imageUrl: mealOrder.imageUrl,
+              )),
         ),
         const SizedBox(width: 16),
         Expanded(
@@ -28,23 +32,16 @@ class OrderMealItemView extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .bodyLarge
-                    ?.copyWith(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600),
+                    ?.copyWith(fontSize: 20, fontWeight: FontWeight.w600),
                 maxLines: 1,
               ),
               const SizedBox(height: 10),
               Text(
                 mealOrder.price,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall
-                    ?.copyWith(
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
-                    color: Theme.of(context)
-                        .colorScheme
-                        .primary),
+                    color: Theme.of(context).colorScheme.primary),
               )
             ],
           ),
@@ -58,20 +55,14 @@ class OrderMealItemView extends StatelessWidget {
                 width: 32,
                 decoration: BoxDecoration(
                     border: Border.all(
-                      color:
-                      Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                     borderRadius: BorderRadius.circular(8)),
                 child: Center(
                   child: Text(
                     mealOrder.quantity,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodySmall
-                        ?.copyWith(
-                        color: Theme.of(context)
-                            .colorScheme
-                            .primary,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.w900),
                   ),
                 )),
