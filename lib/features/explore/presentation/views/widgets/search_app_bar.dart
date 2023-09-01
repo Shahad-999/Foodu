@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../../../../core/widgets/search_bar.dart';
+import '../../../../../core/widgets/search_bar.dart' as appbar;
 
 class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? keyword;
@@ -35,7 +35,7 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
             .colorScheme
             .background,
         title:
-          SearchBar(
+          appbar.SearchBar(
             onClickSearch: onClickSearch,
             widthPadding: 16,
             keyword: keyword,
